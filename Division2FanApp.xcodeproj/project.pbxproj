@@ -1,0 +1,420 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AA9021DE223B8E6F00CBF52F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9021DD223B8E6F00CBF52F /* AppDelegate.swift */; };
+		AA9021E5223B8E7100CBF52F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA9021E4223B8E7100CBF52F /* Assets.xcassets */; };
+		AA9021E8223B8E7100CBF52F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA9021E6223B8E7100CBF52F /* LaunchScreen.storyboard */; };
+		AA9021F5223B8F4700CBF52F /* CalcualtorTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9021F3223B8F4700CBF52F /* CalcualtorTableViewController.swift */; };
+		AA9021F6223B8F4700CBF52F /* CalcualtorTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA9021F4223B8F4700CBF52F /* CalcualtorTableViewController.xib */; };
+		AA9021FA223B92E100CBF52F /* CalculatorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9021F8223B92E100CBF52F /* CalculatorCell.swift */; };
+		AA9021FB223B92E100CBF52F /* CalculatorCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA9021F9223B92E100CBF52F /* CalculatorCell.xib */; };
+		AA9021FE223B936300CBF52F /* CellControllable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9021FD223B936300CBF52F /* CellControllable.swift */; };
+		AA902200223B939900CBF52F /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9021FF223B939900CBF52F /* UITableView+Extensions.swift */; };
+		AA902202223B966900CBF52F /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA902201223B966900CBF52F /* UIColor+Extensions.swift */; };
+		AA902204223B983F00CBF52F /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA902203223B983F00CBF52F /* String+Extensions.swift */; };
+		AA902207223B9BC200CBF52F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = AA902209223B9BC200CBF52F /* Localizable.strings */; };
+		AA90221D223B9EE800CBF52F /* Borda Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AA902210223B9EE800CBF52F /* Borda Light.ttf */; };
+		AA902220223B9EE800CBF52F /* Borda.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AA902213223B9EE800CBF52F /* Borda.ttf */; };
+		AA902222223B9EE800CBF52F /* Borda-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AA902215223B9EE800CBF52F /* Borda-Bold.ttf */; };
+		AA902223223B9EE800CBF52F /* Borda-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AA902216223B9EE800CBF52F /* Borda-ExtraBold.ttf */; };
+		AA902228223BA15B00CBF52F /* UIFont+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA902227223BA15B00CBF52F /* UIFont+Extensions.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		AA9021DA223B8E6F00CBF52F /* Division2FanApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Division2FanApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA9021DD223B8E6F00CBF52F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		AA9021E4223B8E7100CBF52F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AA9021E7223B8E7100CBF52F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		AA9021E9223B8E7100CBF52F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AA9021F3223B8F4700CBF52F /* CalcualtorTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalcualtorTableViewController.swift; sourceTree = "<group>"; };
+		AA9021F4223B8F4700CBF52F /* CalcualtorTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalcualtorTableViewController.xib; sourceTree = "<group>"; };
+		AA9021F8223B92E100CBF52F /* CalculatorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorCell.swift; sourceTree = "<group>"; };
+		AA9021F9223B92E100CBF52F /* CalculatorCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalculatorCell.xib; sourceTree = "<group>"; };
+		AA9021FD223B936300CBF52F /* CellControllable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellControllable.swift; sourceTree = "<group>"; };
+		AA9021FF223B939900CBF52F /* UITableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
+		AA902201223B966900CBF52F /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
+		AA902203223B983F00CBF52F /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		AA902208223B9BC200CBF52F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		AA90220A223B9BEC00CBF52F /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		AA902210223B9EE800CBF52F /* Borda Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Borda Light.ttf"; sourceTree = "<group>"; };
+		AA902213223B9EE800CBF52F /* Borda.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Borda.ttf; sourceTree = "<group>"; };
+		AA902215223B9EE800CBF52F /* Borda-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Borda-Bold.ttf"; sourceTree = "<group>"; };
+		AA902216223B9EE800CBF52F /* Borda-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Borda-ExtraBold.ttf"; sourceTree = "<group>"; };
+		AA902227223BA15B00CBF52F /* UIFont+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extensions.swift"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AA9021D7223B8E6F00CBF52F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AA9021D1223B8E6E00CBF52F = {
+			isa = PBXGroup;
+			children = (
+				AA9021DC223B8E6F00CBF52F /* Division2FanApp */,
+				AA9021DB223B8E6F00CBF52F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AA9021DB223B8E6F00CBF52F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AA9021DA223B8E6F00CBF52F /* Division2FanApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AA9021DC223B8E6F00CBF52F /* Division2FanApp */ = {
+			isa = PBXGroup;
+			children = (
+				AA90220C223B9EE800CBF52F /* Font */,
+				AA9021DD223B8E6F00CBF52F /* AppDelegate.swift */,
+				AA9021E4223B8E7100CBF52F /* Assets.xcassets */,
+				AA9021FC223B92F000CBF52F /* Base */,
+				AA9021F7223B92BC00CBF52F /* Calculator */,
+				AA9021E9223B8E7100CBF52F /* Info.plist */,
+				AA9021E6223B8E7100CBF52F /* LaunchScreen.storyboard */,
+				AA902209223B9BC200CBF52F /* Localizable.strings */,
+			);
+			path = Division2FanApp;
+			sourceTree = "<group>";
+		};
+		AA9021F7223B92BC00CBF52F /* Calculator */ = {
+			isa = PBXGroup;
+			children = (
+				AA9021F8223B92E100CBF52F /* CalculatorCell.swift */,
+				AA9021F9223B92E100CBF52F /* CalculatorCell.xib */,
+				AA9021F3223B8F4700CBF52F /* CalcualtorTableViewController.swift */,
+				AA9021F4223B8F4700CBF52F /* CalcualtorTableViewController.xib */,
+			);
+			path = Calculator;
+			sourceTree = "<group>";
+		};
+		AA9021FC223B92F000CBF52F /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				AA9021FD223B936300CBF52F /* CellControllable.swift */,
+				AA9021FF223B939900CBF52F /* UITableView+Extensions.swift */,
+				AA902201223B966900CBF52F /* UIColor+Extensions.swift */,
+				AA902203223B983F00CBF52F /* String+Extensions.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		AA90220C223B9EE800CBF52F /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				AA902210223B9EE800CBF52F /* Borda Light.ttf */,
+				AA902213223B9EE800CBF52F /* Borda.ttf */,
+				AA902215223B9EE800CBF52F /* Borda-Bold.ttf */,
+				AA902216223B9EE800CBF52F /* Borda-ExtraBold.ttf */,
+				AA902227223BA15B00CBF52F /* UIFont+Extensions.swift */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AA9021D9223B8E6F00CBF52F /* Division2FanApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AA9021EC223B8E7100CBF52F /* Build configuration list for PBXNativeTarget "Division2FanApp" */;
+			buildPhases = (
+				AA9021D6223B8E6F00CBF52F /* Sources */,
+				AA9021D7223B8E6F00CBF52F /* Frameworks */,
+				AA9021D8223B8E6F00CBF52F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Division2FanApp;
+			productName = Division2FanApp;
+			productReference = AA9021DA223B8E6F00CBF52F /* Division2FanApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AA9021D2223B8E6E00CBF52F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = "Christian Deckert";
+				TargetAttributes = {
+					AA9021D9223B8E6F00CBF52F = {
+						CreatedOnToolsVersion = 10.1;
+					};
+				};
+			};
+			buildConfigurationList = AA9021D5223B8E6E00CBF52F /* Build configuration list for PBXProject "Division2FanApp" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				de,
+			);
+			mainGroup = AA9021D1223B8E6E00CBF52F;
+			productRefGroup = AA9021DB223B8E6F00CBF52F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AA9021D9223B8E6F00CBF52F /* Division2FanApp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AA9021D8223B8E6F00CBF52F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA9021E8223B8E7100CBF52F /* LaunchScreen.storyboard in Resources */,
+				AA902207223B9BC200CBF52F /* Localizable.strings in Resources */,
+				AA9021FB223B92E100CBF52F /* CalculatorCell.xib in Resources */,
+				AA902223223B9EE800CBF52F /* Borda-ExtraBold.ttf in Resources */,
+				AA9021E5223B8E7100CBF52F /* Assets.xcassets in Resources */,
+				AA902222223B9EE800CBF52F /* Borda-Bold.ttf in Resources */,
+				AA90221D223B9EE800CBF52F /* Borda Light.ttf in Resources */,
+				AA902220223B9EE800CBF52F /* Borda.ttf in Resources */,
+				AA9021F6223B8F4700CBF52F /* CalcualtorTableViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AA9021D6223B8E6F00CBF52F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA9021F5223B8F4700CBF52F /* CalcualtorTableViewController.swift in Sources */,
+				AA902204223B983F00CBF52F /* String+Extensions.swift in Sources */,
+				AA902228223BA15B00CBF52F /* UIFont+Extensions.swift in Sources */,
+				AA902202223B966900CBF52F /* UIColor+Extensions.swift in Sources */,
+				AA9021FA223B92E100CBF52F /* CalculatorCell.swift in Sources */,
+				AA9021FE223B936300CBF52F /* CellControllable.swift in Sources */,
+				AA902200223B939900CBF52F /* UITableView+Extensions.swift in Sources */,
+				AA9021DE223B8E6F00CBF52F /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		AA9021E6223B8E7100CBF52F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AA9021E7223B8E7100CBF52F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		AA902209223B9BC200CBF52F /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AA902208223B9BC200CBF52F /* en */,
+				AA90220A223B9BEC00CBF52F /* de */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AA9021EA223B8E7100CBF52F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		AA9021EB223B8E7100CBF52F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AA9021ED223B8E7100CBF52F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = C7G26D2828;
+				INFOPLIST_FILE = Division2FanApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.christiandeckertapps.Division2FanApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		AA9021EE223B8E7100CBF52F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = C7G26D2828;
+				INFOPLIST_FILE = Division2FanApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.christiandeckertapps.Division2FanApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AA9021D5223B8E6E00CBF52F /* Build configuration list for PBXProject "Division2FanApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA9021EA223B8E7100CBF52F /* Debug */,
+				AA9021EB223B8E7100CBF52F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AA9021EC223B8E7100CBF52F /* Build configuration list for PBXNativeTarget "Division2FanApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA9021ED223B8E7100CBF52F /* Debug */,
+				AA9021EE223B8E7100CBF52F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AA9021D2223B8E6E00CBF52F /* Project object */;
+}

@@ -1,0 +1,12 @@
+/* 
+  Localizeable.strings
+  Division2FanApp
+
+  Created by Christian on 15.03.19.
+  Copyright © 2019 Christian Deckert. All rights reserved.
+*/
+
+"calculator-controller.title" = "DPS Rechner";
+"calculator-controller.reset-button.title" = "Zurücksetzen";
+
+"calculator-controller.weapon-damage.title" = "Waffen schaden";
