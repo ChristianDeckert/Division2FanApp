@@ -8,31 +8,6 @@
 
 import UIKit
 
-enum Attribute {
-  case weaponDamage
-  case criticalHitChance
-  case criticalHitDamage
-  case headshotDamage
-  case outOfCoverDamage
-  case enemyArmorDamage
-  case healthDamage
-  case rpm
-  
-  
-  var description: String {
-    switch self {
-    case .weaponDamage: return "calculator-controller.weapon-damage.title".localized
-    case .criticalHitChance: return "calculator-controller.crit-chance.title".localized
-    case .criticalHitDamage: return "calculator-controller.crit-damage.title".localized
-    case .headshotDamage: return "calculator-controller.headshot-damage.title".localized
-    case .outOfCoverDamage: return "calculator-controller.out-of-cover-damage.title".localized
-    case .enemyArmorDamage: return "calculator-controller.enemy-armor-damage.title".localized
-    case .healthDamage: return "calculator-controller.health-damage.title".localized
-    case .rpm: return "calculator-controller.rpm.title".localized
-    }
-  }
-}
-
 protocol CalcualtorCellControllerDelegate: class {
   func calcualtorCell(controller: CalcualtorCellController?, didReturnFromTextfieldWith: String?)
 }
@@ -95,6 +70,7 @@ extension CalculatorCell: RowControlable {
     textfield.font = .bordaCaption1
     textfield.textColor = rowController.preferredTintColor
     textfield.delegate = self
+    textfield.placeholder = rowController.placeholder
   }
     
 }

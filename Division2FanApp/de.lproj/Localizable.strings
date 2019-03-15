@@ -9,7 +9,7 @@
 "calculator-controller.title" = "DPS Rechner";
 "calculator-controller.reset-button.title" = "Zurücksetzen";
 
-"calculator-controller.weapon-damage.title" = "Waffen schaden";
+"calculator-controller.weapon-damage.title" = "Waffenschaden";
 "calculator-cell.textfield.placeholder" = "Bitte Wert eineben";
 
 "calculator-controller.crit-chance.title" = "Krit. Trefferchance";

@@ -24,6 +24,11 @@
 		AA902222223B9EE800CBF52F /* Borda-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AA902215223B9EE800CBF52F /* Borda-Bold.ttf */; };
 		AA902223223B9EE800CBF52F /* Borda-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AA902216223B9EE800CBF52F /* Borda-ExtraBold.ttf */; };
 		AA902228223BA15B00CBF52F /* UIFont+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA902227223BA15B00CBF52F /* UIFont+Extensions.swift */; };
+		AA90222F223BE44C00CBF52F /* DpsCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA90222E223BE44C00CBF52F /* DpsCalculator.swift */; };
+		AA902232223BEBC100CBF52F /* StatsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA902230223BEBC100CBF52F /* StatsCollectionViewController.swift */; };
+		AA902233223BEBC100CBF52F /* StatsCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA902231223BEBC100CBF52F /* StatsCollectionViewController.xib */; };
+		AA902236223BEC7900CBF52F /* StatsContainerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA902234223BEC7900CBF52F /* StatsContainerCell.swift */; };
+		AA902237223BEC7900CBF52F /* StatsContainerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA902235223BEC7900CBF52F /* StatsContainerCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +52,11 @@
 		AA902215223B9EE800CBF52F /* Borda-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Borda-Bold.ttf"; sourceTree = "<group>"; };
 		AA902216223B9EE800CBF52F /* Borda-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Borda-ExtraBold.ttf"; sourceTree = "<group>"; };
 		AA902227223BA15B00CBF52F /* UIFont+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extensions.swift"; sourceTree = "<group>"; };
+		AA90222E223BE44C00CBF52F /* DpsCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DpsCalculator.swift; sourceTree = "<group>"; };
+		AA902230223BEBC100CBF52F /* StatsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsCollectionViewController.swift; sourceTree = "<group>"; };
+		AA902231223BEBC100CBF52F /* StatsCollectionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatsCollectionViewController.xib; sourceTree = "<group>"; };
+		AA902234223BEC7900CBF52F /* StatsContainerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsContainerCell.swift; sourceTree = "<group>"; };
+		AA902235223BEC7900CBF52F /* StatsContainerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatsContainerCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,14 +89,15 @@
 		AA9021DC223B8E6F00CBF52F /* Division2FanApp */ = {
 			isa = PBXGroup;
 			children = (
-				AA90220C223B9EE800CBF52F /* Font */,
 				AA9021DD223B8E6F00CBF52F /* AppDelegate.swift */,
 				AA9021E4223B8E7100CBF52F /* Assets.xcassets */,
 				AA9021FC223B92F000CBF52F /* Base */,
 				AA9021F7223B92BC00CBF52F /* Calculator */,
+				AA90220C223B9EE800CBF52F /* Font */,
 				AA9021E9223B8E7100CBF52F /* Info.plist */,
 				AA9021E6223B8E7100CBF52F /* LaunchScreen.storyboard */,
 				AA902209223B9BC200CBF52F /* Localizable.strings */,
+				AA90222D223BE43200CBF52F /* Logic */,
 			);
 			path = Division2FanApp;
 			sourceTree = "<group>";
@@ -98,6 +109,10 @@
 				AA9021F9223B92E100CBF52F /* CalculatorCell.xib */,
 				AA9021F3223B8F4700CBF52F /* CalcualtorTableViewController.swift */,
 				AA9021F4223B8F4700CBF52F /* CalcualtorTableViewController.xib */,
+				AA902230223BEBC100CBF52F /* StatsCollectionViewController.swift */,
+				AA902231223BEBC100CBF52F /* StatsCollectionViewController.xib */,
+				AA902234223BEC7900CBF52F /* StatsContainerCell.swift */,
+				AA902235223BEC7900CBF52F /* StatsContainerCell.xib */,
 			);
 			path = Calculator;
 			sourceTree = "<group>";
@@ -123,6 +138,14 @@
 				AA902227223BA15B00CBF52F /* UIFont+Extensions.swift */,
 			);
 			path = Font;
+			sourceTree = "<group>";
+		};
+		AA90222D223BE43200CBF52F /* Logic */ = {
+			isa = PBXGroup;
+			children = (
+				AA90222E223BE44C00CBF52F /* DpsCalculator.swift */,
+			);
+			path = Logic;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -188,6 +211,8 @@
 				AA902207223B9BC200CBF52F /* Localizable.strings in Resources */,
 				AA9021FB223B92E100CBF52F /* CalculatorCell.xib in Resources */,
 				AA902223223B9EE800CBF52F /* Borda-ExtraBold.ttf in Resources */,
+				AA902237223BEC7900CBF52F /* StatsContainerCell.xib in Resources */,
+				AA902233223BEBC100CBF52F /* StatsCollectionViewController.xib in Resources */,
 				AA9021E5223B8E7100CBF52F /* Assets.xcassets in Resources */,
 				AA902222223B9EE800CBF52F /* Borda-Bold.ttf in Resources */,
 				AA90221D223B9EE800CBF52F /* Borda Light.ttf in Resources */,
@@ -203,6 +228,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA90222F223BE44C00CBF52F /* DpsCalculator.swift in Sources */,
+				AA902236223BEC7900CBF52F /* StatsContainerCell.swift in Sources */,
 				AA9021F5223B8F4700CBF52F /* CalcualtorTableViewController.swift in Sources */,
 				AA902204223B983F00CBF52F /* String+Extensions.swift in Sources */,
 				AA902228223BA15B00CBF52F /* UIFont+Extensions.swift in Sources */,
@@ -210,6 +237,7 @@
 				AA9021FA223B92E100CBF52F /* CalculatorCell.swift in Sources */,
 				AA9021FE223B936300CBF52F /* CellControllable.swift in Sources */,
 				AA902200223B939900CBF52F /* UITableView+Extensions.swift in Sources */,
+				AA902232223BEBC100CBF52F /* StatsCollectionViewController.swift in Sources */,
 				AA9021DE223B8E6F00CBF52F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
