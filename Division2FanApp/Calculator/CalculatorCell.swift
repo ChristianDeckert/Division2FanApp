@@ -81,6 +81,11 @@ extension CalculatorCell: RowControlable {
 
 extension CalculatorCell: UITextFieldDelegate {
   
+  func textFieldDidBeginEditing(_ textField: UITextField) {
+    if textField.text == "0" {
+      textField.text = nil
+    }
+  }
   func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
     updateController(text: textField.text)
     return true
