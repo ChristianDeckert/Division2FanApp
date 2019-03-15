@@ -41,7 +41,23 @@
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BGP-gP-XnU" userLabel="TextContainer">
                                 <rect key="frame" x="0.0" y="32" width="358" height="78.5"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="placeholder" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gJ1-8g-9KB">
+                                        <rect key="frame" x="8" y="17.5" width="342" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="jDS-tM-N0u"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numbersAndPunctuation" keyboardAppearance="light" returnKeyType="continue" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                    </textField>
+                                </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="gJ1-8g-9KB" firstAttribute="centerY" secondItem="BGP-gP-XnU" secondAttribute="centerY" id="Bxl-bA-KrQ"/>
+                                    <constraint firstItem="gJ1-8g-9KB" firstAttribute="centerX" secondItem="BGP-gP-XnU" secondAttribute="centerX" id="CbV-CZ-77H"/>
+                                    <constraint firstItem="gJ1-8g-9KB" firstAttribute="width" secondItem="BGP-gP-XnU" secondAttribute="width" constant="-16" id="HJg-w0-VcM"/>
+                                </constraints>
                             </view>
                         </subviews>
                     </stackView>
@@ -62,6 +78,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="label" destination="v5P-hL-EDG" id="m9B-UG-VdS"/>
+                <outlet property="textfield" destination="gJ1-8g-9KB" id="OeI-oY-pUJ"/>
                 <outlet property="visualEffectView" destination="BGP-gP-XnU" id="mPi-gc-hgf"/>
             </connections>
             <point key="canvasLocation" x="206.40000000000001" y="191.1544227886057"/>

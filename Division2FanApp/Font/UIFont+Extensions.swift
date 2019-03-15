@@ -21,6 +21,10 @@ extension UIFont {
     return UIFont(name: "Borda-Regular3", size: 24)
   }
   
+  static var bordaCaption1: UIFont! {
+    return UIFont(name: "Borda", size: 26)
+  }
+  
 //  static var bordaCaption1: UIFont? {
 //    let font = UIFont(name: "Borda", size: UIFont.systemFontSize)
 //    let fontMetrics = UIFontMetrics(forTextStyle: .caption1)

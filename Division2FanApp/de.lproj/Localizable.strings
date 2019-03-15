@@ -10,3 +10,12 @@
 "calculator-controller.reset-button.title" = "Zurücksetzen";
 
 "calculator-controller.weapon-damage.title" = "Waffen schaden";
+"calculator-cell.textfield.placeholder" = "Bitte Wert eineben";
+
+"calculator-controller.crit-chance.title" = "Krit. Trefferchance";
+"calculator-controller.crit-damage.title" = "Krit. Trefferschaden";
+"calculator-controller.headshot-damage.title" = "Kopfschussschaden";
+"calculator-controller.out-of-cover-damage.title" = "Aus Deckung Schaden";
+"calculator-controller.enemy-armor-damage.title" = "Rüstungsschaden";
+"calculator-controller.health-damage.title" = "Gesundheitsschaden";
+"calculator-controller.rpm.title" = "Schussfrequenz";"

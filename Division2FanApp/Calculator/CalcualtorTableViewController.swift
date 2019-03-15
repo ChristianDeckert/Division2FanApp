@@ -40,15 +40,48 @@ class CalcualtorTableViewController: UITableViewController {
     )
     
     rowControllers = [
-      CalcualtorCellController(title: "calculator-controller.weapon-damage.title".localized),
-      CalcualtorCellController(title: "calculator-controller.weapon-damage.title".localized),
-      CalcualtorCellController(title: "calculator-controller.weapon-damage.title".localized),
-      CalcualtorCellController(title: "calculator-controller.weapon-damage.title".localized),
-      CalcualtorCellController(title: "calculator-controller.weapon-damage.title".localized),
-      CalcualtorCellController(title: "calculator-controller.weapon-damage.title".localized),
-      CalcualtorCellController(title: "calculator-controller.weapon-damage.title".localized),
-      CalcualtorCellController(title: "calculator-controller.weapon-damage.title".localized),
-      CalcualtorCellController(title: "calculator-controller.weapon-damage.title".localized)
+      CalcualtorCellController(
+        delegate: self,
+        attribute: .weaponDamage,
+        value: "5000"
+      ),
+      CalcualtorCellController(
+        delegate: self,
+        attribute: .criticalHitChance,
+        value: "0",
+        placeholder: "0"
+      ),
+      CalcualtorCellController(
+        delegate: self,
+        attribute: .criticalHitDamage,
+        placeholder: "0"
+      ),
+      CalcualtorCellController(
+        delegate: self,
+        attribute: .headshotDamage,
+        placeholder: "0"
+      ),
+      CalcualtorCellController(
+        delegate: self,
+        attribute: .outOfCoverDamage,
+        placeholder: "0"
+      ),
+      CalcualtorCellController(
+        delegate: self,
+        attribute: .enemyArmorDamage,
+        placeholder: "0"
+      ),
+      CalcualtorCellController(
+        delegate: self,
+        attribute: .healthDamage,
+        placeholder: "0"
+      ),
+      CalcualtorCellController(
+        delegate: self,
+        attribute: .rpm,
+        value: "650",
+        placeholder: "650"
+      )
     ]
     
     setBackground()
@@ -114,8 +147,28 @@ extension CalcualtorTableViewController {
 
 extension CalcualtorTableViewController {
   
-  override func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
+  private func shouldHighlight(at indexPath: IndexPath) -> Bool {
     return false
+  }
+  
+  override func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
+    return shouldHighlight(at: indexPath)
+  }
+  
+  override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+    return shouldHighlight(at: indexPath) ? indexPath : nil
+  }
+  
+}
+
+// MARK: - CalcualtorCellControllerDelegate
+
+extension CalcualtorTableViewController: CalcualtorCellControllerDelegate {
+  
+  func calcualtorCell(controller: CalcualtorCellController?, didReturnFromTextfieldWith: String?) {
+    
+    guard let attribute = controller?.attribute else { return }
+    
   }
   
 }

@@ -12,14 +12,15 @@ protocol RowControlling {
   
   var preferredHeight: CGFloat? { get }
   var preferredFont: UIFont? { get }
+  var preferredTintColor: UIColor? { get }
   
 }
 
 protocol RowControlable: class {
   
-  associatedtype T: RowControlling
+  associatedtype CONTROLLER: RowControlling
   
-  func setup(with rowController: T)
+  func setup(with rowController: CONTROLLER)
   
 }
 

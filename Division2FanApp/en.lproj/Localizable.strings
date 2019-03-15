@@ -9,4 +9,13 @@
 "calculator-controller.title" = "DPS Calculator";
 "calculator-controller.reset-button.title" = "Reset";
 
-"calculator-controller.weapon-damage.title" = "Weapon damange";
+"calculator-controller.weapon-damage.title" = "Weapon damage";
+"calculator-cell.textfield.placeholder" = "Enter your stat value";
+
+"calculator-controller.crit-chance.title" = "Critical hit chance";
+"calculator-controller.crit-damage.title" = "Critical hit damage";
+"calculator-controller.headshot-damage.title" = "Headshot damage";
+"calculator-controller.out-of-cover-damage.title" = "Out of cover damage";
+"calculator-controller.enemy-armor-damage.title" = "Enemy armor damage";
+"calculator-controller.health-damage.title" = "Health damage";
+"calculator-controller.rpm.title" = "RPM";
