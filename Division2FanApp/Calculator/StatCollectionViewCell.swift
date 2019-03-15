@@ -14,8 +14,10 @@ final class StatCollectionViewCellController: RowControlling {
   var preferredTintColor: UIColor? { return .primaryTint }
   
   let stat: StatsCollectionViewController.Stat
-  init(stat: StatsCollectionViewController.Stat) {
+  let statsDataSource: StatsCollectionViewControllerDataSource?
+  init(stat: StatsCollectionViewController.Stat, statsDataSource: StatsCollectionViewControllerDataSource?) {
     self.stat = stat
+    self.statsDataSource = statsDataSource
   }
 }
 
@@ -79,19 +81,48 @@ final class StatCollectionViewCell: UICollectionViewCell {
       headCritValueLabel.textColor = .primaryTint
     }
   }
-
+  
   var controller: StatCollectionViewCellController?
-
+  
 }
 
 extension StatCollectionViewCell: RowControlable {
   func setup(with rowController: StatCollectionViewCellController) {
     self.controller = rowController
     
-    titleLabel.font = .bordaSubtitle
+    titleLabel.font = .bordaHeading
     titleLabel.text = rowController.stat.description
+    
+    let bodyValue = Int(rowController.statsDataSource?.dpsCalculator?.calulate(
+      stat: rowController.stat,
+      category: .bodyshot
+      ) ?? 0
+    )
+    bodyValueLabel.text = "\(bodyValue)"
+    
+    let headValue = Int(rowController.statsDataSource?.dpsCalculator?.calulate(
+      stat: rowController.stat,
+      category: .headshot
+      ) ?? 0
+    )
+    headValueLabel.text = "\(headValue)"
+    
+    let critBodyValue = Int(rowController.statsDataSource?.dpsCalculator?.calulate(
+      stat: rowController.stat,
+      category: .critBodyShot
+      ) ?? 0
+    )
+    bodyCritValueLabel.text = "\(critBodyValue)"
+    
+    let critHeadValue = Int(rowController.statsDataSource?.dpsCalculator?.calulate(
+      stat: rowController.stat,
+      category: .critHeadShot
+      ) ?? 0
+    )
+    headCritValueLabel.text = "\(critHeadValue)"
   }
   
   typealias CONTROLLER = StatCollectionViewCellController
   
 }
+

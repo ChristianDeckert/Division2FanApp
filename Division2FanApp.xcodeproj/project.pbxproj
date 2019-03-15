@@ -31,6 +31,8 @@
 		AA902237223BEC7900CBF52F /* StatsContainerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA902235223BEC7900CBF52F /* StatsContainerCell.xib */; };
 		AA90223A223BF42F00CBF52F /* StatCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA902238223BF42F00CBF52F /* StatCollectionViewCell.swift */; };
 		AA90223B223BF42F00CBF52F /* StatCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA902239223BF42F00CBF52F /* StatCollectionViewCell.xib */; };
+		AA90223E223C375500CBF52F /* Loot Drop Epic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AA90223D223C375400CBF52F /* Loot Drop Epic.mp3 */; };
+		AA902240223C377300CBF52F /* Sounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA90223F223C377300CBF52F /* Sounds.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +63,8 @@
 		AA902235223BEC7900CBF52F /* StatsContainerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatsContainerCell.xib; sourceTree = "<group>"; };
 		AA902238223BF42F00CBF52F /* StatCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatCollectionViewCell.swift; sourceTree = "<group>"; };
 		AA902239223BF42F00CBF52F /* StatCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatCollectionViewCell.xib; sourceTree = "<group>"; };
+		AA90223D223C375400CBF52F /* Loot Drop Epic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Loot Drop Epic.mp3"; sourceTree = "<group>"; };
+		AA90223F223C377300CBF52F /* Sounds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sounds.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +97,7 @@
 		AA9021DC223B8E6F00CBF52F /* Division2FanApp */ = {
 			isa = PBXGroup;
 			children = (
+				AA90223C223C374200CBF52F /* Sound */,
 				AA9021DD223B8E6F00CBF52F /* AppDelegate.swift */,
 				AA9021E4223B8E7100CBF52F /* Assets.xcassets */,
 				AA9021FC223B92F000CBF52F /* Base */,
@@ -152,6 +157,15 @@
 				AA90222E223BE44C00CBF52F /* DpsCalculator.swift */,
 			);
 			path = Logic;
+			sourceTree = "<group>";
+		};
+		AA90223C223C374200CBF52F /* Sound */ = {
+			isa = PBXGroup;
+			children = (
+				AA90223D223C375400CBF52F /* Loot Drop Epic.mp3 */,
+				AA90223F223C377300CBF52F /* Sounds.swift */,
+			);
+			path = Sound;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -225,6 +239,7 @@
 				AA90221D223B9EE800CBF52F /* Borda Light.ttf in Resources */,
 				AA902220223B9EE800CBF52F /* Borda.ttf in Resources */,
 				AA9021F6223B8F4700CBF52F /* CalcualtorTableViewController.xib in Resources */,
+				AA90223E223C375500CBF52F /* Loot Drop Epic.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,6 +254,7 @@
 				AA902236223BEC7900CBF52F /* StatsContainerCell.swift in Sources */,
 				AA90223A223BF42F00CBF52F /* StatCollectionViewCell.swift in Sources */,
 				AA9021F5223B8F4700CBF52F /* CalcualtorTableViewController.swift in Sources */,
+				AA902240223C377300CBF52F /* Sounds.swift in Sources */,
 				AA902204223B983F00CBF52F /* String+Extensions.swift in Sources */,
 				AA902228223BA15B00CBF52F /* UIFont+Extensions.swift in Sources */,
 				AA902202223B966900CBF52F /* UIColor+Extensions.swift in Sources */,

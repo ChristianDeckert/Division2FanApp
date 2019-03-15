@@ -29,12 +29,7 @@ final class StatsContainerCell: UITableViewCell {
   
   var controller: CONTROLLER?
   
-  private lazy var collectionViewController: StatsCollectionViewController = {
-    let collectionViewController = StatsCollectionViewController(dpsCalculator: nil)
-    collectionViewController.view.frame = collectionViewContainer.bounds
-    collectionViewContainer.addSubview(collectionViewController.view)
-    return collectionViewController
-  }()
+  private var collectionViewController: StatsCollectionViewController?
   
   override func awakeFromNib() {
     super.awakeFromNib()
@@ -50,8 +45,23 @@ extension StatsContainerCell: RowControlable {
     self.controller = rowController
     pageControl.pageIndicatorTintColor = .darkGray
     pageControl.currentPageIndicatorTintColor = rowController.preferredTintColor
-    collectionViewController.dpsCalculator = rowController.dpsCalculator
+    
+    for view in collectionViewContainer.subviews {
+      view.removeFromSuperview()
+    }
+    let collectionViewController = StatsCollectionViewController(statsDataSource: self)
+    collectionViewController.view.frame = collectionViewContainer.bounds
+    collectionViewContainer.addSubview(collectionViewController.view)
+    self.collectionViewController = collectionViewController
   }
+  
+}
+
+extension StatsContainerCell: StatsCollectionViewControllerDataSource {
+  var dpsCalculator: DpsCalculator? {
+    return controller?.dpsCalculator
+  }
+  
   
 }
 

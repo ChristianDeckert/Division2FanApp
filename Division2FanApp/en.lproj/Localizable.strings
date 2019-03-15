@@ -19,8 +19,11 @@
 "calculator-controller.enemy-armor-damage.title" = "Enemy armor damage";
 "calculator-controller.health-damage.title" = "Health damage";
 "calculator-controller.rpm.title" = "RPM";
+"calculator-controller.damage-to-elites.title" = "Damage to elites";
 
 "stats-collection-controller.npc-in-cover-health.title" = "NPC in cover health damage";
+"stats-collection-controller.elite-npc-in-cover-health.title" = "Elite NPC in cover health";
+"stats-collection-controller.npc-out-of-cover-health.title" = "NPC out of cover health";
 
 "stats-collection-controller.body-shot.title" = "Body shot:";
 "stats-collection-controller.body-shot-critical.title" = "Crit. body shot:";

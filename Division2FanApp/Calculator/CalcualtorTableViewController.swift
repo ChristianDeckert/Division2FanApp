@@ -20,13 +20,15 @@ class CalcualtorTableViewController: UITableViewController {
     return UIBarButtonItem(
       title: "calculator-controller.reset-button.title".localized,
       style: .plain,
-      target: nil,
-      action: nil
+      target: self,
+      action: #selector(resetAction)
     )
   }()
   
   private lazy var dpsCalculator = DpsCalculator()
-  private lazy var statsCellController = StatsContainerCellController(dpsCalculator: dpsCalculator)
+  private var statsCellController: StatsContainerCellController {
+    return StatsContainerCellController(dpsCalculator: dpsCalculator)    
+  }
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -51,9 +53,10 @@ class CalcualtorTableViewController: UITableViewController {
   private func setBackground() {
     let imageView = UIImageView(
       image: UIImage(
-        named: "image-background-stone"
+        named: "image-background"
       )
     )
+    imageView.alpha = 0.8
     imageView.contentMode = .scaleAspectFill
     tableView.backgroundView = imageView
   }
@@ -62,6 +65,12 @@ class CalcualtorTableViewController: UITableViewController {
     super.viewWillAppear(animated)
     
     navigationItem.rightBarButtonItem = resetBarButtonItem
+  }
+  
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+    
+    Sounds.shared.play(effect: .lootDrop)
   }
 }
 
@@ -122,6 +131,13 @@ extension CalcualtorTableViewController {
   
 }
 
+extension CalcualtorTableViewController {
+  @objc func resetAction() {
+    dpsCalculator = DpsCalculator(inputAttributes: [])
+    rowControllers = defaultRowControllers
+  }
+}
+
 // MARK: - Table view delegate
 
 extension CalcualtorTableViewController {
@@ -156,8 +172,11 @@ extension CalcualtorTableViewController: CalcualtorCellControllerDelegate {
       value: value
     )
     
-    let result = dpsCalculator.calulate()
-    debugPrint(">> result: \(result)")
+    controller?.update(value: value)
+    
+    tableView.beginUpdates()
+    tableView.reloadSections(IndexSet(integer: 0), with: .none)
+    tableView.endUpdates()
   }
   
 }
@@ -191,6 +210,12 @@ extension CalcualtorTableViewController {
       CalcualtorCellController(
         delegate: self,
         attribute: .outOfCoverDamage,
+        value: "0",
+        placeholder: "0"
+      ),
+      CalcualtorCellController(
+        delegate: self,
+        attribute: .damageToElites,
         value: "0",
         placeholder: "0"
       ),

@@ -17,6 +17,7 @@ enum Attribute {
   case outOfCoverDamage
   case enemyArmorDamage
   case healthDamage
+  case damageToElites
   case rpm
   
   
@@ -29,13 +30,23 @@ enum Attribute {
     case .outOfCoverDamage: return "calculator-controller.out-of-cover-damage.title".localized
     case .enemyArmorDamage: return "calculator-controller.enemy-armor-damage.title".localized
     case .healthDamage: return "calculator-controller.health-damage.title".localized
+    case .damageToElites: return "calculator-controller.damage-to-elites.title".localized
     case .rpm: return "calculator-controller.rpm.title".localized
     }
   }
 }
 
+enum Category {
+  case bodyshot
+  case headshot
+  case critBodyShot
+  case critHeadShot
+}
 
-struct DpsCalculator {
+
+final class DpsCalculator {
+  
+  static let defaultWeaponDamage: Double = 5000
   
   struct InputAttribute {
     let attribute: Attribute
@@ -50,13 +61,20 @@ struct DpsCalculator {
   
   init(inputAttributes: Set<InputAttribute> = []) {
     self.inputAttributes = inputAttributes
+    if !has(attribute: .weaponDamage) {
+      add(attribute: .weaponDamage, value: DpsCalculator.defaultWeaponDamage)
+    }
+  }
+  
+  private func has(attribute: Attribute) -> Bool {
+    return inputAttributes.first(where: { $0.attribute == attribute }) != nil
   }
   
   private func value(of attribute: Attribute) -> Double {
     return inputAttributes.first(where: { $0.attribute == attribute })?.value ?? 0
   }
   
-  mutating func add(attribute: Attribute, value: Double) {
+  func add(attribute: Attribute, value: Double) {
     if let existing = inputAttributes.firstIndex(where: { $0.attribute == attribute }) {
       inputAttributes.remove(at: existing)
     }
@@ -68,12 +86,48 @@ struct DpsCalculator {
     )
   }
   
-  func calulate() -> Double {
-    
+  func calulate(stat: StatsCollectionViewController.Stat, category: Category) -> Double {
     let weaponDamageValue = value(of: .weaponDamage)
-    let healthDamageValue = value(of: .healthDamage)
+    guard weaponDamageValue > 0 else { return 0 }
     
-    return weaponDamageValue * (1 + healthDamageValue / 100)
+    
+    var result: Double = 0
+    switch stat {
+    case .npcInCoverHealth:
+      
+      switch category {
+      case .bodyshot:
+        let healthDamageValue = value(of: .healthDamage)
+        result = weaponDamageValue * (1 + healthDamageValue / 100)
+      case .headshot:
+        let healthDamageValue = value(of: .healthDamage)
+        let headshotDamage = value(of: .headshotDamage)
+        result = weaponDamageValue * (1 + healthDamageValue / 100) * (1 + headshotDamage / 100)
+      case .critBodyShot:
+        let healthDamageValue = value(of: .healthDamage)
+        let criticalHitDamage = value(of: .criticalHitDamage)
+        result = weaponDamageValue * (1 + healthDamageValue / 100) * (1 + criticalHitDamage / 100)
+      case .critHeadShot:
+        let healthDamageValue = value(of: .healthDamage)
+        let criticalHitDamage = value(of: .criticalHitDamage)
+        let headshotDamage = value(of: .headshotDamage)
+        result = weaponDamageValue * (1 + healthDamageValue / 100) * (1 + criticalHitDamage / 100 + headshotDamage / 100)
+      }
+      
+    case .eliteNpcInCoverHealth:
+      let damageToElites = value(of: .damageToElites)
+      let healthDamageValue = value(of: .healthDamage)
+      result = weaponDamageValue * (1 + healthDamageValue / 100) * (1 + damageToElites / 100)
+      
+    case .npcOutOfCoverHealth:
+      let outOfCoverDamage = value(of: .outOfCoverDamage)
+      let healthDamageValue = value(of: .healthDamage)
+      result = weaponDamageValue * (1 + healthDamageValue / 100) * (1 + outOfCoverDamage / 100)
+
+    }
+    
+    
+    return result
   }
   
 }

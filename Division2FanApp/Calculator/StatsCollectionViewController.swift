@@ -8,30 +8,35 @@
 
 import UIKit
 
+protocol StatsCollectionViewControllerDataSource: class {
+  var dpsCalculator: DpsCalculator? { get }
+}
+
 final class StatsCollectionViewController: UICollectionViewController {
   
   enum Stat {
     case npcInCoverHealth
+    case eliteNpcInCoverHealth
+    case npcOutOfCoverHealth
     
     var description: String {
       switch  self {
       case .npcInCoverHealth:
         return "stats-collection-controller.npc-in-cover-health.title".localized
-
+      case .eliteNpcInCoverHealth:
+        return "stats-collection-controller.elite-npc-in-cover-health.title".localized
+      case .npcOutOfCoverHealth:
+        return "stats-collection-controller.npc-out-of-cover-health.title".localized
       }
     }
   }
   
-  var dpsCalculator: DpsCalculator? {
-    didSet {
-      collectionView?.reloadData()
-    }
-  }
+  private weak var statsDataSource: StatsCollectionViewControllerDataSource?
   
-  
-  init(dpsCalculator: DpsCalculator?) {
+  init(statsDataSource: StatsCollectionViewControllerDataSource?) {
     let flowLayout = UICollectionViewFlowLayout()
     flowLayout.scrollDirection = .horizontal
+    self.statsDataSource = statsDataSource
     super.init(collectionViewLayout: flowLayout)
   }
   
@@ -39,7 +44,11 @@ final class StatsCollectionViewController: UICollectionViewController {
     fatalError("init(coder:) has not been implemented")
   }
   
-  var items = [StatCollectionViewCellController]()
+  var items = [StatCollectionViewCellController]() {
+    didSet {
+      collectionView?.reloadData()
+    }
+  }
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -50,13 +59,18 @@ final class StatsCollectionViewController: UICollectionViewController {
     collectionView.isPagingEnabled = true
     
     items = [
-      StatCollectionViewCellController(stat: .npcInCoverHealth),
-      StatCollectionViewCellController(stat: .npcInCoverHealth),
-      StatCollectionViewCellController(stat: .npcInCoverHealth),
-      StatCollectionViewCellController(stat: .npcInCoverHealth),
-      StatCollectionViewCellController(stat: .npcInCoverHealth),
-      StatCollectionViewCellController(stat: .npcInCoverHealth),      
-      StatCollectionViewCellController(stat: .npcInCoverHealth)
+      StatCollectionViewCellController(
+        stat: .npcInCoverHealth,
+        statsDataSource: statsDataSource
+      ),
+      StatCollectionViewCellController(
+        stat: .eliteNpcInCoverHealth,
+        statsDataSource: statsDataSource
+      ),      
+      StatCollectionViewCellController(
+        stat: .npcOutOfCoverHealth,
+        statsDataSource: statsDataSource
+      )
     ]
   }
   

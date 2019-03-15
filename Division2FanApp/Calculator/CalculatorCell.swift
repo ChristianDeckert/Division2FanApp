@@ -19,7 +19,7 @@ final class CalcualtorCellController: RowControlling {
   
   
   var preferredHeight: CGFloat? {
-    return 128
+    return 96
   }
   
   var attribute: Attribute
@@ -40,6 +40,10 @@ final class CalcualtorCellController: RowControlling {
     self.placeholder = placeholder
     self.delegate = delegate
   }
+  
+  func update(value: Double) {
+    self.value = String(describing: Int(value))
+  }
 }
 
 final class CalculatorCell: UITableViewCell {
@@ -53,7 +57,7 @@ final class CalculatorCell: UITableViewCell {
   override func awakeFromNib() {
     super.awakeFromNib()
   }
-
+  
 }
 
 extension CalculatorCell: RowControlable {
@@ -72,13 +76,32 @@ extension CalculatorCell: RowControlable {
     textfield.delegate = self
     textfield.placeholder = rowController.placeholder
   }
-    
+  
 }
 
 extension CalculatorCell: UITextFieldDelegate {
-  func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-    controller?.delegate?.calcualtorCell(controller: controller, didReturnFromTextfieldWith: textfield.text)
-   textField.resignFirstResponder()
+  
+  func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+    updateController(text: textField.text)
     return true
   }
+  
+  func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    updateController(text: textField.text)
+    textField.resignFirstResponder()
+    return true
+  }
+  
+  private func updateController(text: String?) {
+    let textFieldText: String
+    if let text = text {
+      textFieldText = text
+    } else {
+      textFieldText = "0"
+    }
+    textfield.text = "\(Int(textFieldText) ?? 0)"
+    controller?.delegate?.calcualtorCell(controller: controller, didReturnFromTextfieldWith: textFieldText)
+  }
 }
+
+
