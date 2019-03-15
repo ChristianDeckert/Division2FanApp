@@ -29,6 +29,8 @@
 		AA902233223BEBC100CBF52F /* StatsCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA902231223BEBC100CBF52F /* StatsCollectionViewController.xib */; };
 		AA902236223BEC7900CBF52F /* StatsContainerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA902234223BEC7900CBF52F /* StatsContainerCell.swift */; };
 		AA902237223BEC7900CBF52F /* StatsContainerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA902235223BEC7900CBF52F /* StatsContainerCell.xib */; };
+		AA90223A223BF42F00CBF52F /* StatCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA902238223BF42F00CBF52F /* StatCollectionViewCell.swift */; };
+		AA90223B223BF42F00CBF52F /* StatCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA902239223BF42F00CBF52F /* StatCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +59,8 @@
 		AA902231223BEBC100CBF52F /* StatsCollectionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatsCollectionViewController.xib; sourceTree = "<group>"; };
 		AA902234223BEC7900CBF52F /* StatsContainerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsContainerCell.swift; sourceTree = "<group>"; };
 		AA902235223BEC7900CBF52F /* StatsContainerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatsContainerCell.xib; sourceTree = "<group>"; };
+		AA902238223BF42F00CBF52F /* StatCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatCollectionViewCell.swift; sourceTree = "<group>"; };
+		AA902239223BF42F00CBF52F /* StatCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +117,8 @@
 				AA902231223BEBC100CBF52F /* StatsCollectionViewController.xib */,
 				AA902234223BEC7900CBF52F /* StatsContainerCell.swift */,
 				AA902235223BEC7900CBF52F /* StatsContainerCell.xib */,
+				AA902238223BF42F00CBF52F /* StatCollectionViewCell.swift */,
+				AA902239223BF42F00CBF52F /* StatCollectionViewCell.xib */,
 			);
 			path = Calculator;
 			sourceTree = "<group>";
@@ -213,6 +219,7 @@
 				AA902223223B9EE800CBF52F /* Borda-ExtraBold.ttf in Resources */,
 				AA902237223BEC7900CBF52F /* StatsContainerCell.xib in Resources */,
 				AA902233223BEBC100CBF52F /* StatsCollectionViewController.xib in Resources */,
+				AA90223B223BF42F00CBF52F /* StatCollectionViewCell.xib in Resources */,
 				AA9021E5223B8E7100CBF52F /* Assets.xcassets in Resources */,
 				AA902222223B9EE800CBF52F /* Borda-Bold.ttf in Resources */,
 				AA90221D223B9EE800CBF52F /* Borda Light.ttf in Resources */,
@@ -230,6 +237,7 @@
 			files = (
 				AA90222F223BE44C00CBF52F /* DpsCalculator.swift in Sources */,
 				AA902236223BEC7900CBF52F /* StatsContainerCell.swift in Sources */,
+				AA90223A223BF42F00CBF52F /* StatCollectionViewCell.swift in Sources */,
 				AA9021F5223B8F4700CBF52F /* CalcualtorTableViewController.swift in Sources */,
 				AA902204223B983F00CBF52F /* String+Extensions.swift in Sources */,
 				AA902228223BA15B00CBF52F /* UIFont+Extensions.swift in Sources */,

@@ -9,7 +9,7 @@
 import UIKit
 
 final class StatsContainerCellController: RowControlling {
-  var preferredHeight: CGFloat? { return 320 }
+  var preferredHeight: CGFloat? { return 256 }
   
   var preferredTintColor: UIColor? {
     return .primaryTint
@@ -25,8 +25,16 @@ final class StatsContainerCellController: RowControlling {
 final class StatsContainerCell: UITableViewCell {
   
   @IBOutlet weak var collectionViewContainer: UIView!
+  @IBOutlet weak var pageControl: UIPageControl!
   
   var controller: CONTROLLER?
+  
+  private lazy var collectionViewController: StatsCollectionViewController = {
+    let collectionViewController = StatsCollectionViewController(dpsCalculator: nil)
+    collectionViewController.view.frame = collectionViewContainer.bounds
+    collectionViewContainer.addSubview(collectionViewController.view)
+    return collectionViewController
+  }()
   
   override func awakeFromNib() {
     super.awakeFromNib()
@@ -40,6 +48,10 @@ extension StatsContainerCell: RowControlable {
   
   func setup(with rowController: CONTROLLER) {
     self.controller = rowController
+    pageControl.pageIndicatorTintColor = .darkGray
+    pageControl.currentPageIndicatorTintColor = rowController.preferredTintColor
+    collectionViewController.dpsCalculator = rowController.dpsCalculator
   }
   
 }
+

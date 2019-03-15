@@ -18,4 +18,11 @@
 "calculator-controller.out-of-cover-damage.title" = "Aus Deckung Schaden";
 "calculator-controller.enemy-armor-damage.title" = "Rüstungsschaden";
 "calculator-controller.health-damage.title" = "Gesundheitsschaden";
-"calculator-controller.rpm.title" = "Schussfrequenz";"
+"calculator-controller.rpm.title" = "Schussfrequenz";
+
+"stats-collection-controller.npc-in-cover-health.title" = "NPC in Deckung Gesundheitsschaden";
+
+"stats-collection-controller.body-shot.title" = "Körpertreffer:";
+"stats-collection-controller.body-shot-critical.title" = "Krit. Körpertreffer:";
+"stats-collection-controller.head-shot.title" = "Kopftreffer:";
+"stats-collection-controller.head-shot-critical.title" = "Krit. Körpertreffer:";

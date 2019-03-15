@@ -8,63 +8,109 @@
 
 import UIKit
 
-private let reuseIdentifier = "Cell"
-
-class StatsCollectionViewController: UICollectionViewController {
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-    }
-
-    // MARK: UICollectionViewDataSource
-
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
-
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
-        return 0
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
-    
-        // Configure the cell
-    
-        return cell
-    }
-
-    // MARK: UICollectionViewDelegate
-
+final class StatsCollectionViewController: UICollectionViewController {
   
-
-    override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-        return false
-    }
- 
-
-    override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        return false
-    }
- 
-
-    /*
-    // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-    override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
+  enum Stat {
+    case npcInCoverHealth
     
+    var description: String {
+      switch  self {
+      case .npcInCoverHealth:
+        return "stats-collection-controller.npc-in-cover-health.title".localized
+
+      }
     }
-    */
+  }
+  
+  var dpsCalculator: DpsCalculator? {
+    didSet {
+      collectionView?.reloadData()
+    }
+  }
+  
+  
+  init(dpsCalculator: DpsCalculator?) {
+    let flowLayout = UICollectionViewFlowLayout()
+    flowLayout.scrollDirection = .horizontal
+    super.init(collectionViewLayout: flowLayout)
+  }
+  
+  required init?(coder aDecoder: NSCoder) {
+    fatalError("init(coder:) has not been implemented")
+  }
+  
+  var items = [StatCollectionViewCellController]()
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
     
+    collectionView.register(UINib(nibName: "StatCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "StatCollectionViewCell")
+    collectionView.backgroundColor = .clear
+    collectionView.backgroundView = nil
+    collectionView.isPagingEnabled = true
+    
+    items = [
+      StatCollectionViewCellController(stat: .npcInCoverHealth),
+      StatCollectionViewCellController(stat: .npcInCoverHealth),
+      StatCollectionViewCellController(stat: .npcInCoverHealth),
+      StatCollectionViewCellController(stat: .npcInCoverHealth),
+      StatCollectionViewCellController(stat: .npcInCoverHealth),
+      StatCollectionViewCellController(stat: .npcInCoverHealth),      
+      StatCollectionViewCellController(stat: .npcInCoverHealth)
+    ]
+  }
+  
+  // MARK: UICollectionViewDataSource
+  
+  override func numberOfSections(in collectionView: UICollectionView) -> Int {
+    return 1
+  }
+  
+  
+  override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {    
+    return items.count
+  }
+  
+  override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    let cell = collectionView.dequeueReusableCell(
+      withReuseIdentifier: "StatCollectionViewCell",
+      for: indexPath
+      ) as! StatCollectionViewCell
+    
+    cell.setup(with: items[indexPath.row])
+    
+    return cell
+  }
+  
+  // MARK: UICollectionViewDelegate
+
+  override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
+    return false
+  }
+  
+  
+  override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
+    return false
+  }
+  
 }
+
+extension StatsCollectionViewController: UICollectionViewDelegateFlowLayout {
+  
+  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    return view.bounds.size
+  }
+  
+  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+    return 0
+  }
+  
+  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+    return .zero
+  }
+  
+  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+    return 0
+  }
+}
+

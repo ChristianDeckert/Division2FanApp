@@ -27,27 +27,34 @@
                         </view>
                         <blurEffect style="light"/>
                     </visualEffectView>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Lo-6E-K9O" userLabel="CollectionViewContainerView">
-                        <rect key="frame" x="24" y="8" width="392" height="159.5"/>
+                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Lo-6E-K9O" userLabel="CollectionViewContainerView">
+                        <rect key="frame" x="24" y="0.0" width="392" height="135.5"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
+                    <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="8" translatesAutoresizingMaskIntoConstraints="NO" id="CFo-wE-08C">
+                        <rect key="frame" x="160.5" y="135.5" width="119" height="37"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </pageControl>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstItem="Ert-3p-9Ss" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="1F5-bJ-qCe"/>
                     <constraint firstItem="2Lo-6E-K9O" firstAttribute="width" secondItem="Ert-3p-9Ss" secondAttribute="width" constant="-16" id="4Ce-pA-K2Y"/>
-                    <constraint firstItem="2Lo-6E-K9O" firstAttribute="height" secondItem="Ert-3p-9Ss" secondAttribute="height" id="7fv-lD-HJp"/>
-                    <constraint firstItem="2Lo-6E-K9O" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="8jD-F4-PdI"/>
-                    <constraint firstItem="2Lo-6E-K9O" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Isp-rJ-xO7"/>
+                    <constraint firstItem="2Lo-6E-K9O" firstAttribute="centerX" secondItem="Ert-3p-9Ss" secondAttribute="centerX" id="CTC-yY-XEo"/>
                     <constraint firstAttribute="trailing" secondItem="Ert-3p-9Ss" secondAttribute="trailing" constant="16" id="L1e-Js-wM2"/>
+                    <constraint firstItem="2Lo-6E-K9O" firstAttribute="top" secondItem="Ert-3p-9Ss" secondAttribute="top" id="OGj-DJ-YJt"/>
                     <constraint firstItem="Ert-3p-9Ss" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="WXL-7g-kAc"/>
                     <constraint firstAttribute="bottom" secondItem="Ert-3p-9Ss" secondAttribute="bottom" constant="16" id="ei1-df-dhz"/>
+                    <constraint firstItem="CFo-wE-08C" firstAttribute="centerX" secondItem="2Lo-6E-K9O" secondAttribute="centerX" id="lys-Fz-Uz9"/>
+                    <constraint firstItem="2Lo-6E-K9O" firstAttribute="bottom" secondItem="Ert-3p-9Ss" secondAttribute="bottom" constant="-24" id="m9F-XT-H4S"/>
+                    <constraint firstItem="CFo-wE-08C" firstAttribute="top" secondItem="2Lo-6E-K9O" secondAttribute="bottom" id="x5Q-6I-Trm"/>
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="collectionViewContainer" destination="2Lo-6E-K9O" id="0J3-up-3Mo"/>
+                <outlet property="pageControl" destination="CFo-wE-08C" id="shB-qP-wPg"/>
             </connections>
             <point key="canvasLocation" x="233.59999999999999" y="213.19340329835083"/>
         </tableViewCell>

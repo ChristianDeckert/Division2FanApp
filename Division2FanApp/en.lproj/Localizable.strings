@@ -19,3 +19,10 @@
 "calculator-controller.enemy-armor-damage.title" = "Enemy armor damage";
 "calculator-controller.health-damage.title" = "Health damage";
 "calculator-controller.rpm.title" = "RPM";
+
+"stats-collection-controller.npc-in-cover-health.title" = "NPC in cover health damage";
+
+"stats-collection-controller.body-shot.title" = "Body shot:";
+"stats-collection-controller.body-shot-critical.title" = "Crit. body shot:";
+"stats-collection-controller.head-shot.title" = "Head shot:";
+"stats-collection-controller.head-shot-critical.title" = "Crit. head shot:";

@@ -13,6 +13,10 @@ extension UIFont {
    return UIFont(name: "Borda", size: 14)
   }
   
+  static var bordaSubtitle: UIFont! {
+    return UIFont(name: "Borda", size: 20)
+  }
+  
   static var bordaHeading: UIFont! {
     return UIFont(name: "Borda-Regular4", size: 20)
   }
