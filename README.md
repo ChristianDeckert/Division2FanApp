@@ -1,5 +1,6 @@
 # Division2FanApp
 ![alt text](screenshot.png)
 
-https://twitter.com/machead83
-https://christiandeckert.wordpress.com
+Twitter: https://twitter.com/machead83
+
+Blog: https://christiandeckert.wordpress.com
