@@ -29,10 +29,15 @@ final class StatsContainerCell: UITableViewCell {
   
   var controller: CONTROLLER?
   
+  static var recentIndex: Int?
+  
   private var collectionViewController: StatsCollectionViewController?
   
   override func awakeFromNib() {
     super.awakeFromNib()
+    
+    guard let recentIndex = StatsContainerCell.recentIndex else { return }
+    pageControl.currentPage = recentIndex
   }
   
 }
@@ -51,7 +56,8 @@ extension StatsContainerCell: RowControlable {
     }
     let collectionViewController = StatsCollectionViewController(
       statsDataSource: self,
-      statsDelegate: self
+      statsDelegate: self,
+      startIndex: StatsContainerCell.recentIndex
     )
     collectionViewController.view.frame = collectionViewContainer.bounds
     collectionViewContainer.addSubview(collectionViewController.view)
@@ -69,6 +75,7 @@ extension StatsContainerCell: StatsCollectionViewControllerDataSource {
 extension StatsContainerCell: StatsCollectionViewControllerDelegate{
   func didScrollTo(index: Int) {
     pageControl.currentPage = index
+    StatsContainerCell.recentIndex = index
   }
   
 

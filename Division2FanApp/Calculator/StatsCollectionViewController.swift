@@ -52,11 +52,17 @@ final class StatsCollectionViewController: UICollectionViewController {
   
   private weak var statsDataSource: StatsCollectionViewControllerDataSource?
   private weak var statsDelegate: StatsCollectionViewControllerDelegate?
-  init(statsDataSource: StatsCollectionViewControllerDataSource?, statsDelegate: StatsCollectionViewControllerDelegate?) {
+  private var startIndex: Int?
+  init(
+    statsDataSource: StatsCollectionViewControllerDataSource?,
+    statsDelegate: StatsCollectionViewControllerDelegate?,
+    startIndex: Int? = nil
+    ) {
     let flowLayout = UICollectionViewFlowLayout()
     flowLayout.scrollDirection = .horizontal
     self.statsDataSource = statsDataSource
     self.statsDelegate = statsDelegate
+    self.startIndex = startIndex
     super.init(collectionViewLayout: flowLayout)
   }
   
@@ -114,6 +120,22 @@ final class StatsCollectionViewController: UICollectionViewController {
     ]
   }
   
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    
+    guard let startIndex = startIndex else { return }
+    
+    collectionView.scrollToItem(
+      at: IndexPath(
+        item: startIndex,
+        section: 0
+      ),
+      at: .centeredHorizontally,
+      animated: false
+    )
+    
+    self.startIndex = nil
+  }
   // MARK: UICollectionViewDataSource
   
   override func numberOfSections(in collectionView: UICollectionView) -> Int {
