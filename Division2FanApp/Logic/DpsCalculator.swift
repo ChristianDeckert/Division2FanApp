@@ -94,35 +94,156 @@ final class DpsCalculator {
     var result: Double = 0
     switch stat {
     case .npcInCoverHealth:
-      
+      let healthDamageValue = value(of: .healthDamage)
       switch category {
       case .bodyshot:
-        let healthDamageValue = value(of: .healthDamage)
         result = weaponDamageValue * (1 + healthDamageValue / 100)
       case .headshot:
-        let healthDamageValue = value(of: .healthDamage)
         let headshotDamage = value(of: .headshotDamage)
         result = weaponDamageValue * (1 + healthDamageValue / 100) * (1 + headshotDamage / 100)
       case .critBodyShot:
-        let healthDamageValue = value(of: .healthDamage)
         let criticalHitDamage = value(of: .criticalHitDamage)
         result = weaponDamageValue * (1 + healthDamageValue / 100) * (1 + criticalHitDamage / 100)
       case .critHeadShot:
-        let healthDamageValue = value(of: .healthDamage)
         let criticalHitDamage = value(of: .criticalHitDamage)
         let headshotDamage = value(of: .headshotDamage)
         result = weaponDamageValue * (1 + healthDamageValue / 100) * (1 + criticalHitDamage / 100 + headshotDamage / 100)
       }
       
     case .eliteNpcInCoverHealth:
-      let damageToElites = value(of: .damageToElites)
       let healthDamageValue = value(of: .healthDamage)
-      result = weaponDamageValue * (1 + healthDamageValue / 100) * (1 + damageToElites / 100)
-      
+      let damageToElites = value(of: .damageToElites)
+      switch category {
+      case .bodyshot:
+        result = weaponDamageValue * (1 + healthDamageValue / 100) * (1 + damageToElites / 100)
+      case .headshot:
+        let headshotDamage = value(of: .headshotDamage)
+        result = weaponDamageValue * (1 + healthDamageValue / 100) * (1 + headshotDamage / 100) * (1 + damageToElites / 100)
+      case .critBodyShot:
+        let criticalHitDamage = value(of: .criticalHitDamage)
+        result = weaponDamageValue * (1 + healthDamageValue / 100) * (1 + criticalHitDamage / 100) * (1 + damageToElites / 100)
+      case .critHeadShot:
+        let criticalHitDamage = value(of: .criticalHitDamage)
+        let headshotDamage = value(of: .headshotDamage)
+        result = weaponDamageValue * (1 + healthDamageValue / 100) * (1 + criticalHitDamage / 100 + headshotDamage / 100) * (1 + damageToElites / 100)
+      }
+
     case .npcOutOfCoverHealth:
+      
       let outOfCoverDamage = value(of: .outOfCoverDamage)
       let healthDamageValue = value(of: .healthDamage)
-      result = weaponDamageValue * (1 + healthDamageValue / 100) * (1 + outOfCoverDamage / 100)
+      switch category {
+      case .bodyshot:
+        result = weaponDamageValue * (1 + healthDamageValue / 100) * (1 + outOfCoverDamage / 100)
+      case .headshot:
+        let headshotDamage = value(of: .headshotDamage)
+        result = weaponDamageValue * (1 + healthDamageValue / 100) * (1 + headshotDamage / 100) * (1 + outOfCoverDamage / 100)
+      case .critBodyShot:
+        let criticalHitDamage = value(of: .criticalHitDamage)
+        result = weaponDamageValue * (1 + healthDamageValue / 100) * (1 + criticalHitDamage / 100) * (1 + outOfCoverDamage / 100)
+      case .critHeadShot:
+        let criticalHitDamage = value(of: .criticalHitDamage)
+        let headshotDamage = value(of: .headshotDamage)
+        result = weaponDamageValue * (1 + healthDamageValue / 100) * (1 + criticalHitDamage / 100 + headshotDamage / 100) * (1 + outOfCoverDamage / 100)
+      }
+      
+    case .eliteNpcOutOfCoverHealth:
+      
+      let outOfCoverDamage = value(of: .outOfCoverDamage)
+      let damageToElites = value(of: .damageToElites)
+      let healthDamageValue = value(of: .healthDamage)
+      switch category {
+      case .bodyshot:
+        result = weaponDamageValue * (1 + healthDamageValue / 100) * (1 + outOfCoverDamage / 100) * (1 + damageToElites / 100)
+      case .headshot:
+        let headshotDamage = value(of: .headshotDamage)
+        result = weaponDamageValue * (1 + healthDamageValue / 100) * (1 + headshotDamage / 100) * (1 + outOfCoverDamage / 100) * (1 + damageToElites / 100)
+      case .critBodyShot:
+        let healthDamageValue = value(of: .healthDamage)
+        let criticalHitDamage = value(of: .criticalHitDamage)
+        result = weaponDamageValue * (1 + healthDamageValue / 100) * (1 + criticalHitDamage / 100) * (1 + outOfCoverDamage / 100) * (1 + damageToElites / 100)
+      case .critHeadShot:
+        let healthDamageValue = value(of: .healthDamage)
+        let criticalHitDamage = value(of: .criticalHitDamage)
+        let headshotDamage = value(of: .headshotDamage)
+        result = weaponDamageValue * (1 + healthDamageValue / 100) * (1 + criticalHitDamage / 100 + headshotDamage / 100) * (1 + outOfCoverDamage / 100) * (1 + damageToElites / 100)
+      }
+      
+    case .npcInCoverArmor:
+      let armorDamageValue = value(of: .enemyArmorDamage)
+      switch category {
+      case .bodyshot:
+        result = weaponDamageValue * (1 + armorDamageValue / 100)
+      case .headshot:
+        let headshotDamage = value(of: .headshotDamage)
+        result = weaponDamageValue * (1 + armorDamageValue / 100) * (1 + headshotDamage / 100)
+      case .critBodyShot:
+        let criticalHitDamage = value(of: .criticalHitDamage)
+        result = weaponDamageValue * (1 + armorDamageValue / 100) * (1 + criticalHitDamage / 100)
+      case .critHeadShot:
+        let criticalHitDamage = value(of: .criticalHitDamage)
+        let headshotDamage = value(of: .headshotDamage)
+        result = weaponDamageValue * (1 + armorDamageValue / 100) * (1 + criticalHitDamage / 100 + headshotDamage / 100)
+      }
+      
+    case .eliteNpcInCoverArmor:
+      let armorDamageValue = value(of: .enemyArmorDamage)
+      let damageToElites = value(of: .damageToElites)
+      switch category {
+      case .bodyshot:
+        result = weaponDamageValue * (1 + armorDamageValue / 100) * (1 + damageToElites / 100)
+      case .headshot:
+        let headshotDamage = value(of: .headshotDamage)
+        result = weaponDamageValue * (1 + armorDamageValue / 100) * (1 + headshotDamage / 100) * (1 + damageToElites / 100)
+      case .critBodyShot:
+        let criticalHitDamage = value(of: .criticalHitDamage)
+        result = weaponDamageValue * (1 + armorDamageValue / 100) * (1 + criticalHitDamage / 100) * (1 + damageToElites / 100)
+      case .critHeadShot:
+        let criticalHitDamage = value(of: .criticalHitDamage)
+        let headshotDamage = value(of: .headshotDamage)
+        result = weaponDamageValue * (1 + armorDamageValue / 100) * (1 + criticalHitDamage / 100 + headshotDamage / 100) * (1 + damageToElites / 100)
+      }
+      
+    case .npcOutOfCoverArmor:
+      
+      let outOfCoverDamage = value(of: .outOfCoverDamage)
+      let armorDamageValue = value(of: .enemyArmorDamage)
+      switch category {
+      case .bodyshot:
+        result = weaponDamageValue * (1 + armorDamageValue / 100) * (1 + outOfCoverDamage / 100)
+      case .headshot:
+        let headshotDamage = value(of: .headshotDamage)
+        result = weaponDamageValue * (1 + armorDamageValue / 100) * (1 + headshotDamage / 100) * (1 + outOfCoverDamage / 100)
+      case .critBodyShot:
+        let criticalHitDamage = value(of: .criticalHitDamage)
+        result = weaponDamageValue * (1 + armorDamageValue / 100) * (1 + criticalHitDamage / 100) * (1 + outOfCoverDamage / 100)
+      case .critHeadShot:
+        let criticalHitDamage = value(of: .criticalHitDamage)
+        let headshotDamage = value(of: .headshotDamage)
+        result = weaponDamageValue * (1 + armorDamageValue / 100) * (1 + criticalHitDamage / 100 + headshotDamage / 100) * (1 + outOfCoverDamage / 100)
+      }
+      
+    case .eliteNpcOutOfCoverArmor:
+      
+      let outOfCoverDamage = value(of: .outOfCoverDamage)
+      let damageToElites = value(of: .damageToElites)
+      let armorDamageValue = value(of: .enemyArmorDamage)
+      switch category {
+      case .bodyshot:
+        result = weaponDamageValue * (1 + armorDamageValue / 100) * (1 + outOfCoverDamage / 100) * (1 + damageToElites / 100)
+      case .headshot:
+        let headshotDamage = value(of: .headshotDamage)
+        result = weaponDamageValue * (1 + armorDamageValue / 100) * (1 + headshotDamage / 100) * (1 + outOfCoverDamage / 100) * (1 + damageToElites / 100)
+      case .critBodyShot:
+        let healthDamageValue = value(of: .healthDamage)
+        let criticalHitDamage = value(of: .criticalHitDamage)
+        result = weaponDamageValue * (1 + armorDamageValue / 100) * (1 + criticalHitDamage / 100) * (1 + outOfCoverDamage / 100) * (1 + damageToElites / 100)
+      case .critHeadShot:
+        let healthDamageValue = value(of: .healthDamage)
+        let criticalHitDamage = value(of: .criticalHitDamage)
+        let headshotDamage = value(of: .headshotDamage)
+        result = weaponDamageValue * (1 + armorDamageValue / 100) * (1 + criticalHitDamage / 100 + headshotDamage / 100) * (1 + outOfCoverDamage / 100) * (1 + damageToElites / 100)
+      }
 
     }
     

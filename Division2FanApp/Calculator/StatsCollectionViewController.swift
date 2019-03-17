@@ -18,6 +18,11 @@ final class StatsCollectionViewController: UICollectionViewController {
     case npcInCoverHealth
     case eliteNpcInCoverHealth
     case npcOutOfCoverHealth
+    case eliteNpcOutOfCoverHealth
+    case npcInCoverArmor
+    case eliteNpcInCoverArmor
+    case npcOutOfCoverArmor
+    case eliteNpcOutOfCoverArmor
     
     var description: String {
       switch  self {
@@ -27,6 +32,16 @@ final class StatsCollectionViewController: UICollectionViewController {
         return "stats-collection-controller.elite-npc-in-cover-health.title".localized
       case .npcOutOfCoverHealth:
         return "stats-collection-controller.npc-out-of-cover-health.title".localized
+      case .eliteNpcOutOfCoverHealth:
+        return "stats-collection-controller.elite-npc-out-of-cover-health.title".localized
+      case .npcInCoverArmor:
+        return "stats-collection-controller.npc-in-cover-armor.title".localized
+      case .eliteNpcInCoverArmor:
+        return "stats-collection-controller.elite-npc-in-cover-armor.title".localized
+      case .npcOutOfCoverArmor:
+        return "stats-collection-controller.npc-out-of-cover-armor.title".localized
+      case .eliteNpcOutOfCoverArmor:
+        return "stats-collection-controller.elite-npc-out-of-cover-armor.title".localized
       }
     }
   }
@@ -69,6 +84,26 @@ final class StatsCollectionViewController: UICollectionViewController {
       ),      
       StatCollectionViewCellController(
         stat: .npcOutOfCoverHealth,
+        statsDataSource: statsDataSource
+      ),
+      StatCollectionViewCellController(
+        stat: .eliteNpcOutOfCoverHealth,
+        statsDataSource: statsDataSource
+      ),
+      StatCollectionViewCellController(
+        stat: .npcInCoverArmor,
+        statsDataSource: statsDataSource
+      ),
+      StatCollectionViewCellController(
+        stat: .eliteNpcInCoverArmor,
+        statsDataSource: statsDataSource
+      ),
+      StatCollectionViewCellController(
+        stat: .npcOutOfCoverArmor,
+        statsDataSource: statsDataSource
+      ),
+      StatCollectionViewCellController(
+        stat: .eliteNpcOutOfCoverArmor,
         statsDataSource: statsDataSource
       )
     ]

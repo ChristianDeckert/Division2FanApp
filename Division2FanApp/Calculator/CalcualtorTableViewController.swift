@@ -27,8 +27,10 @@ class CalcualtorTableViewController: UITableViewController {
   
   private lazy var dpsCalculator = DpsCalculator()
   private var statsCellController: StatsContainerCellController {
-    return StatsContainerCellController(dpsCalculator: dpsCalculator)    
+    return StatsContainerCellController(dpsCalculator: dpsCalculator)
   }
+  
+  private var initialScrollviewOffsetY: CGFloat?
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -45,12 +47,15 @@ class CalcualtorTableViewController: UITableViewController {
       right: 0
     )
     
-    rowControllers = defaultRowControllers
+    rowControllers = exampleRowControllers
     
-    setBackground()
+    navigationController?.navigationBar.blurAppearance()
+    tableView.backgroundView = nil
+    tableView.backgroundColor = .clear
+    tableView.delegate = self
   }
   
-  private func setBackground() {
+  private func setBackgroundImage() {
     let imageView = UIImageView(
       image: UIImage(
         named: "image-background"
@@ -70,7 +75,10 @@ class CalcualtorTableViewController: UITableViewController {
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
     
-    Sounds.shared.play(effect: .lootDrop)
+//    Sounds.shared.play(effect: .lootDrop)
+    
+    guard nil == initialScrollviewOffsetY else { return }
+    initialScrollviewOffsetY = tableView.contentOffset.y
   }
 }
 
@@ -182,6 +190,7 @@ extension CalcualtorTableViewController: CalcualtorCellControllerDelegate {
 }
 
 extension CalcualtorTableViewController {
+  
   var defaultRowControllers: [RowControlling] {
     return [
       CalcualtorCellController(
@@ -239,6 +248,79 @@ extension CalcualtorTableViewController {
       )
     ]
   }
+  
+  var exampleRowControllers: [RowControlling] {
+    
+    
+    dpsCalculator.add(attribute: .weaponDamage, value: 5000)
+    dpsCalculator.add(attribute: .criticalHitChance, value: 30)
+    dpsCalculator.add(attribute: .criticalHitDamage, value: 80)
+    dpsCalculator.add(attribute: .headshotDamage, value: 110)
+    dpsCalculator.add(attribute: .outOfCoverDamage, value: 10)
+    dpsCalculator.add(attribute: .damageToElites, value: 20)
+    dpsCalculator.add(attribute: .enemyArmorDamage, value: 8)
+    dpsCalculator.add(attribute: .healthDamage, value: 5)
+    dpsCalculator.add(attribute: .rpm, value: 650)
+    return [
+      CalcualtorCellController(
+        delegate: self,
+        attribute: .weaponDamage,
+        value: "5000"
+      ),
+      CalcualtorCellController(
+        delegate: self,
+        attribute: .criticalHitChance,
+        value: "30",
+        placeholder: "0"
+      ),
+      CalcualtorCellController(
+        delegate: self,
+        attribute: .criticalHitDamage,
+        value: "80",
+        placeholder: "0"
+      ),
+      CalcualtorCellController(
+        delegate: self,
+        attribute: .headshotDamage,
+        value: "110",
+        placeholder: "0"
+      ),
+      CalcualtorCellController(
+        delegate: self,
+        attribute: .outOfCoverDamage,
+        value: "10",
+        placeholder: "0"
+      ),
+      CalcualtorCellController(
+        delegate: self,
+        attribute: .damageToElites,
+        value: "20",
+        placeholder: "0"
+      ),
+      CalcualtorCellController(
+        delegate: self,
+        attribute: .enemyArmorDamage,
+        value: "8",
+        placeholder: "0"
+      ),
+      CalcualtorCellController(
+        delegate: self,
+        attribute: .healthDamage,
+        value: "5",
+        placeholder: "0"
+      ),
+      CalcualtorCellController(
+        delegate: self,
+        attribute: .rpm,
+        value: "650",
+        placeholder: "650"
+      )
+    ]
+  }
 }
 
+extension CalcualtorTableViewController {
+  override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+  }
+}
 

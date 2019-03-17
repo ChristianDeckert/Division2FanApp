@@ -16,11 +16,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   }
 
   var window: UIWindow?
-  
-  lazy var navigationController: UINavigationController = {
-    let navigationController = UINavigationController(rootViewController: CalcualtorTableViewController())
-    return navigationController
-  }()
 
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -30,7 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     ]
     
     window = UIWindow(frame: UIScreen.main.bounds)
-    window?.rootViewController = navigationController
+    window?.rootViewController = RootViewController()
     window?.tintColor = .primaryTint
     window?.makeKeyAndVisible()
     
@@ -47,11 +42,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   }
 
   func applicationDidBecomeActive(_ application: UIApplication) {
+    NotificationCenter.default.post(name: NSNotification.Name.applicationDidBecomeActive, object: nil)
   }
 
   func applicationWillTerminate(_ application: UIApplication) {
   }
-
-
 }
 
+extension NSNotification.Name {
+  static let applicationDidBecomeActive = NSNotification.Name(rawValue: "applicationDidBecomeActive")
+}

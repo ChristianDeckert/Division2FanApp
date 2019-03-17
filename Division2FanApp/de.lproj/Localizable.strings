@@ -24,6 +24,12 @@
 "stats-collection-controller.npc-in-cover-health.title" = "NPC in Deckung Gesundheitsschaden";
 "stats-collection-controller.elite-npc-in-cover-health.title" = "Elite-NPC in Deckung Gesundh.";
 "stats-collection-controller.npc-out-of-cover-health.title" = "NPC außerh. Deckung Gesundh.";
+"stats-collection-controller.elite-npc-out-of-cover-health.title" = "Elite-NPC außerh. Deckung G.";
+"stats-collection-controller.npc-in-cover-armor.title" = "NPC in Deckung Rüstung";
+"stats-collection-controller.elite-npc-in-cover-armor.title" = "Elite-NPC in Deckung Rüstung";
+"stats-collection-controller.npc-out-of-cover-armor.title" = "NPC außerh. Deckung Rüstung";
+"stats-collection-controller.elite-npc-out-of-cover-armor.title" = "Elite-NPC außerh. Deckung Rüst.";
+
 
 "stats-collection-controller.body-shot.title" = "Körpertreffer:";
 "stats-collection-controller.body-shot-critical.title" = "Krit. Körpertreffer:";
