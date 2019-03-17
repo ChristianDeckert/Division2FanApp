@@ -41,6 +41,7 @@ enum Category {
   case headshot
   case critBodyShot
   case critHeadShot
+  case dps
 }
 
 
@@ -90,6 +91,7 @@ final class DpsCalculator {
     let weaponDamageValue = value(of: .weaponDamage)
     guard weaponDamageValue > 0 else { return 0 }
     
+    let headshotRate: Double = 100
     
     var result: Double = 0
     switch stat {
@@ -108,6 +110,15 @@ final class DpsCalculator {
         let criticalHitDamage = value(of: .criticalHitDamage)
         let headshotDamage = value(of: .headshotDamage)
         result = weaponDamageValue * (1 + healthDamageValue / 100) * (1 + criticalHitDamage / 100 + headshotDamage / 100)
+      case .dps:
+        let criticalHitDamage = value(of: .criticalHitDamage)
+        let criticalHitChance = value(of: .criticalHitChance)
+        let headshotDamage = value(of: .headshotDamage)
+        let rpm = value(of: .rpm)
+        result = weaponDamageValue * (1 + criticalHitDamage/100 * criticalHitChance/100)
+          * (1 + (headshotDamage/100) * (headshotRate/100))
+          * (rpm/60)
+          * (1 + healthDamageValue/100)
       }
       
     case .eliteNpcInCoverHealth:
@@ -126,6 +137,16 @@ final class DpsCalculator {
         let criticalHitDamage = value(of: .criticalHitDamage)
         let headshotDamage = value(of: .headshotDamage)
         result = weaponDamageValue * (1 + healthDamageValue / 100) * (1 + criticalHitDamage / 100 + headshotDamage / 100) * (1 + damageToElites / 100)
+      case .dps:
+        let criticalHitDamage = value(of: .criticalHitDamage)
+        let criticalHitChance = value(of: .criticalHitChance)
+        let headshotDamage = value(of: .headshotDamage)
+        let rpm = value(of: .rpm)
+        result = weaponDamageValue * (1 + criticalHitDamage/100 * criticalHitChance/100)
+          * (1 + (headshotDamage/100) * (headshotRate/100))
+          * (rpm/60)
+          * (1 + healthDamageValue/100)
+          * (1 + damageToElites/100)
       }
 
     case .npcOutOfCoverHealth:
@@ -145,6 +166,16 @@ final class DpsCalculator {
         let criticalHitDamage = value(of: .criticalHitDamage)
         let headshotDamage = value(of: .headshotDamage)
         result = weaponDamageValue * (1 + healthDamageValue / 100) * (1 + criticalHitDamage / 100 + headshotDamage / 100) * (1 + outOfCoverDamage / 100)
+      case .dps:
+        let criticalHitDamage = value(of: .criticalHitDamage)
+        let criticalHitChance = value(of: .criticalHitChance)
+        let headshotDamage = value(of: .headshotDamage)
+        let rpm = value(of: .rpm)
+        result = weaponDamageValue * (1 + criticalHitDamage/100 * criticalHitChance/100)
+          * (1 + (headshotDamage/100) * (headshotRate/100))
+          * (rpm/60)
+          * (1 + healthDamageValue/100)
+          * (1 + outOfCoverDamage/100)
       }
       
     case .eliteNpcOutOfCoverHealth:
@@ -167,6 +198,17 @@ final class DpsCalculator {
         let criticalHitDamage = value(of: .criticalHitDamage)
         let headshotDamage = value(of: .headshotDamage)
         result = weaponDamageValue * (1 + healthDamageValue / 100) * (1 + criticalHitDamage / 100 + headshotDamage / 100) * (1 + outOfCoverDamage / 100) * (1 + damageToElites / 100)
+      case .dps:
+        let criticalHitDamage = value(of: .criticalHitDamage)
+        let criticalHitChance = value(of: .criticalHitChance)
+        let headshotDamage = value(of: .headshotDamage)
+        let rpm = value(of: .rpm)
+        result = weaponDamageValue * (1 + criticalHitDamage/100 * criticalHitChance/100)
+          * (1 + (headshotDamage/100) * (headshotRate/100))
+          * (rpm/60)
+          * (1 + healthDamageValue/100)
+          * (1 + outOfCoverDamage/100)
+          * (1 + damageToElites/100)
       }
       
     case .npcInCoverArmor:
@@ -184,7 +226,17 @@ final class DpsCalculator {
         let criticalHitDamage = value(of: .criticalHitDamage)
         let headshotDamage = value(of: .headshotDamage)
         result = weaponDamageValue * (1 + armorDamageValue / 100) * (1 + criticalHitDamage / 100 + headshotDamage / 100)
+      case .dps:
+        let criticalHitDamage = value(of: .criticalHitDamage)
+        let criticalHitChance = value(of: .criticalHitChance)
+        let headshotDamage = value(of: .headshotDamage)
+        let rpm = value(of: .rpm)
+        result = weaponDamageValue * (1 + criticalHitDamage/100 * criticalHitChance/100)
+          * (1 + (headshotDamage/100) * (headshotRate/100))
+          * (rpm/60)
+          * (1 + armorDamageValue/100)
       }
+      
       
     case .eliteNpcInCoverArmor:
       let armorDamageValue = value(of: .enemyArmorDamage)
@@ -202,6 +254,16 @@ final class DpsCalculator {
         let criticalHitDamage = value(of: .criticalHitDamage)
         let headshotDamage = value(of: .headshotDamage)
         result = weaponDamageValue * (1 + armorDamageValue / 100) * (1 + criticalHitDamage / 100 + headshotDamage / 100) * (1 + damageToElites / 100)
+      case .dps:
+        let criticalHitDamage = value(of: .criticalHitDamage)
+        let criticalHitChance = value(of: .criticalHitChance)
+        let headshotDamage = value(of: .headshotDamage)
+        let rpm = value(of: .rpm)
+        result = weaponDamageValue * (1 + criticalHitDamage/100 * criticalHitChance/100)
+          * (1 + (headshotDamage/100) * (headshotRate/100))
+          * (rpm/60)
+          * (1 + armorDamageValue/100)
+          * (1 + damageToElites/100)
       }
       
     case .npcOutOfCoverArmor:
@@ -221,6 +283,16 @@ final class DpsCalculator {
         let criticalHitDamage = value(of: .criticalHitDamage)
         let headshotDamage = value(of: .headshotDamage)
         result = weaponDamageValue * (1 + armorDamageValue / 100) * (1 + criticalHitDamage / 100 + headshotDamage / 100) * (1 + outOfCoverDamage / 100)
+      case .dps:
+        let criticalHitDamage = value(of: .criticalHitDamage)
+        let criticalHitChance = value(of: .criticalHitChance)
+        let headshotDamage = value(of: .headshotDamage)
+        let rpm = value(of: .rpm)
+        result = weaponDamageValue * (1 + criticalHitDamage/100 * criticalHitChance/100)
+          * (1 + (headshotDamage/100) * (headshotRate/100))
+          * (rpm/60)
+          * (1 + armorDamageValue/100)
+          * (1 + outOfCoverDamage/100)
       }
       
     case .eliteNpcOutOfCoverArmor:
@@ -237,10 +309,21 @@ final class DpsCalculator {
       case .critBodyShot:
         let criticalHitDamage = value(of: .criticalHitDamage)
         result = weaponDamageValue * (1 + armorDamageValue / 100) * (1 + criticalHitDamage / 100) * (1 + outOfCoverDamage / 100) * (1 + damageToElites / 100)
-      case .critHeadShot:        
+      case .critHeadShot:
         let criticalHitDamage = value(of: .criticalHitDamage)
         let headshotDamage = value(of: .headshotDamage)
         result = weaponDamageValue * (1 + armorDamageValue / 100) * (1 + criticalHitDamage / 100 + headshotDamage / 100) * (1 + outOfCoverDamage / 100) * (1 + damageToElites / 100)
+      case .dps:
+        let criticalHitDamage = value(of: .criticalHitDamage)
+        let criticalHitChance = value(of: .criticalHitChance)
+        let headshotDamage = value(of: .headshotDamage)
+        let rpm = value(of: .rpm)
+        result = weaponDamageValue * (1 + criticalHitDamage/100 * criticalHitChance/100)
+          * (1 + (headshotDamage/100) * (headshotRate/100))
+          * (rpm/60)
+          * (1 + armorDamageValue/100)
+          * (1 + outOfCoverDamage/100)
+          * (1 + damageToElites/100)
       }
 
     }

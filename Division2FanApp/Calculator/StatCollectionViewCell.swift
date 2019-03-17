@@ -134,6 +134,13 @@ extension StatCollectionViewCell: RowControlable {
       ) ?? 0
     )
     headCritValueLabel.text = "\(critHeadValue)"
+    
+    let dpsValue = Int(rowController.statsDataSource?.dpsCalculator?.calulate(
+      stat: rowController.stat,
+      category: .dps
+      ) ?? 0
+    )
+    dpsValueLabel.text = "\(dpsValue)"
   }
   
   typealias CONTROLLER = StatCollectionViewCellController
