@@ -141,7 +141,6 @@ extension CalcualtorTableViewController {
 
 extension CalcualtorTableViewController {
   @objc func resetAction() {
-    dpsCalculator = DpsCalculator(inputAttributes: [])
     rowControllers = defaultRowControllers
   }
 }
@@ -192,6 +191,16 @@ extension CalcualtorTableViewController: CalcualtorCellControllerDelegate {
 extension CalcualtorTableViewController {
   
   var defaultRowControllers: [RowControlling] {
+    
+    dpsCalculator = DpsCalculator(
+      inputAttributes: [
+        DpsCalculator.InputAttribute(
+          attribute: .rpm,
+          value: 650
+        )
+      ]
+    )
+    
     return [
       CalcualtorCellController(
         delegate: self,
@@ -244,14 +253,12 @@ extension CalcualtorTableViewController {
         delegate: self,
         attribute: .rpm,
         value: "650",
-        placeholder: "650"
+        placeholder: "0"
       )
     ]
   }
   
   var exampleRowControllers: [RowControlling] {
-    
-    
     dpsCalculator.add(attribute: .weaponDamage, value: 5000)
     dpsCalculator.add(attribute: .criticalHitChance, value: 30)
     dpsCalculator.add(attribute: .criticalHitDamage, value: 80)
