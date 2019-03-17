@@ -53,6 +53,7 @@ final class CalculatorCell: UITableViewCell {
   @IBOutlet weak var visualEffectView: UIVisualEffect!
   
   private var controller: CalcualtorCellController?
+  private var callbackDebouncer: Timer?
   
   override func awakeFromNib() {
     super.awakeFromNib()
@@ -98,14 +99,45 @@ extension CalculatorCell: UITextFieldDelegate {
   }
   
   private func updateController(text: String?) {
+    callbackDebouncer?.invalidate()
+    let textFieldText = self.textFieldText(text: text)
+    textfield.text = "\(Int(textFieldText) ?? 0)"
+    controller?.delegate?.calcualtorCell(
+      controller: controller,
+      didReturnFromTextfieldWith: textFieldText
+    )
+  }
+  
+  func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+    callbackDebounced()
+    return true
+  }
+  
+  private func callbackDebounced() {
+    callbackDebouncer?.invalidate()
+    callbackDebouncer = Timer.scheduledTimer(
+      withTimeInterval: 0.75,
+      repeats: false,
+      block: { [weak self] timer in
+      guard let self = self else { return }
+      guard self.callbackDebouncer == timer else { return }
+      self.callbackDebouncer?.invalidate()
+      let textFieldText = self.textFieldText(text: self.textfield.text)
+      self.controller?.delegate?.calcualtorCell(
+        controller: self.controller,
+        didReturnFromTextfieldWith: textFieldText
+      )
+    })
+  }
+  
+  private func textFieldText(text: String?) -> String {
     let textFieldText: String
     if let text = text {
       textFieldText = text
     } else {
       textFieldText = "0"
     }
-    textfield.text = "\(Int(textFieldText) ?? 0)"
-    controller?.delegate?.calcualtorCell(controller: controller, didReturnFromTextfieldWith: textFieldText)
+    return textFieldText
   }
 }
 
