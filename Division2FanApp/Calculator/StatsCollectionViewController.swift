@@ -12,6 +12,10 @@ protocol StatsCollectionViewControllerDataSource: class {
   var dpsCalculator: DpsCalculator? { get }
 }
 
+protocol StatsCollectionViewControllerDelegate: class {
+  func didScrollTo(index: Int)
+}
+
 final class StatsCollectionViewController: UICollectionViewController {
   
   enum Stat {
@@ -47,11 +51,12 @@ final class StatsCollectionViewController: UICollectionViewController {
   }
   
   private weak var statsDataSource: StatsCollectionViewControllerDataSource?
-  
-  init(statsDataSource: StatsCollectionViewControllerDataSource?) {
+  private weak var statsDelegate: StatsCollectionViewControllerDelegate?
+  init(statsDataSource: StatsCollectionViewControllerDataSource?, statsDelegate: StatsCollectionViewControllerDelegate?) {
     let flowLayout = UICollectionViewFlowLayout()
     flowLayout.scrollDirection = .horizontal
     self.statsDataSource = statsDataSource
+    self.statsDelegate = statsDelegate
     super.init(collectionViewLayout: flowLayout)
   }
   
@@ -163,3 +168,25 @@ extension StatsCollectionViewController: UICollectionViewDelegateFlowLayout {
   }
 }
 
+extension StatsCollectionViewController {
+  
+  override func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+    updateIndex()
+  }
+  
+  override func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+    guard !decelerate else {return }
+    updateIndex()
+  }
+  
+  private func updateIndex() {
+    guard collectionView.bounds.size.width > 0 else { return }
+    var currentIndex: Int = Int(collectionView.contentOffset.x / collectionView.bounds.size.width)
+    if currentIndex < 0 {
+      currentIndex = 0
+    } else if currentIndex >= items.count {
+      currentIndex = items.count - 1
+    }
+    statsDelegate?.didScrollTo(index: currentIndex)
+  }
+}

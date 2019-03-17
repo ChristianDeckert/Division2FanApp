@@ -235,11 +235,9 @@ final class DpsCalculator {
         let headshotDamage = value(of: .headshotDamage)
         result = weaponDamageValue * (1 + armorDamageValue / 100) * (1 + headshotDamage / 100) * (1 + outOfCoverDamage / 100) * (1 + damageToElites / 100)
       case .critBodyShot:
-        let healthDamageValue = value(of: .healthDamage)
         let criticalHitDamage = value(of: .criticalHitDamage)
         result = weaponDamageValue * (1 + armorDamageValue / 100) * (1 + criticalHitDamage / 100) * (1 + outOfCoverDamage / 100) * (1 + damageToElites / 100)
-      case .critHeadShot:
-        let healthDamageValue = value(of: .healthDamage)
+      case .critHeadShot:        
         let criticalHitDamage = value(of: .criticalHitDamage)
         let headshotDamage = value(of: .headshotDamage)
         result = weaponDamageValue * (1 + armorDamageValue / 100) * (1 + criticalHitDamage / 100 + headshotDamage / 100) * (1 + outOfCoverDamage / 100) * (1 + damageToElites / 100)

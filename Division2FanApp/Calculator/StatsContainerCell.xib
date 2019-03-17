@@ -15,39 +15,28 @@
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="StatsContainerCell" rowHeight="176" id="KGk-i7-Jjw" customClass="StatsContainerCell" customModule="Division2FanApp" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="440" height="176"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+            <tableViewCellContentView key="contentView" opaque="NO" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="440" height="175.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ert-3p-9Ss">
-                        <rect key="frame" x="16" y="0.0" width="408" height="159.5"/>
-                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="4Y0-v6-kJl">
-                            <rect key="frame" x="0.0" y="0.0" width="408" height="159.5"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        </view>
-                        <blurEffect style="light"/>
-                    </visualEffectView>
-                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Lo-6E-K9O" userLabel="CollectionViewContainerView">
-                        <rect key="frame" x="24" y="0.0" width="392" height="135.5"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Lo-6E-K9O" userLabel="CollectionViewContainerView">
+                        <rect key="frame" x="0.0" y="0.0" width="440" height="175.5"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" numberOfPages="8" translatesAutoresizingMaskIntoConstraints="NO" id="CFo-wE-08C">
-                        <rect key="frame" x="160.5" y="117" width="119" height="37"/>
+                        <rect key="frame" x="0.0" y="122.5" width="440" height="37"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </pageControl>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
-                    <constraint firstItem="Ert-3p-9Ss" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="1F5-bJ-qCe"/>
-                    <constraint firstItem="2Lo-6E-K9O" firstAttribute="width" secondItem="Ert-3p-9Ss" secondAttribute="width" constant="-16" id="4Ce-pA-K2Y"/>
-                    <constraint firstItem="2Lo-6E-K9O" firstAttribute="centerX" secondItem="Ert-3p-9Ss" secondAttribute="centerX" id="CTC-yY-XEo"/>
-                    <constraint firstAttribute="trailing" secondItem="Ert-3p-9Ss" secondAttribute="trailing" constant="16" id="L1e-Js-wM2"/>
-                    <constraint firstItem="2Lo-6E-K9O" firstAttribute="top" secondItem="Ert-3p-9Ss" secondAttribute="top" id="OGj-DJ-YJt"/>
-                    <constraint firstItem="Ert-3p-9Ss" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="WXL-7g-kAc"/>
-                    <constraint firstAttribute="bottom" secondItem="Ert-3p-9Ss" secondAttribute="bottom" constant="16" id="ei1-df-dhz"/>
+                    <constraint firstItem="CFo-wE-08C" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" id="2PY-tP-v66"/>
+                    <constraint firstAttribute="bottom" secondItem="CFo-wE-08C" secondAttribute="bottom" constant="16" id="E79-ji-nbz"/>
+                    <constraint firstAttribute="trailing" secondItem="2Lo-6E-K9O" secondAttribute="trailing" id="GYA-SA-tlV"/>
+                    <constraint firstItem="2Lo-6E-K9O" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="guz-Ja-UCH"/>
+                    <constraint firstItem="2Lo-6E-K9O" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="gwm-B3-Uu8"/>
                     <constraint firstItem="CFo-wE-08C" firstAttribute="centerX" secondItem="2Lo-6E-K9O" secondAttribute="centerX" id="lys-Fz-Uz9"/>
-                    <constraint firstItem="2Lo-6E-K9O" firstAttribute="bottom" secondItem="Ert-3p-9Ss" secondAttribute="bottom" constant="-24" id="m9F-XT-H4S"/>
-                    <constraint firstItem="CFo-wE-08C" firstAttribute="centerY" secondItem="2Lo-6E-K9O" secondAttribute="bottom" id="x5Q-6I-Trm"/>
+                    <constraint firstAttribute="bottom" secondItem="2Lo-6E-K9O" secondAttribute="bottom" id="qM0-1u-1LV"/>
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

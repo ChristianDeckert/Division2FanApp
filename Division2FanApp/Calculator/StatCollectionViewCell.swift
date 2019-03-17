@@ -82,6 +82,20 @@ final class StatCollectionViewCell: UICollectionViewCell {
     }
   }
   
+  @IBOutlet weak var dpsTitleLabel: UILabel!{
+    didSet {
+      dpsTitleLabel.text = "stats-collection-controller.dps.title".localized
+      dpsTitleLabel.font = .bordaSubtitle
+    }
+  }
+  @IBOutlet weak var dpsValueLabel: UILabel! {
+    didSet {
+      dpsValueLabel.text = "0"
+      dpsValueLabel.font = .bordaSubtitle
+      dpsValueLabel.textColor = .primaryTint
+    }
+  }
+  
   var controller: StatCollectionViewCellController?
   
 }

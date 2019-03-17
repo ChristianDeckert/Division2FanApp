@@ -49,7 +49,10 @@ extension StatsContainerCell: RowControlable {
     for view in collectionViewContainer.subviews {
       view.removeFromSuperview()
     }
-    let collectionViewController = StatsCollectionViewController(statsDataSource: self)
+    let collectionViewController = StatsCollectionViewController(
+      statsDataSource: self,
+      statsDelegate: self
+    )
     collectionViewController.view.frame = collectionViewContainer.bounds
     collectionViewContainer.addSubview(collectionViewController.view)
     self.collectionViewController = collectionViewController
@@ -61,7 +64,12 @@ extension StatsContainerCell: StatsCollectionViewControllerDataSource {
   var dpsCalculator: DpsCalculator? {
     return controller?.dpsCalculator
   }
-  
-  
 }
 
+extension StatsContainerCell: StatsCollectionViewControllerDelegate{
+  func didScrollTo(index: Int) {
+    pageControl.currentPage = index
+  }
+  
+
+}
