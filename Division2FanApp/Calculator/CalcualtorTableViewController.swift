@@ -25,6 +25,15 @@ class CalcualtorTableViewController: UITableViewController {
     )
   }()
   
+  lazy var infoBarButtonItem: UIBarButtonItem = {
+    return UIBarButtonItem(
+      title: "calculator-controller.info-button.title".localized,
+      style: .plain,
+      target: self,
+      action: #selector(infoAction)
+    )
+  }()
+  
   private lazy var dpsCalculator = DpsCalculator()
   private var statsCellController: StatsContainerCellController {
     return StatsContainerCellController(dpsCalculator: dpsCalculator)
@@ -70,6 +79,7 @@ class CalcualtorTableViewController: UITableViewController {
     super.viewWillAppear(animated)
     
     navigationItem.rightBarButtonItem = resetBarButtonItem
+    navigationItem.leftBarButtonItem = infoBarButtonItem
   }
   
   override func viewDidAppear(_ animated: Bool) {
@@ -142,6 +152,11 @@ extension CalcualtorTableViewController {
 extension CalcualtorTableViewController {
   @objc func resetAction() {
     rowControllers = defaultRowControllers
+  }
+  
+  @objc func infoAction() {
+    let infoController = InfoTableViewController()
+    navigationController?.pushViewController(infoController, animated: true)
   }
 }
 

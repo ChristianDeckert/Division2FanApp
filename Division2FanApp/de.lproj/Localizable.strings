@@ -8,6 +8,7 @@
 
 "calculator-controller.title" = "DPS Rechner";
 "calculator-controller.reset-button.title" = "Zurücksetzen";
+"calculator-controller.info-button.title" = "Infos";
 
 "calculator-controller.weapon-damage.title" = "Waffenschaden";
 "calculator-cell.textfield.placeholder" = "Bitte Wert eineben";
@@ -36,3 +37,24 @@
 "stats-collection-controller.body-shot-critical.title" = "Krit. Körpertreffer:";
 "stats-collection-controller.head-shot.title" = "Kopftreffer:";
 "stats-collection-controller.head-shot-critical.title" = "Krit. Kopftreffer:";
+
+"info-controller.about.title" = "Über diese App";
+"info-controller.about.text" = "Dies ist ein Fan Projekt für Tom Clancy's Division 2 und steht in keiner Verbindung zu Ubisoft, Massive oder Redstorm.\n\nDer DPS Rechner ist ein kostenloses Werkzeug für Division Agenten zum Berechnen von Schadenswerten.\n\nDer Quellcode ist unter der MIT Open Source Lizenz auf GitHub verfügbar.";
+"info-controller.about.button-text" = "Show source code on GitHub";
+
+"info-controller.buy.title" = "Division bei Uplay";
+"info-controller.buy.text" = "Hol dir Division 2 bei Uplay";
+"info-controller.buy.button-text" = "Uplay Website anzeigen";
+
+"info-controller.buy-epic.title" = "Division bei Epic Games";
+"info-controller.buy-epic.text" = "Hol dir Division 2 bei Epic Games";
+"info-controller.buy-epic.button-text" = "Epic Games Website anzeigen";
+
+"info-controller.buy-amazon.title" = "Division bei Amazon";
+"info-controller.buy-amazon.text" = "Hol dir Division 2 bei Amazon";
+"info-controller.buy-amazon.button-text" = "Uplay Website anzeigen";
+
+"info-controller.marco.title" = "MarcoStyle";
+"info-controller.marco.text" = "Als Inspirationsquell diente das DPS Kalkulationsblatt von MarcoStyle. Vielen Dank dafür.";
+"info-controller.marco.button-text" = "MarcoStyle auf YouTube";
+
