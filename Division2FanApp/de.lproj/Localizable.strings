@@ -40,7 +40,7 @@
 
 "info-controller.title" = "Infos zur App";
 "info-controller.about.title" = "Wichtige Informationen";
-"info-controller.about.text" = "Dies ist ein Fan Projekt für Tom Clancy's Division 2™ und steht in keiner Verbindung zu Ubisoft, Massive oder Redstorm. Alle Warenzeichen gehören ihren jeweiligen Inhabern und werden nur zu Informationszwecken benutzt.\n\nDer DPS Rechner ist ein kostenloses Werkzeug für Division Agenten zum Berechnen von Schadenswerten.\n\nDer Quellcode ist unter Open Source Lizenz auf GitHub verfügbar.\n\nWenn du Ideen und/oder Feedback hast, besuche die unten verlinkte Seite.";
+"info-controller.about.text" = "Dies ist ein Fan Projekt für Tom Clancy's Division 2™ und steht in keiner Verbindung zu Ubisoft, Massive oder Redstorm. Alle Warenzeichen gehören ihren jeweiligen Inhabern und werden nur zu Informationszwecken benutzt.\n\nDer SPS Rechner ist ein kostenloses unerlässliches Werkzeug für alle Agenten, die sich im Überlebenskampf in Washington DC befinden.\n\nDer Quellcode ist unter Open Source Lizenz auf GitHub verfügbar.\n\nWenn du Ideen und/oder Feedback hast, besuche die unten verlinkte Seite.";
 "info-controller.about.button-text" = "Quellcode anzeigen";
 
 "info-controller.buy.title" = "Division bei Uplay";
