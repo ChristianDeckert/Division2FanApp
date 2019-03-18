@@ -60,7 +60,7 @@ extension StatsContainerCell: RowControlable {
       startIndex: StatsContainerCell.recentIndex
     )
     collectionViewController.view.frame = collectionViewContainer.bounds
-    collectionViewContainer.addSubview(collectionViewController.view)
+    collectionViewController.view.embed(in: collectionViewContainer)   
     self.collectionViewController = collectionViewController
   }
   
