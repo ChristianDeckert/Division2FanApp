@@ -17,14 +17,24 @@ final class RootViewController: UIViewController {
   
   lazy var videoPlayerViewController = VideoPlayerViewController(delegate: self)
   lazy var calculatorViewController = CalcualtorTableViewController()
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-      add(childViewController: videoPlayerViewController, animation: .none)
-      
-      NotificationCenter.default.addObserver(self, selector: #selector(didBecomeActive), name: NSNotification.Name.applicationDidBecomeActive, object: nil)
-    }
+  
+  private let userDefaultsService: UserDefaultsService
+  init(userDefaultsService: UserDefaultsService = .shared) {
+    self.userDefaultsService = userDefaultsService
+    super.init(nibName: nil, bundle: nil)
+  }
+  
+  required init?(coder aDecoder: NSCoder) {
+    fatalError("init(coder:) has not been implemented")
+  }
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    
+    add(childViewController: videoPlayerViewController, animation: .none)
+    
+    NotificationCenter.default.addObserver(self, selector: #selector(didBecomeActive), name: NSNotification.Name.applicationDidBecomeActive, object: nil)
+  }
   
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
@@ -32,13 +42,21 @@ final class RootViewController: UIViewController {
     guard children.count == 1 else { return }
     videoPlayerViewController.play(video: .whitehouse)
     
-    DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(5)) { [weak self] in
+    let seconds: Int
+    if userDefaultsService.boolValue(for: .notFirstStart) {
+      seconds = 2
+    } else {
+      seconds = 5
+      userDefaultsService.set(value: true, key: .notFirstStart)
+    }
+    
+    DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(seconds)) { [weak self] in
       guard let self = self else { return }
       self.add(childViewController: self.navController, animation: .fade(duration: 0.5))
     }
     
   }
-
+  
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
   }
@@ -57,3 +75,4 @@ extension RootViewController: VideoPlayerViewControllerDelegate {
     videoPlayerViewController.loop()
   }
 }
+
