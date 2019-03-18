@@ -10,7 +10,9 @@ The inspirational source was the DPS calculation sheet by MarcoStyle. Thanks a l
 ![alt text](screenshot2.png)
 ![alt text](screenshot1.png)
 
-https://www.youtube.com/watch?v=e5gqKtI05LM&feature=youtu.be
+[![YouTube](https://img.youtube.com/vi/e5gqKtI05LM/0.jpg)](https://www.youtube.com/watch?v=e5gqKtI05LM)
+
+YouTube: https://www.youtube.com/watch?v=e5gqKtI05LM&feature=youtu.be
 
 Twitter: https://twitter.com/machead83
 
