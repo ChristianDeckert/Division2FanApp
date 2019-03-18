@@ -14,6 +14,7 @@
 		AA168EC3223FA6F400857113 /* InfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA168EB7223EC6D800857113 /* InfoTableViewController.swift */; };
 		AA168EC6223FA8EB00857113 /* UserDefaultsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA168EC5223FA8EB00857113 /* UserDefaultsService.swift */; };
 		AA168EC8223FC56000857113 /* precinct-siege-sample.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AA168EC7223FC56000857113 /* precinct-siege-sample.mp3 */; };
+		AA433402224000F800987F5B /* division2-dz-east.mov in Resources */ = {isa = PBXBuildFile; fileRef = AA433401224000F800987F5B /* division2-dz-east.mov */; };
 		AA9021DE223B8E6F00CBF52F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9021DD223B8E6F00CBF52F /* AppDelegate.swift */; };
 		AA9021E5223B8E7100CBF52F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA9021E4223B8E7100CBF52F /* Assets.xcassets */; };
 		AA9021E8223B8E7100CBF52F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA9021E6223B8E7100CBF52F /* LaunchScreen.storyboard */; };
@@ -59,6 +60,7 @@
 		AA168EC1223FA17700857113 /* AppIcon_1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon_1024.png; sourceTree = "<group>"; };
 		AA168EC5223FA8EB00857113 /* UserDefaultsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsService.swift; sourceTree = "<group>"; };
 		AA168EC7223FC56000857113 /* precinct-siege-sample.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "precinct-siege-sample.mp3"; sourceTree = "<group>"; };
+		AA433401224000F800987F5B /* division2-dz-east.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "division2-dz-east.mov"; sourceTree = "<group>"; };
 		AA9021DA223B8E6F00CBF52F /* Division2FanApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Division2FanApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA9021DD223B8E6F00CBF52F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AA9021E4223B8E7100CBF52F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -238,6 +240,8 @@
 		AA902241223D6B4100CBF52F /* Video */ = {
 			isa = PBXGroup;
 			children = (
+				AA168EB2223DB9C200857113 /* division2-whitehouse.mov */,
+				AA433401224000F800987F5B /* division2-dz-east.mov */,
 				AA902242223D6B5F00CBF52F /* VideoPlayerViewController.swift */,
 				AA902243223D6B5F00CBF52F /* VideoPlayerViewController.xib */,
 			);
@@ -248,7 +252,6 @@
 			isa = PBXGroup;
 			children = (
 				AA9021E9223B8E7100CBF52F /* Info.plist */,
-				AA168EB2223DB9C200857113 /* division2-whitehouse.mov */,
 				AA9021E4223B8E7100CBF52F /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -331,6 +334,7 @@
 				AA9021F6223B8F4700CBF52F /* CalcualtorTableViewController.xib in Resources */,
 				AA90223E223C375500CBF52F /* Loot Drop Epic.mp3 in Resources */,
 				AA168EB8223EC6D800857113 /* InfoTableViewController.xib in Resources */,
+				AA433402224000F800987F5B /* division2-dz-east.mov in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

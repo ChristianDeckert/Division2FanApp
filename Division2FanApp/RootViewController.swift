@@ -42,7 +42,6 @@ final class RootViewController: UIViewController {
     super.viewDidAppear(animated)
     
     guard children.count == 1 else { return }
-    videoPlayerViewController.play(video: .whitehouse)
     
     let seconds: Int
     if userDefaultsService.boolValue(for: .notFirstStart) {
@@ -60,6 +59,22 @@ final class RootViewController: UIViewController {
   
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
+    
+    switch userDefaultsService.stringValue(for: .recentVideo) {
+    case VideoPlayerViewController.Video.darkzoneEast.rawValue:
+      videoPlayerViewController.play(video: .whitehouse)
+      userDefaultsService.set(
+        value: VideoPlayerViewController.Video.whitehouse.rawValue,
+        key: .recentVideo
+      )
+    default:
+      videoPlayerViewController.play(video: .darkzoneEast)
+      userDefaultsService.set(
+        value: VideoPlayerViewController.Video.darkzoneEast.rawValue,
+        key: .recentVideo
+      )
+    }
+  
     
     guard !Sounds.shared.isPlaying else { return }
     Sounds.shared.play(effect: .precinctSiege)    

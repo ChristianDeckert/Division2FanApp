@@ -11,12 +11,14 @@ import UIKit
 protocol UserDefaultsServing {
   func boolValue(for key: UserDefaultsService.Keys) -> Bool
   func set(value: Any, key: UserDefaultsService.Keys)
+  func stringValue(for key: UserDefaultsService.Keys) -> String?
 }
 
 final class UserDefaultsService {
 
   enum Keys: String {
     case notFirstStart
+    case recentVideo
   }
   
   static let shared = UserDefaultsService()

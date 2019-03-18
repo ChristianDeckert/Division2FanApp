@@ -27,6 +27,7 @@ final class VideoPlayerViewController: UIViewController {
     case trash = "division2-trash"
     case skyline = "division2-skyline"
     case whitehouse = "division2-whitehouse"
+    case darkzoneEast = "division2-dz-east"
   }
   
   
