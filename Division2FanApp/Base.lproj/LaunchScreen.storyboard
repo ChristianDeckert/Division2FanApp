@@ -9,6 +9,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Borda-ExtraBold.ttf">
+            <string>Borda-Regular4</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="EHf-IW-A2E">
@@ -21,19 +26,39 @@
                             <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image-background-stone" translatesAutoresizingMaskIntoConstraints="NO" id="APi-pZ-REn" userLabel="bg-image">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image-division-logo" translatesAutoresizingMaskIntoConstraints="NO" id="zIW-tT-Z1x">
-                                <rect key="frame" x="64" y="179.5" width="247" height="200"/>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image-division-logo" translatesAutoresizingMaskIntoConstraints="NO" id="zIW-tT-Z1x">
+                                <rect key="frame" x="64" y="192.5" width="247" height="200"/>
                             </imageView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DPS Calculator" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b9z-4N-0Gq">
+                                <rect key="frame" x="68.5" y="151.5" width="238.5" height="41"/>
+                                <fontDescription key="fontDescription" name="Borda-Regular4" family="Borda" pointSize="38"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <size key="shadowOffset" width="0.0" height="3"/>
+                            </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="for" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="heI-2r-S5S">
+                                <rect key="frame" x="171.5" y="208.5" width="32" height="30"/>
+                                <fontDescription key="fontDescription" name="Borda-Regular4" family="Borda" pointSize="28"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <size key="shadowOffset" width="0.0" height="2"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="zIW-tT-Z1x" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="1fv-Yz-e5Y"/>
                             <constraint firstItem="zIW-tT-Z1x" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" constant="-128" id="3Ra-sX-DUr"/>
                             <constraint firstItem="APi-pZ-REn" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="51B-Ze-qjh"/>
+                            <constraint firstItem="heI-2r-S5S" firstAttribute="top" secondItem="b9z-4N-0Gq" secondAttribute="bottom" constant="16" id="7cu-hd-J3M"/>
+                            <constraint firstItem="b9z-4N-0Gq" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" multiplier="1/2" id="LPT-Io-zYv"/>
+                            <constraint firstItem="heI-2r-S5S" firstAttribute="centerX" secondItem="b9z-4N-0Gq" secondAttribute="centerX" id="PAj-t8-hCo"/>
                             <constraint firstAttribute="bottom" secondItem="APi-pZ-REn" secondAttribute="bottom" id="YMG-3B-KyN"/>
                             <constraint firstAttribute="trailing" secondItem="APi-pZ-REn" secondAttribute="trailing" id="hAv-SO-pdw"/>
-                            <constraint firstItem="zIW-tT-Z1x" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" constant="-64" id="hUo-cL-aeM"/>
                             <constraint firstItem="APi-pZ-REn" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="kM8-Ho-SAq"/>
+                            <constraint firstItem="zIW-tT-Z1x" firstAttribute="top" secondItem="b9z-4N-0Gq" secondAttribute="bottom" id="qHK-iM-zuD"/>
+                            <constraint firstItem="b9z-4N-0Gq" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="spu-Hs-tNA"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

@@ -31,6 +31,8 @@ final class RootViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    view.backgroundColor = .black
+    
     add(childViewController: videoPlayerViewController, animation: .none)
     
     NotificationCenter.default.addObserver(self, selector: #selector(didBecomeActive), name: NSNotification.Name.applicationDidBecomeActive, object: nil)
@@ -54,11 +56,13 @@ final class RootViewController: UIViewController {
       guard let self = self else { return }
       self.add(childViewController: self.navController, animation: .fade(duration: 0.5))
     }
-    
   }
   
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
+    
+    guard !Sounds.shared.isPlaying else { return }
+    Sounds.shared.play(effect: .precinctSiege)    
   }
   
   @objc func didBecomeActive() {

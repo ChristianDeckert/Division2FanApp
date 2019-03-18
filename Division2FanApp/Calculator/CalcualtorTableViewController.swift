@@ -79,12 +79,13 @@ class CalcualtorTableViewController: UITableViewController {
     
     navigationItem.rightBarButtonItem = resetBarButtonItem
     navigationItem.leftBarButtonItem = infoBarButtonItem
+    
+    guard !Sounds.shared.isPlaying else { return }
+    Sounds.shared.play(effect: .precinctSiege)
   }
   
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
-    
-//    Sounds.shared.play(effect: .lootDrop)
     
     guard nil == initialScrollviewOffsetY else { return }
     initialScrollviewOffsetY = tableView.contentOffset.y

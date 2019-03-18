@@ -203,8 +203,25 @@ extension VideoPlayerViewController {
     view.insertSubview(playerViewController.view, at: 0)
     playerViewController.view.frame = view.bounds
 
+    setCategory()
+    
     player.play()
     return true
+  }
+  
+  
+  private func setCategory() {
+    do {
+      try AVAudioSession.sharedInstance().setCategory(
+        AVAudioSession.Category.ambient,
+        mode: AVAudioSession.Mode.default,
+        options: AVAudioSession.CategoryOptions.mixWithOthers
+      )
+      
+      debugPrint(">> successfully set audio category")
+    } catch {
+      debugPrint(">> failed to set audio category \(error)")
+    }
   }
   
   func playPauseAction() {

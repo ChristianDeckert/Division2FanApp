@@ -13,6 +13,7 @@
 		AA168EBD223EC77F00857113 /* InfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA168EBB223EC77F00857113 /* InfoCell.xib */; };
 		AA168EC3223FA6F400857113 /* InfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA168EB7223EC6D800857113 /* InfoTableViewController.swift */; };
 		AA168EC6223FA8EB00857113 /* UserDefaultsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA168EC5223FA8EB00857113 /* UserDefaultsService.swift */; };
+		AA168EC8223FC56000857113 /* precinct-siege-sample.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AA168EC7223FC56000857113 /* precinct-siege-sample.mp3 */; };
 		AA9021DE223B8E6F00CBF52F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9021DD223B8E6F00CBF52F /* AppDelegate.swift */; };
 		AA9021E5223B8E7100CBF52F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA9021E4223B8E7100CBF52F /* Assets.xcassets */; };
 		AA9021E8223B8E7100CBF52F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA9021E6223B8E7100CBF52F /* LaunchScreen.storyboard */; };
@@ -57,6 +58,7 @@
 		AA168EBF223F9EB600857113 /* AppIcon.pxm */ = {isa = PBXFileReference; lastKnownFileType = file; path = AppIcon.pxm; sourceTree = "<group>"; };
 		AA168EC1223FA17700857113 /* AppIcon_1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon_1024.png; sourceTree = "<group>"; };
 		AA168EC5223FA8EB00857113 /* UserDefaultsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsService.swift; sourceTree = "<group>"; };
+		AA168EC7223FC56000857113 /* precinct-siege-sample.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "precinct-siege-sample.mp3"; sourceTree = "<group>"; };
 		AA9021DA223B8E6F00CBF52F /* Division2FanApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Division2FanApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA9021DD223B8E6F00CBF52F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AA9021E4223B8E7100CBF52F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -226,6 +228,7 @@
 		AA90223C223C374200CBF52F /* Sound */ = {
 			isa = PBXGroup;
 			children = (
+				AA168EC7223FC56000857113 /* precinct-siege-sample.mp3 */,
 				AA90223D223C375400CBF52F /* Loot Drop Epic.mp3 */,
 				AA90223F223C377300CBF52F /* Sounds.swift */,
 			);
@@ -322,6 +325,7 @@
 				AA902222223B9EE800CBF52F /* Borda-Bold.ttf in Resources */,
 				AA90221D223B9EE800CBF52F /* Borda Light.ttf in Resources */,
 				AA902220223B9EE800CBF52F /* Borda.ttf in Resources */,
+				AA168EC8223FC56000857113 /* precinct-siege-sample.mp3 in Resources */,
 				AA168EBD223EC77F00857113 /* InfoCell.xib in Resources */,
 				AA902245223D6B6000CBF52F /* VideoPlayerViewController.xib in Resources */,
 				AA9021F6223B8F4700CBF52F /* CalcualtorTableViewController.xib in Resources */,

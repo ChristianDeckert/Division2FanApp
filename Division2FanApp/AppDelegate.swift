@@ -28,7 +28,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     window?.rootViewController = RootViewController()
     window?.tintColor = .primaryTint
     window?.makeKeyAndVisible()
-    
     return true
   }
 

@@ -45,7 +45,7 @@
 
 
 "info-controller.title" = "About this app";
-"info-controller.about.title" = "About this app";
+"info-controller.about.title" = "Disclaimer";
 "info-controller.about.text" = "This is a fan project for Tom Clancy's Division 2 and is unrelated to Ubisoft, Massive or Redstorm. All trademarks belong to their respective owners and are used for informational purposes only.\n\nThe DPS Calculator is a free tool for Division Agents to calculate damage.\n\nThe source code is available under open source license on GitHub.\n\nIf you have ideas and / or feedback, visit the page linked below.";
 "info-controller.about.button-text" = "Show source code";
 
@@ -69,10 +69,17 @@
 "info-controller.buy-ost.text" = "Get the official soundtrack by Ola Strandh.";
 "info-controller.buy-ost.button-text" = "Open iTunes Store";
 
-
 "info-controller.buy-font.title" = "Division Font";
 "info-controller.buy-font.text" = "You like the division font called \"Borda\"? Download it here:";
 "info-controller.buy-font.button-text" = "Open MyFonts webseite";
+
+"info-controller.podcast-sitrep.title" = "SITREP Radio";
+"info-controller.podcast-sitrep.text" = "SITREP Radio is a Mash Those Buttons podcast dedicated to The Division 2 and it's community at iTunes.";
+"info-controller.podcast-sitrep.button-text" = "Open Podcasts";
+
+"info-controller.podcast-diesel.title" = "The ECHO Cast";
+"info-controller.podcast-diesel.text" = "A The Division 2 podcast hosted by Baundiesel at iTunes.";
+"info-controller.podcast-diesel.button-text" = "Open Podcasts";
 
 "info-controller.my-twitter.title" = "Twitter Account";
 "info-controller.my-twitter.text" = "You can find my on Twitter.";

@@ -84,6 +84,20 @@ class InfoTableViewController: UITableViewController {
       ),
       InfoCellController(
         delegate: self,
+        title: "info-controller.podcast-sitrep.title".localized,
+        text: "info-controller.podcast-sitrep.text".localized,
+        buttonText: "info-controller.podcast-sitrep.button-text".localized,
+        link: URL(string:"https://itunes.apple.com/de/podcast/sitrep-radio-a-podcast-for-the-division-2/id1116429281?mt=2")
+      ),
+      InfoCellController(
+        delegate: self,
+        title: "info-controller.podcast-diesel.title".localized,
+        text: "info-controller.podcast-diesel.text".localized,
+        buttonText: "info-controller.podcast-diesel.button-text".localized,
+        link: URL(string:"https://itunes.apple.com/de/podcast/the-echo-cast-the-division-2-podcast/id1415297495?mt=2")
+      ),
+      InfoCellController(
+        delegate: self,
         title: "info-controller.my-twitter.title".localized,
         text: "info-controller.my-twitter.text".localized,
         buttonText: "info-controller.my-twitter.button-text".localized,
