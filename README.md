@@ -4,8 +4,11 @@ The DPS Calculator is a free and indispensable tool for all division agents who 
 
 This is a fan project for Tom Clancy's Division 2 and is unrelated to Ubisoft, Massive or Redstorm. All trademarks belong to their respective owners and are used for informational purposes only.
 
-![alt text](screenshot1.png)
+The inspirational source was the DPS calculation sheet by MarcoStyle. Thanks a lot for this.
+
+![alt text](screenshot3.png)
 ![alt text](screenshot2.png)
+![alt text](screenshot1.png)
 
 Twitter: https://twitter.com/machead83
 
