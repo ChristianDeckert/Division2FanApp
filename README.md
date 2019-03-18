@@ -1,4 +1,4 @@
-# Division2FanApp
+# DPS Calculator
 
 The DPS Calculator is a free and indispensable tool for all division agents who are in the struggle for survival in Washington DC.
 
