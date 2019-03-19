@@ -12,6 +12,8 @@ The inspirational source was the DPS calculation sheet by MarcoStyle. Thanks a l
 
 [![YouTube](https://img.youtube.com/vi/e5gqKtI05LM/0.jpg)](https://www.youtube.com/watch?v=e5gqKtI05LM)
 
+App Store: https://itunes.apple.com/us/app/dps-calculator/id1456609348?ls=1&mt=8
+
 YouTube: https://www.youtube.com/watch?v=e5gqKtI05LM&feature=youtu.be
 
 Twitter: https://twitter.com/machead83
