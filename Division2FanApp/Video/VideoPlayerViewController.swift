@@ -21,11 +21,7 @@ final class VideoPlayerViewController: UIViewController {
 
   
   enum Video: String {
-    case streets = "division2-street"
-    case benchmark = "division2-benchmark"
-    case headquaters = "division2-hq"
-    case trash = "division2-trash"
-    case skyline = "division2-skyline"
+    case streets = "division2-streets"
     case whitehouse = "division2-whitehouse"
     case darkzoneEast = "division2-dz-east"
   }

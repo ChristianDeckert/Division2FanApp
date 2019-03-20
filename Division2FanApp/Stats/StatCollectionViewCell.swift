@@ -14,8 +14,11 @@ final class StatCollectionViewCellController: RowControlling {
   var preferredTintColor: UIColor? { return .primaryTint }
   
   let stat: StatsCollectionViewController.Stat
-  let statsDataSource: StatsCollectionViewControllerDataSource?
-  init(stat: StatsCollectionViewController.Stat, statsDataSource: StatsCollectionViewControllerDataSource?) {
+  let statsDataSource: StatsDataSource?
+  init(
+    stat: StatsCollectionViewController.Stat,
+    statsDataSource: StatsDataSource?
+    ) {
     self.stat = stat
     self.statsDataSource = statsDataSource
   }
@@ -107,35 +110,35 @@ extension StatCollectionViewCell: RowControlable {
     titleLabel.font = .bordaHeading
     titleLabel.text = rowController.stat.description
     
-    let bodyValue = Int(rowController.statsDataSource?.dpsCalculator?.calulate(
+    let bodyValue = Int(rowController.statsDataSource?.getDpsCalculator?.calulate(
       stat: rowController.stat,
       category: .bodyshot
       ) ?? 0
     )
     bodyValueLabel.text = "\(bodyValue)"
     
-    let headValue = Int(rowController.statsDataSource?.dpsCalculator?.calulate(
+    let headValue = Int(rowController.statsDataSource?.getDpsCalculator?.calulate(
       stat: rowController.stat,
       category: .headshot
       ) ?? 0
     )
     headValueLabel.text = "\(headValue)"
     
-    let critBodyValue = Int(rowController.statsDataSource?.dpsCalculator?.calulate(
+    let critBodyValue = Int(rowController.statsDataSource?.getDpsCalculator?.calulate(
       stat: rowController.stat,
       category: .critBodyShot
       ) ?? 0
     )
     bodyCritValueLabel.text = "\(critBodyValue)"
     
-    let critHeadValue = Int(rowController.statsDataSource?.dpsCalculator?.calulate(
+    let critHeadValue = Int(rowController.statsDataSource?.getDpsCalculator?.calulate(
       stat: rowController.stat,
       category: .critHeadShot
       ) ?? 0
     )
     headCritValueLabel.text = "\(critHeadValue)"
     
-    let dpsValue = Int(rowController.statsDataSource?.dpsCalculator?.calulate(
+    let dpsValue = Int(rowController.statsDataSource?.getDpsCalculator?.calulate(
       stat: rowController.stat,
       category: .dps
       ) ?? 0

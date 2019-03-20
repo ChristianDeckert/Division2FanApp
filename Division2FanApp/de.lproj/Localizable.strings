@@ -6,7 +6,7 @@
   Copyright © 2019 Christian Deckert. All rights reserved.
 */
 
-"calculator-controller.title" = "DPS Rechner";
+"container-controller.title" = "DPS Rechner";
 "calculator-controller.reset-button.title" = "Zurücksetzen";
 "calculator-controller.info-button.title" = "Infos";
 
@@ -59,7 +59,11 @@
 "info-controller.marco.text" = "Als Inspirationsquell diente das DPS Kalkulationsblatt von MarcoStyle. Vielen Dank dafür.";
 "info-controller.marco.button-text" = "MarcoStyle auf YouTube";
 
-"info-controller.buy-ost.title" = "Division 2 Soundrack";
+"info-controller.marco-dps.title" = "DPS Excel Sheet";
+"info-controller.marco-dps.text" = "Hier ist der Direktlink zu Marcos Excel-Blatt.";
+"info-controller.marco-dps.button-text" = "Google Drive öffnen";
+
+"info-controller.buy-ost.title" = "Division 2 Soundtrack";
 "info-controller.buy-ost.text" = "Hol dir den offiziellen Soundtrack von Ola Strandh.";
 "info-controller.buy-ost.button-text" = "iTunes Store öffnen";
 

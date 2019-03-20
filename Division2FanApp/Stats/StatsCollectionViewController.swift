@@ -8,10 +8,6 @@
 
 import UIKit
 
-protocol StatsCollectionViewControllerDataSource: class {
-  var dpsCalculator: DpsCalculator? { get }
-}
-
 protocol StatsCollectionViewControllerDelegate: class {
   func didScrollTo(index: Int)
 }
@@ -50,11 +46,11 @@ final class StatsCollectionViewController: UICollectionViewController {
     }
   }
   
-  private weak var statsDataSource: StatsCollectionViewControllerDataSource?
+  private weak var statsDataSource: StatsDataSource?
   private weak var statsDelegate: StatsCollectionViewControllerDelegate?
   private var startIndex: Int?
   init(
-    statsDataSource: StatsCollectionViewControllerDataSource?,
+    statsDataSource: StatsDataSource?,
     statsDelegate: StatsCollectionViewControllerDelegate?,
     startIndex: Int? = nil
     ) {
@@ -124,17 +120,19 @@ final class StatsCollectionViewController: UICollectionViewController {
     super.viewWillAppear(animated)
     
     guard let startIndex = startIndex else { return }
-    
+    scroll(to: startIndex)
+    self.startIndex = nil
+  }
+  
+  func scroll(to index: Int, animated: Bool = false) {
     collectionView.scrollToItem(
       at: IndexPath(
-        item: startIndex,
+        item: index,
         section: 0
       ),
       at: .centeredHorizontally,
-      animated: false
+      animated: animated
     )
-    
-    self.startIndex = nil
   }
   // MARK: UICollectionViewDataSource
   

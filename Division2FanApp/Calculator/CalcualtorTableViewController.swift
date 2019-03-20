@@ -10,40 +10,24 @@ import UIKit
 
 class CalcualtorTableViewController: UITableViewController {
   
-  private var rowControllers = [RowControlling]() {
+  private var statController: StatCollectionViewCellController?
+  var rowControllers = [RowControlling]() {
     didSet {
       tableView?.reloadData()
     }
   }
   
-  lazy var resetBarButtonItem: UIBarButtonItem = {
-    return UIBarButtonItem(
-      title: "calculator-controller.reset-button.title".localized,
-      style: .plain,
-      target: self,
-      action: #selector(resetAction)
-    )
-  }()
-  
-  lazy var infoBarButtonItem: UIBarButtonItem = {
-    return UIBarButtonItem(
-      title: "calculator-controller.info-button.title".localized,
-      style: .plain,
-      target: self,
-      action: #selector(infoAction)
-    )
-  }()
-  
-  private lazy var dpsCalculator = DpsCalculator()
-  private var statsCellController: StatsContainerCellController {
-    return StatsContainerCellController(dpsCalculator: dpsCalculator)
-  }
-  
-  private var initialScrollviewOffsetY: CGFloat?
-  
   private let userDefaultsService: UserDefaultsService
-  init(userDefaultsService: UserDefaultsService = .shared) {
+  private weak var statsDataSource: StatsDataSource?
+  
+  init(
+    rowControllers: [RowControlling],
+    userDefaultsService: UserDefaultsService = .shared,
+    statsDataSource: StatsDataSource?
+    ) {
+    self.statsDataSource = statsDataSource
     self.userDefaultsService = userDefaultsService
+    self.rowControllers = rowControllers
     super.init(nibName: nil, bundle: nil)
   }
   
@@ -54,9 +38,6 @@ class CalcualtorTableViewController: UITableViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    title = "calculator-controller.title".localized
-    
-    tableView.register(cellNibNamed: "StatsContainerCell")
     tableView.register(cellNibNamed: "CalculatorCell")
     
     tableView.contentInset = UIEdgeInsets(
@@ -65,30 +46,10 @@ class CalcualtorTableViewController: UITableViewController {
       bottom: 16,
       right: 0
     )
-    
-    rowControllers = exampleRowControllers
-    
-    navigationController?.navigationBar.blurAppearance()
+        
     tableView.backgroundView = nil
     tableView.backgroundColor = .clear
     tableView.delegate = self
-  }
-  
-  override func viewWillAppear(_ animated: Bool) {
-    super.viewWillAppear(animated)
-    
-    navigationItem.rightBarButtonItem = resetBarButtonItem
-    navigationItem.leftBarButtonItem = infoBarButtonItem
-    
-    guard !Sounds.shared.isPlaying else { return }
-    Sounds.shared.play(effect: .precinctSiege)
-  }
-  
-  override func viewDidAppear(_ animated: Bool) {
-    super.viewDidAppear(animated)
-    
-    guard nil == initialScrollviewOffsetY else { return }
-    initialScrollviewOffsetY = tableView.contentOffset.y
   }
 }
 
@@ -97,38 +58,18 @@ class CalcualtorTableViewController: UITableViewController {
 extension CalcualtorTableViewController {
   
   override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-    switch indexPath.section {
-    case 0: return statsCellController.preferredHeight ?? 44
-    default: return rowControllers[indexPath.row].preferredHeight ?? 44
-    }
-    
+    return rowControllers[indexPath.row].preferredHeight ?? 44
   }
   
   override func numberOfSections(in tableView: UITableView) -> Int {
-    return 2
+    return 1
   }
   
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    if section == 0 { return 1 }
-    
     return rowControllers.count
   }
   
-  
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    
-    if  indexPath.section == 0 {
-      let statsCell = tableView.dequeueReusableCell(
-        withIdentifier: "StatsContainerCell",
-        for: indexPath
-        ) as! StatsContainerCell
-      
-      statsCell.setup(with: statsCellController)
-      
-      return statsCell
-    }
-    
-    
     let cell: UITableViewCell
     
     switch rowControllers[indexPath.row] {
@@ -149,17 +90,6 @@ extension CalcualtorTableViewController {
   
 }
 
-extension CalcualtorTableViewController {
-  @objc func resetAction() {
-    rowControllers = defaultRowControllers
-  }
-  
-  @objc func infoAction() {
-    let infoController = InfoTableViewController()
-    navigationController?.pushViewController(infoController, animated: true)
-  }
-}
-
 // MARK: - Table view delegate
 
 extension CalcualtorTableViewController {
@@ -176,173 +106,5 @@ extension CalcualtorTableViewController {
     return shouldHighlight(at: indexPath) ? indexPath : nil
   }
   
-}
-
-// MARK: - CalcualtorCellControllerDelegate
-
-extension CalcualtorTableViewController: CalcualtorCellControllerDelegate {
-  
-  func calcualtorCell(controller: CalcualtorCellController?, didReturnFromTextfieldWith value: String?) {
-    
-    guard
-      let attribute = controller?.attribute,
-      let stringValue = value,
-      let value = Double(stringValue) else { return }
-    
-    dpsCalculator.add(
-      attribute: attribute,
-      value: value
-    )
-    
-    controller?.update(value: value)
-    
-    tableView.beginUpdates()
-    tableView.reloadSections(IndexSet(integer: 0), with: .none)
-    tableView.endUpdates()
-  }
-  
-}
-
-extension CalcualtorTableViewController {
-  
-  var defaultRowControllers: [RowControlling] {
-    
-    dpsCalculator = DpsCalculator(
-      inputAttributes: [
-        DpsCalculator.InputAttribute(
-          attribute: .rpm,
-          value: 650
-        )
-      ]
-    )
-    
-    return [
-      CalcualtorCellController(
-        delegate: self,
-        attribute: .weaponDamage,
-        value: "5000"
-      ),
-      CalcualtorCellController(
-        delegate: self,
-        attribute: .criticalHitChance,
-        value: "0",
-        placeholder: "0"
-      ),
-      CalcualtorCellController(
-        delegate: self,
-        attribute: .criticalHitDamage,
-        value: "0",
-        placeholder: "0"
-      ),
-      CalcualtorCellController(
-        delegate: self,
-        attribute: .headshotDamage,
-        value: "0",
-        placeholder: "0"
-      ),
-      CalcualtorCellController(
-        delegate: self,
-        attribute: .outOfCoverDamage,
-        value: "0",
-        placeholder: "0"
-      ),
-      CalcualtorCellController(
-        delegate: self,
-        attribute: .damageToElites,
-        value: "0",
-        placeholder: "0"
-      ),
-      CalcualtorCellController(
-        delegate: self,
-        attribute: .enemyArmorDamage,
-        value: "0",
-        placeholder: "0"
-      ),
-      CalcualtorCellController(
-        delegate: self,
-        attribute: .healthDamage,
-        value: "0",
-        placeholder: "0"
-      ),
-      CalcualtorCellController(
-        delegate: self,
-        attribute: .rpm,
-        value: "650",
-        placeholder: "0"
-      )
-    ]
-  }
-  
-  var exampleRowControllers: [RowControlling] {
-    dpsCalculator.add(attribute: .weaponDamage, value: 5000)
-    dpsCalculator.add(attribute: .criticalHitChance, value: 30)
-    dpsCalculator.add(attribute: .criticalHitDamage, value: 80)
-    dpsCalculator.add(attribute: .headshotDamage, value: 110)
-    dpsCalculator.add(attribute: .outOfCoverDamage, value: 10)
-    dpsCalculator.add(attribute: .damageToElites, value: 20)
-    dpsCalculator.add(attribute: .enemyArmorDamage, value: 8)
-    dpsCalculator.add(attribute: .healthDamage, value: 5)
-    dpsCalculator.add(attribute: .rpm, value: 650)
-    return [
-      CalcualtorCellController(
-        delegate: self,
-        attribute: .weaponDamage,
-        value: "5000"
-      ),
-      CalcualtorCellController(
-        delegate: self,
-        attribute: .criticalHitChance,
-        value: "30",
-        placeholder: "0"
-      ),
-      CalcualtorCellController(
-        delegate: self,
-        attribute: .criticalHitDamage,
-        value: "80",
-        placeholder: "0"
-      ),
-      CalcualtorCellController(
-        delegate: self,
-        attribute: .headshotDamage,
-        value: "110",
-        placeholder: "0"
-      ),
-      CalcualtorCellController(
-        delegate: self,
-        attribute: .outOfCoverDamage,
-        value: "10",
-        placeholder: "0"
-      ),
-      CalcualtorCellController(
-        delegate: self,
-        attribute: .damageToElites,
-        value: "20",
-        placeholder: "0"
-      ),
-      CalcualtorCellController(
-        delegate: self,
-        attribute: .enemyArmorDamage,
-        value: "8",
-        placeholder: "0"
-      ),
-      CalcualtorCellController(
-        delegate: self,
-        attribute: .healthDamage,
-        value: "5",
-        placeholder: "0"
-      ),
-      CalcualtorCellController(
-        delegate: self,
-        attribute: .rpm,
-        value: "650",
-        placeholder: "650"
-      )
-    ]
-  }
-}
-
-extension CalcualtorTableViewController {
-  override func scrollViewDidScroll(_ scrollView: UIScrollView) {
-  }
 }
 

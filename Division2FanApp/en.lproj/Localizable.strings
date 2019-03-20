@@ -6,7 +6,7 @@
   Copyright © 2019 Christian Deckert. All rights reserved.
 */
 
-"calculator-controller.title" = "DPS Calculator";
+"container-controller.title" = "DPS Calculator";
 "calculator-controller.reset-button.title" = "Reset";
 "calculator-controller.info-button.title" = "About";
 
@@ -39,7 +39,7 @@
 
 "info-controller.title" = "About this app";
 "info-controller.about.title" = "Disclaimer";
-"info-controller.about.text" = "This is a fan project for Tom Clancy's Division 2 and is unrelated to Ubisoft, Massive or Redstorm. All trademarks belong to their respective owners and are used for informational purposes only.\n\nThe DPS Calculator is an free and indispensable tool for all division agents who are in the struggle for survival in Washington DC.\n\nThe source code is available under open source license on GitHub.\n\nIf you have ideas and / or feedback, visit the page linked below.";
+"info-controller.about.text" = "This is a fan project for Tom Clancy's Division 2 and is unrelated to Ubisoft, Massive or Redstorm. All trademarks belong to their respective owners and are used for informational purposes only.\n\nThe DPS Calculator is a free and indispensable tool for all division agents who are in the struggle for survival in Washington DC.\n\nThe source code is available under open source license on GitHub.\n\nIf you have ideas and / or feedback, visit the page linked below.";
 "info-controller.about.button-text" = "Show source code";
 
 "info-controller.buy.title" = "Division at Uplay";
@@ -58,7 +58,11 @@
 "info-controller.marco.text" = "The inspirational source was the DPS calculation sheet by MarcoStyle. Thanks a lot for this.";
 "info-controller.marco.button-text" = "MarcoStyle on YouTube";
 
-"info-controller.buy-ost.title" = "Division 2 Soundrack";
+"info-controller.marco-dps.title" = "DPS Excel Sheet";
+"info-controller.marco-dps.text" = "Here's the direct link to Marcos sheet.";
+"info-controller.marco-dps.button-text" = "Open Google drive";
+
+"info-controller.buy-ost.title" = "Division 2 Soundtrack";
 "info-controller.buy-ost.text" = "Get the official soundtrack by Ola Strandh.";
 "info-controller.buy-ost.button-text" = "Open iTunes Store";
 

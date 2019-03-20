@@ -70,10 +70,17 @@ class InfoTableViewController: UITableViewController {
       ),
       InfoCellController(
         delegate: self,
+        title: "info-controller.marco-dps.title".localized,
+        text: "info-controller.marco-dps.text".localized,
+        buttonText: "info-controller.marco-dps.button-text".localized,
+        link: URL(string: "https://drive.google.com/file/d/1zR35ayVY5gGslOoAF5hDkrCL4x0KPn3G/view") // Bundle.main.url(forResource: "DPS CALCULATOR MARCOSTYLE", withExtension: "xlsx")
+      ),
+      InfoCellController(
+        delegate: self,
         title: "info-controller.buy-ost.title".localized,
         text: "info-controller.buy-ost.text".localized,
         buttonText: "info-controller.buy-ost.button-text".localized,
-        link: URL(string:"https://itunes.apple.com/de/album/tom-clancys-the-division-2-original-game-soundtrack/1451238567")
+        link: URL(string:"https://geo.itunes.apple.com/us/album/tom-clancys-the-division-2-original-game-soundtrack/1451238567?mt=1&app=music&at=1001lShr")
       ),
       InfoCellController(
         delegate: self,
@@ -87,14 +94,14 @@ class InfoTableViewController: UITableViewController {
         title: "info-controller.podcast-sitrep.title".localized,
         text: "info-controller.podcast-sitrep.text".localized,
         buttonText: "info-controller.podcast-sitrep.button-text".localized,
-        link: URL(string:"https://itunes.apple.com/de/podcast/sitrep-radio-a-podcast-for-the-division-2/id1116429281?mt=2")
+        link: URL(string:"https://itunes.apple.com/us/podcast/sitrep-radio-a-podcast-for-the-division-2/id1116429281?mt=2&app=podcast&at=1001lShr")
       ),
       InfoCellController(
         delegate: self,
         title: "info-controller.podcast-diesel.title".localized,
         text: "info-controller.podcast-diesel.text".localized,
         buttonText: "info-controller.podcast-diesel.button-text".localized,
-        link: URL(string:"https://itunes.apple.com/de/podcast/the-echo-cast-the-division-2-podcast/id1415297495?mt=2")
+        link: URL(string:"https://itunes.apple.com/us/podcast/the-echo-cast-the-division-2-podcast/id1415297495?mt=2&app=podcast&at=1001lShr")
       ),
       InfoCellController(
         delegate: self,

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8C7968A5F3D48D08637FBA2B /* Pods_Division2FanApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D90300CAC8CF99EFBAA4C60 /* Pods_Division2FanApp.framework */; };
 		AA168EB3223DB9C200857113 /* division2-whitehouse.mov in Resources */ = {isa = PBXBuildFile; fileRef = AA168EB2223DB9C200857113 /* division2-whitehouse.mov */; };
 		AA168EB8223EC6D800857113 /* InfoTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA168EB6223EC6D800857113 /* InfoTableViewController.xib */; };
 		AA168EBC223EC77F00857113 /* InfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA168EBA223EC77F00857113 /* InfoCell.swift */; };
@@ -15,6 +16,10 @@
 		AA168EC6223FA8EB00857113 /* UserDefaultsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA168EC5223FA8EB00857113 /* UserDefaultsService.swift */; };
 		AA168EC8223FC56000857113 /* precinct-siege-sample.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AA168EC7223FC56000857113 /* precinct-siege-sample.mp3 */; };
 		AA433402224000F800987F5B /* division2-dz-east.mov in Resources */ = {isa = PBXBuildFile; fileRef = AA433401224000F800987F5B /* division2-dz-east.mov */; };
+		AA4334042240DE9400987F5B /* DPS CALCULATOR MARCOSTYLE.xlsx in Resources */ = {isa = PBXBuildFile; fileRef = AA4334032240DE9400987F5B /* DPS CALCULATOR MARCOSTYLE.xlsx */; };
+		AA4334242242E97200987F5B /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4334222242E97200987F5B /* ContainerViewController.swift */; };
+		AA4334252242E97200987F5B /* ContainerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA4334232242E97200987F5B /* ContainerViewController.xib */; };
+		AA4334292242FA5500987F5B /* division2-streets.mov in Resources */ = {isa = PBXBuildFile; fileRef = AA4334282242FA5500987F5B /* division2-streets.mov */; };
 		AA9021DE223B8E6F00CBF52F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9021DD223B8E6F00CBF52F /* AppDelegate.swift */; };
 		AA9021E5223B8E7100CBF52F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA9021E4223B8E7100CBF52F /* Assets.xcassets */; };
 		AA9021E8223B8E7100CBF52F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA9021E6223B8E7100CBF52F /* LaunchScreen.storyboard */; };
@@ -35,8 +40,6 @@
 		AA90222F223BE44C00CBF52F /* DpsCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA90222E223BE44C00CBF52F /* DpsCalculator.swift */; };
 		AA902232223BEBC100CBF52F /* StatsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA902230223BEBC100CBF52F /* StatsCollectionViewController.swift */; };
 		AA902233223BEBC100CBF52F /* StatsCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA902231223BEBC100CBF52F /* StatsCollectionViewController.xib */; };
-		AA902236223BEC7900CBF52F /* StatsContainerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA902234223BEC7900CBF52F /* StatsContainerCell.swift */; };
-		AA902237223BEC7900CBF52F /* StatsContainerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA902235223BEC7900CBF52F /* StatsContainerCell.xib */; };
 		AA90223A223BF42F00CBF52F /* StatCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA902238223BF42F00CBF52F /* StatCollectionViewCell.swift */; };
 		AA90223B223BF42F00CBF52F /* StatCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA902239223BF42F00CBF52F /* StatCollectionViewCell.xib */; };
 		AA90223E223C375500CBF52F /* Loot Drop Epic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AA90223D223C375400CBF52F /* Loot Drop Epic.mp3 */; };
@@ -51,6 +54,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5D90300CAC8CF99EFBAA4C60 /* Pods_Division2FanApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Division2FanApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA168EB2223DB9C200857113 /* division2-whitehouse.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "division2-whitehouse.mov"; sourceTree = "<group>"; };
 		AA168EB6223EC6D800857113 /* InfoTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InfoTableViewController.xib; sourceTree = "<group>"; };
 		AA168EB7223EC6D800857113 /* InfoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoTableViewController.swift; sourceTree = "<group>"; };
@@ -61,6 +65,10 @@
 		AA168EC5223FA8EB00857113 /* UserDefaultsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsService.swift; sourceTree = "<group>"; };
 		AA168EC7223FC56000857113 /* precinct-siege-sample.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "precinct-siege-sample.mp3"; sourceTree = "<group>"; };
 		AA433401224000F800987F5B /* division2-dz-east.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "division2-dz-east.mov"; sourceTree = "<group>"; };
+		AA4334032240DE9400987F5B /* DPS CALCULATOR MARCOSTYLE.xlsx */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DPS CALCULATOR MARCOSTYLE.xlsx"; sourceTree = "<group>"; };
+		AA4334222242E97200987F5B /* ContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
+		AA4334232242E97200987F5B /* ContainerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContainerViewController.xib; sourceTree = "<group>"; };
+		AA4334282242FA5500987F5B /* division2-streets.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "division2-streets.mov"; sourceTree = "<group>"; };
 		AA9021DA223B8E6F00CBF52F /* Division2FanApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Division2FanApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA9021DD223B8E6F00CBF52F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AA9021E4223B8E7100CBF52F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -84,8 +92,6 @@
 		AA90222E223BE44C00CBF52F /* DpsCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DpsCalculator.swift; sourceTree = "<group>"; };
 		AA902230223BEBC100CBF52F /* StatsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsCollectionViewController.swift; sourceTree = "<group>"; };
 		AA902231223BEBC100CBF52F /* StatsCollectionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatsCollectionViewController.xib; sourceTree = "<group>"; };
-		AA902234223BEC7900CBF52F /* StatsContainerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsContainerCell.swift; sourceTree = "<group>"; };
-		AA902235223BEC7900CBF52F /* StatsContainerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatsContainerCell.xib; sourceTree = "<group>"; };
 		AA902238223BF42F00CBF52F /* StatCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatCollectionViewCell.swift; sourceTree = "<group>"; };
 		AA902239223BF42F00CBF52F /* StatCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatCollectionViewCell.xib; sourceTree = "<group>"; };
 		AA90223D223C375400CBF52F /* Loot Drop Epic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Loot Drop Epic.mp3"; sourceTree = "<group>"; };
@@ -97,6 +103,8 @@
 		AA90225A223D897400CBF52F /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		AA90225C223D898300CBF52F /* UINavigationBar+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+Extensions.swift"; sourceTree = "<group>"; };
 		AA90225E223D8A0500CBF52F /* NSLayoutContraint+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayoutContraint+Extensions.swift"; sourceTree = "<group>"; };
+		E83349855BDFFBC9911A8E2E /* Pods-Division2FanApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Division2FanApp.debug.xcconfig"; path = "Target Support Files/Pods-Division2FanApp/Pods-Division2FanApp.debug.xcconfig"; sourceTree = "<group>"; };
+		F3278855D53960EFFF3E43B1 /* Pods-Division2FanApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Division2FanApp.release.xcconfig"; path = "Target Support Files/Pods-Division2FanApp/Pods-Division2FanApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +112,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C7968A5F3D48D08637FBA2B /* Pods_Division2FanApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,8 +124,6 @@
 			children = (
 				AA902230223BEBC100CBF52F /* StatsCollectionViewController.swift */,
 				AA902231223BEBC100CBF52F /* StatsCollectionViewController.xib */,
-				AA902234223BEC7900CBF52F /* StatsContainerCell.swift */,
-				AA902235223BEC7900CBF52F /* StatsContainerCell.xib */,
 				AA902238223BF42F00CBF52F /* StatCollectionViewCell.swift */,
 				AA902239223BF42F00CBF52F /* StatCollectionViewCell.xib */,
 			);
@@ -143,11 +150,30 @@
 			path = Artwork;
 			sourceTree = "<group>";
 		};
+		AA4334262242F09800987F5B /* Container */ = {
+			isa = PBXGroup;
+			children = (
+				AA4334222242E97200987F5B /* ContainerViewController.swift */,
+				AA4334232242E97200987F5B /* ContainerViewController.xib */,
+			);
+			path = Container;
+			sourceTree = "<group>";
+		};
+		AA4334272242F0A700987F5B /* RootViewController */ = {
+			isa = PBXGroup;
+			children = (
+				AA902246223D6CD400CBF52F /* RootViewController.swift */,
+			);
+			path = RootViewController;
+			sourceTree = "<group>";
+		};
 		AA9021D1223B8E6E00CBF52F = {
 			isa = PBXGroup;
 			children = (
 				AA9021DC223B8E6F00CBF52F /* Division2FanApp */,
 				AA9021DB223B8E6F00CBF52F /* Products */,
+				CEC53AF69D00A31415BF357B /* Pods */,
+				F137D8F89D8A446A702776DE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -166,13 +192,14 @@
 				AA168EBE223F9EB600857113 /* Artwork */,
 				AA9021FC223B92F000CBF52F /* Base */,
 				AA9021F7223B92BC00CBF52F /* Calculator */,
+				AA4334262242F09800987F5B /* Container */,
 				AA90220C223B9EE800CBF52F /* Font */,
 				AA168EB5223EC6D800857113 /* Info */,
 				AA9021E6223B8E7100CBF52F /* LaunchScreen.storyboard */,
 				AA902209223B9BC200CBF52F /* Localizable.strings */,
 				AA90222D223BE43200CBF52F /* Logic */,
 				AA902248223D6FAF00CBF52F /* Resources */,
-				AA902246223D6CD400CBF52F /* RootViewController.swift */,
+				AA4334272242F0A700987F5B /* RootViewController */,
 				AA90223C223C374200CBF52F /* Sound */,
 				AA168EB4223EC6C000857113 /* Stats */,
 				AA902241223D6B4100CBF52F /* Video */,
@@ -240,6 +267,7 @@
 		AA902241223D6B4100CBF52F /* Video */ = {
 			isa = PBXGroup;
 			children = (
+				AA4334282242FA5500987F5B /* division2-streets.mov */,
 				AA168EB2223DB9C200857113 /* division2-whitehouse.mov */,
 				AA433401224000F800987F5B /* division2-dz-east.mov */,
 				AA902242223D6B5F00CBF52F /* VideoPlayerViewController.swift */,
@@ -251,10 +279,28 @@
 		AA902248223D6FAF00CBF52F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				AA4334032240DE9400987F5B /* DPS CALCULATOR MARCOSTYLE.xlsx */,
 				AA9021E9223B8E7100CBF52F /* Info.plist */,
 				AA9021E4223B8E7100CBF52F /* Assets.xcassets */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		CEC53AF69D00A31415BF357B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E83349855BDFFBC9911A8E2E /* Pods-Division2FanApp.debug.xcconfig */,
+				F3278855D53960EFFF3E43B1 /* Pods-Division2FanApp.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		F137D8F89D8A446A702776DE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5D90300CAC8CF99EFBAA4C60 /* Pods_Division2FanApp.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,9 +310,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AA9021EC223B8E7100CBF52F /* Build configuration list for PBXNativeTarget "Division2FanApp" */;
 			buildPhases = (
+				0E3FB9BB6C4CE87643A35360 /* [CP] Check Pods Manifest.lock */,
 				AA9021D6223B8E6F00CBF52F /* Sources */,
 				AA9021D7223B8E6F00CBF52F /* Frameworks */,
 				AA9021D8223B8E6F00CBF52F /* Resources */,
+				DDF9A8F9BB16BB0EE58882FC /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -320,9 +368,10 @@
 				AA902207223B9BC200CBF52F /* Localizable.strings in Resources */,
 				AA9021FB223B92E100CBF52F /* CalculatorCell.xib in Resources */,
 				AA902223223B9EE800CBF52F /* Borda-ExtraBold.ttf in Resources */,
+				AA4334252242E97200987F5B /* ContainerViewController.xib in Resources */,
 				AA168EB3223DB9C200857113 /* division2-whitehouse.mov in Resources */,
-				AA902237223BEC7900CBF52F /* StatsContainerCell.xib in Resources */,
 				AA902233223BEBC100CBF52F /* StatsCollectionViewController.xib in Resources */,
+				AA4334292242FA5500987F5B /* division2-streets.mov in Resources */,
 				AA90223B223BF42F00CBF52F /* StatCollectionViewCell.xib in Resources */,
 				AA9021E5223B8E7100CBF52F /* Assets.xcassets in Resources */,
 				AA902222223B9EE800CBF52F /* Borda-Bold.ttf in Resources */,
@@ -331,6 +380,7 @@
 				AA168EC8223FC56000857113 /* precinct-siege-sample.mp3 in Resources */,
 				AA168EBD223EC77F00857113 /* InfoCell.xib in Resources */,
 				AA902245223D6B6000CBF52F /* VideoPlayerViewController.xib in Resources */,
+				AA4334042240DE9400987F5B /* DPS CALCULATOR MARCOSTYLE.xlsx in Resources */,
 				AA9021F6223B8F4700CBF52F /* CalcualtorTableViewController.xib in Resources */,
 				AA90223E223C375500CBF52F /* Loot Drop Epic.mp3 in Resources */,
 				AA168EB8223EC6D800857113 /* InfoTableViewController.xib in Resources */,
@@ -340,6 +390,53 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0E3FB9BB6C4CE87643A35360 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Division2FanApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DDF9A8F9BB16BB0EE58882FC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Division2FanApp/Pods-Division2FanApp-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Division2FanApp/Pods-Division2FanApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		AA9021D6223B8E6F00CBF52F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -347,7 +444,6 @@
 			files = (
 				AA168EC3223FA6F400857113 /* InfoTableViewController.swift in Sources */,
 				AA90222F223BE44C00CBF52F /* DpsCalculator.swift in Sources */,
-				AA902236223BEC7900CBF52F /* StatsContainerCell.swift in Sources */,
 				AA90223A223BF42F00CBF52F /* StatCollectionViewCell.swift in Sources */,
 				AA902244223D6B6000CBF52F /* VideoPlayerViewController.swift in Sources */,
 				AA9021F5223B8F4700CBF52F /* CalcualtorTableViewController.swift in Sources */,
@@ -359,6 +455,7 @@
 				AA902228223BA15B00CBF52F /* UIFont+Extensions.swift in Sources */,
 				AA168EC6223FA8EB00857113 /* UserDefaultsService.swift in Sources */,
 				AA902202223B966900CBF52F /* UIColor+Extensions.swift in Sources */,
+				AA4334242242E97200987F5B /* ContainerViewController.swift in Sources */,
 				AA9021FA223B92E100CBF52F /* CalculatorCell.swift in Sources */,
 				AA9021FE223B936300CBF52F /* CellControllable.swift in Sources */,
 				AA90225D223D898300CBF52F /* UINavigationBar+Extensions.swift in Sources */,
@@ -513,6 +610,7 @@
 		};
 		AA9021ED223B8E7100CBF52F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E83349855BDFFBC9911A8E2E /* Pods-Division2FanApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -532,6 +630,7 @@
 		};
 		AA9021EE223B8E7100CBF52F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F3278855D53960EFFF3E43B1 /* Pods-Division2FanApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
