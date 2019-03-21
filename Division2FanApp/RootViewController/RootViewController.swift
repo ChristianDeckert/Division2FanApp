@@ -61,13 +61,7 @@ final class RootViewController: UIViewController {
     super.viewWillAppear(animated)
     
     switch userDefaultsService.stringValue(for: .recentVideo) {
-    case VideoPlayerViewController.Video.darkzoneEast.rawValue:
-      videoPlayerViewController.play(video: .whitehouse)
-      userDefaultsService.set(
-        value: VideoPlayerViewController.Video.whitehouse.rawValue,
-        key: .recentVideo
-      )
-    case VideoPlayerViewController.Video.whitehouse.rawValue:
+    case VideoPlayerViewController.Video.darkzoneEast.rawValue:      
       videoPlayerViewController.play(video: .streets)
       userDefaultsService.set(
         value: VideoPlayerViewController.Video.streets.rawValue,

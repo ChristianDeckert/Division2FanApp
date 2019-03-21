@@ -41,9 +41,9 @@ class CalcualtorTableViewController: UITableViewController {
     tableView.register(cellNibNamed: "CalculatorCell")
     
     tableView.contentInset = UIEdgeInsets(
-      top: 16,
+      top: 0,
       left: 0,
-      bottom: 16,
+      bottom: 256,
       right: 0
     )
         

@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		8C7968A5F3D48D08637FBA2B /* Pods_Division2FanApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D90300CAC8CF99EFBAA4C60 /* Pods_Division2FanApp.framework */; };
-		AA168EB3223DB9C200857113 /* division2-whitehouse.mov in Resources */ = {isa = PBXBuildFile; fileRef = AA168EB2223DB9C200857113 /* division2-whitehouse.mov */; };
 		AA168EB8223EC6D800857113 /* InfoTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA168EB6223EC6D800857113 /* InfoTableViewController.xib */; };
 		AA168EBC223EC77F00857113 /* InfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA168EBA223EC77F00857113 /* InfoCell.swift */; };
 		AA168EBD223EC77F00857113 /* InfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA168EBB223EC77F00857113 /* InfoCell.xib */; };
@@ -20,6 +19,7 @@
 		AA4334242242E97200987F5B /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4334222242E97200987F5B /* ContainerViewController.swift */; };
 		AA4334252242E97200987F5B /* ContainerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA4334232242E97200987F5B /* ContainerViewController.xib */; };
 		AA4334292242FA5500987F5B /* division2-streets.mov in Resources */ = {isa = PBXBuildFile; fileRef = AA4334282242FA5500987F5B /* division2-streets.mov */; };
+		AA43342B22438E8600987F5B /* UIDevice+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA43342A22438E8600987F5B /* UIDevice+Extensions.swift */; };
 		AA9021DE223B8E6F00CBF52F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9021DD223B8E6F00CBF52F /* AppDelegate.swift */; };
 		AA9021E5223B8E7100CBF52F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA9021E4223B8E7100CBF52F /* Assets.xcassets */; };
 		AA9021E8223B8E7100CBF52F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA9021E6223B8E7100CBF52F /* LaunchScreen.storyboard */; };
@@ -55,7 +55,6 @@
 
 /* Begin PBXFileReference section */
 		5D90300CAC8CF99EFBAA4C60 /* Pods_Division2FanApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Division2FanApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		AA168EB2223DB9C200857113 /* division2-whitehouse.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "division2-whitehouse.mov"; sourceTree = "<group>"; };
 		AA168EB6223EC6D800857113 /* InfoTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InfoTableViewController.xib; sourceTree = "<group>"; };
 		AA168EB7223EC6D800857113 /* InfoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoTableViewController.swift; sourceTree = "<group>"; };
 		AA168EBA223EC77F00857113 /* InfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoCell.swift; sourceTree = "<group>"; };
@@ -69,6 +68,7 @@
 		AA4334222242E97200987F5B /* ContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		AA4334232242E97200987F5B /* ContainerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContainerViewController.xib; sourceTree = "<group>"; };
 		AA4334282242FA5500987F5B /* division2-streets.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "division2-streets.mov"; sourceTree = "<group>"; };
+		AA43342A22438E8600987F5B /* UIDevice+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+Extensions.swift"; sourceTree = "<group>"; };
 		AA9021DA223B8E6F00CBF52F /* Division2FanApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Division2FanApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA9021DD223B8E6F00CBF52F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AA9021E4223B8E7100CBF52F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -230,6 +230,7 @@
 				AA90225C223D898300CBF52F /* UINavigationBar+Extensions.swift */,
 				AA90225E223D8A0500CBF52F /* NSLayoutContraint+Extensions.swift */,
 				AA168EC5223FA8EB00857113 /* UserDefaultsService.swift */,
+				AA43342A22438E8600987F5B /* UIDevice+Extensions.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -268,7 +269,6 @@
 			isa = PBXGroup;
 			children = (
 				AA4334282242FA5500987F5B /* division2-streets.mov */,
-				AA168EB2223DB9C200857113 /* division2-whitehouse.mov */,
 				AA433401224000F800987F5B /* division2-dz-east.mov */,
 				AA902242223D6B5F00CBF52F /* VideoPlayerViewController.swift */,
 				AA902243223D6B5F00CBF52F /* VideoPlayerViewController.xib */,
@@ -314,7 +314,6 @@
 				AA9021D6223B8E6F00CBF52F /* Sources */,
 				AA9021D7223B8E6F00CBF52F /* Frameworks */,
 				AA9021D8223B8E6F00CBF52F /* Resources */,
-				DDF9A8F9BB16BB0EE58882FC /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -369,7 +368,6 @@
 				AA9021FB223B92E100CBF52F /* CalculatorCell.xib in Resources */,
 				AA902223223B9EE800CBF52F /* Borda-ExtraBold.ttf in Resources */,
 				AA4334252242E97200987F5B /* ContainerViewController.xib in Resources */,
-				AA168EB3223DB9C200857113 /* division2-whitehouse.mov in Resources */,
 				AA902233223BEBC100CBF52F /* StatsCollectionViewController.xib in Resources */,
 				AA4334292242FA5500987F5B /* division2-streets.mov in Resources */,
 				AA90223B223BF42F00CBF52F /* StatCollectionViewCell.xib in Resources */,
@@ -413,28 +411,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		DDF9A8F9BB16BB0EE58882FC /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Division2FanApp/Pods-Division2FanApp-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Division2FanApp/Pods-Division2FanApp-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -450,6 +426,7 @@
 				AA90225B223D897400CBF52F /* UIViewController+Extensions.swift in Sources */,
 				AA902247223D6CD400CBF52F /* RootViewController.swift in Sources */,
 				AA902259223D896100CBF52F /* UIView+Extensions.swift in Sources */,
+				AA43342B22438E8600987F5B /* UIDevice+Extensions.swift in Sources */,
 				AA902240223C377300CBF52F /* Sounds.swift in Sources */,
 				AA902204223B983F00CBF52F /* String+Extensions.swift in Sources */,
 				AA902228223BA15B00CBF52F /* UIFont+Extensions.swift in Sources */,

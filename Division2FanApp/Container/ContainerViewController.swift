@@ -12,7 +12,63 @@ protocol StatsDataSource: class {
   var getDpsCalculator: DpsCalculator? { get }
 }
 
-class ContainerViewController: UIViewController {
+protocol KeyboardManaging: class {
+  var textField: UITextField? { get set }
+  func focus(view: UIView, keyboardRect: CGRect)
+  func reset(view: UIView)
+}
+
+final class KeyboardManager: KeyboardManaging{
+  weak var textField: UITextField?
+  
+  private var keyboardHeight: CGFloat = 0
+  
+  init() {
+    switch UIDevice.current.screenType {
+    case .iPhones_5_5s_5c_SE:
+      keyboardHeight = 216
+    case .iPhones_6Plus_6sPlus_7Plus_8Plus:
+      keyboardHeight = 226
+    case .iPhones_X_XS:
+      keyboardHeight = 233
+    default:
+      keyboardHeight = 243
+    }
+  }
+  
+  func focus(view: UIView, keyboardRect: CGRect) {
+    
+    guard
+      let textfield = self.textField,
+      let tableView = view as? UITableView else { return }
+    
+    self.keyboardHeight = min(keyboardRect.size.height, self.keyboardHeight)
+    tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: keyboardHeight + textfield.bounds.height, right: 0)
+    
+//    let textFieldRect = view.convert(textfield.frame, from: textfield)
+//    let diffY = view.bounds.size.height - keyboardRect.size.height - textFieldRect.origin.y
+//
+//    guard diffY < 0 else { return }
+//    let translation: CGFloat = diffY - textfield.bounds.height - (view.safeAreaInsets.top - view.safeAreaInsets.bottom)
+//
+//    UIView.animate(withDuration: 0.2) {
+//      view.transform = CGAffineTransform.init(translationX: 0, y: translation)
+//    }
+//
+//    debugPrint(">> Keyboard: setting offset \(translation)")
+  }
+  
+  func reset(view: UIView) {
+    guard let tableView = view as? UITableView else { return }
+    tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 16, right: 0)
+//    UIView.animate(withDuration: 0.2) {
+//      view.transform = .identity
+//    }
+//    debugPrint(">> Keyboard: resetting offset \(0)")
+  }
+}
+
+final class ContainerViewController: UIViewController {
   
   @IBOutlet weak var collectionContainerView: UIView!
   @IBOutlet weak var tableContainerView: UIView!
@@ -38,13 +94,7 @@ class ContainerViewController: UIViewController {
   
   private var recentStatIndex: Int = 0
   private var dpsCalculator = DpsCalculator()
-  
-//  let keyboardNotifications: [NSNotification.Name] = [
-//    .keyboardWillShowNotification,
-//    .UIResponder.keyboardWillHideNotification,
-//    .UIResponder.keyboardWillChangeFrameNotification,
-//    ]
-
+  private var keyboardManager: KeyboardManaging
   
   private lazy var statsCollectionViewController: StatsCollectionViewController = {
     let statsCollectionViewController = StatsCollectionViewController(
@@ -62,6 +112,16 @@ class ContainerViewController: UIViewController {
     )
     return calcualtorTableViewController
   }()
+  
+  
+  init(keyboardManager: KeyboardManaging = KeyboardManager()) {
+    self.keyboardManager = keyboardManager
+    super.init(nibName: nil, bundle: nil)
+  }
+  
+  required init?(coder aDecoder: NSCoder) {
+    fatalError("init(coder:) has not been implemented")
+  }
   
   deinit {
     NotificationCenter.default.removeObserver(self)
@@ -103,16 +163,15 @@ class ContainerViewController: UIViewController {
   
   @objc func keyboardWillShow(notification: Notification) {
     guard let userInfo = notification.userInfo else { return }
-    if let keyboardSize = (userInfo[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-      let contentInsets = UIEdgeInsets(top: 0, left: 0, bottom: keyboardSize.height, right: 0)
-      calculatorTableViewController.tableView.contentInset.bottom = 44 + contentInsets.bottom
-//      view.transform = CGAffineTransform.init(translationX: 0, y: -1 * contentInsets.bottom)
+    if let keyboardRect = (userInfo[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+      keyboardManager.focus(
+        view: calculatorTableViewController.tableView,
+        keyboardRect: keyboardRect
+      )
     }
   }
   
   @objc func keyboardWillHide(notification: Notification) {
-    calculatorTableViewController.tableView.contentInset.bottom = 16
-//    view.transform = .identity
   }
 }
 
@@ -282,6 +341,17 @@ extension ContainerViewController {
 // MARK: - CalcualtorCellControllerDelegate
 
 extension ContainerViewController: CalcualtorCellControllerDelegate {
+  func calcualtorCellDidEndEditing(textfield: UITextField) {
+    keyboardManager.reset(view: view)
+//    guard keyboardManager.textField == textfield else { return }
+    keyboardManager.textField = nil
+    
+  }
+  
+  
+  func calcualtorCellWillBeginEditing(textfield: UITextField) {
+   keyboardManager.textField = textfield
+  }
   
   func calcualtorCell(controller: CalcualtorCellController?, didReturnFromTextfieldWith value: String?) {
     

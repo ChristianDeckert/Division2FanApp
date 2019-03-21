@@ -9,7 +9,9 @@
 import UIKit
 
 protocol CalcualtorCellControllerDelegate: class {
+  func calcualtorCellWillBeginEditing(textfield: UITextField)
   func calcualtorCell(controller: CalcualtorCellController?, didReturnFromTextfieldWith: String?)
+  func calcualtorCellDidEndEditing(textfield: UITextField)
 }
 
 final class CalcualtorCellController: RowControlling {
@@ -86,11 +88,16 @@ extension CalculatorCell: UITextFieldDelegate {
     if textField.text == "0" {
       textField.text = nil
     }
+    
+    controller?.delegate?.calcualtorCellWillBeginEditing(textfield: textField)
   }
   func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
     updateController(text: textField.text)
     return true
   }
+  
+  func textFieldDidEndEditing(_ textField: UITextField) {
+    controller?.delegate?.calcualtorCellDidEndEditing(textfield: textField)  }
   
   func textFieldShouldReturn(_ textField: UITextField) -> Bool {
     updateController(text: textField.text)

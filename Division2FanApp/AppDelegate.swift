@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import IQKeyboardManagerSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -24,9 +23,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       UINavigationBar.appearance().titleTextAttributes = [
         .font: UIFont.bordaHeading
     ]
-    
-    IQKeyboardManager.shared.enable = true
-    IQKeyboardManager.shared.enableAutoToolbar = false
     
     window = UIWindow(frame: UIScreen.main.bounds)
     window?.rootViewController = RootViewController()
