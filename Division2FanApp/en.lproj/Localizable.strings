@@ -81,3 +81,6 @@
 "info-controller.my-twitter.title" = "Twitter Account";
 "info-controller.my-twitter.text" = "You can find my on Twitter.";
 "info-controller.my-twitter.button-text" = "Open Twitter";
+
+"fab-menu.map-browser.title" = "Map of Washington DC";
+"fab-menu.map-browser.about" = "About the app";

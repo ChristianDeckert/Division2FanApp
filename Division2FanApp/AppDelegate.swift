@@ -20,9 +20,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-      UINavigationBar.appearance().titleTextAttributes = [
-        .font: UIFont.bordaHeading
+    UINavigationBar.appearance().titleTextAttributes = [
+      .font: UIFont.bordaHeading
     ]
+    
+    UIBarButtonItem.appearance().setTitleTextAttributes([
+      .font: UIFont.bordaSubHeading
+      ], for: .normal
+    )
     
     window = UIWindow(frame: UIScreen.main.bounds)
     window?.rootViewController = RootViewController()

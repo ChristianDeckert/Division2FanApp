@@ -14,12 +14,23 @@
 		AA168EC3223FA6F400857113 /* InfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA168EB7223EC6D800857113 /* InfoTableViewController.swift */; };
 		AA168EC6223FA8EB00857113 /* UserDefaultsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA168EC5223FA8EB00857113 /* UserDefaultsService.swift */; };
 		AA168EC8223FC56000857113 /* precinct-siege-sample.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AA168EC7223FC56000857113 /* precinct-siege-sample.mp3 */; };
+		AA1A9F4B224A0D2500653BA7 /* division2-night.mov in Resources */ = {isa = PBXBuildFile; fileRef = AA1A9F4A224A0D2500653BA7 /* division2-night.mov */; };
+		AA1A9F4F224A0DCC00653BA7 /* BrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1A9F4D224A0DCC00653BA7 /* BrowserViewController.swift */; };
+		AA1A9F50224A0DCC00653BA7 /* BrowserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA1A9F4E224A0DCC00653BA7 /* BrowserViewController.xib */; };
+		AA1CDECB224A60C700CE1EFA /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA1CDECA224A60C700CE1EFA /* WebKit.framework */; };
 		AA433402224000F800987F5B /* division2-dz-east.mov in Resources */ = {isa = PBXBuildFile; fileRef = AA433401224000F800987F5B /* division2-dz-east.mov */; };
 		AA4334042240DE9400987F5B /* DPS CALCULATOR MARCOSTYLE.xlsx in Resources */ = {isa = PBXBuildFile; fileRef = AA4334032240DE9400987F5B /* DPS CALCULATOR MARCOSTYLE.xlsx */; };
 		AA4334242242E97200987F5B /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4334222242E97200987F5B /* ContainerViewController.swift */; };
 		AA4334252242E97200987F5B /* ContainerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA4334232242E97200987F5B /* ContainerViewController.xib */; };
 		AA4334292242FA5500987F5B /* division2-streets.mov in Resources */ = {isa = PBXBuildFile; fileRef = AA4334282242FA5500987F5B /* division2-streets.mov */; };
 		AA43342B22438E8600987F5B /* UIDevice+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA43342A22438E8600987F5B /* UIDevice+Extensions.swift */; };
+		AA43343622439FC500987F5B /* FABWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA43342F22439FC500987F5B /* FABWindow.swift */; };
+		AA43343722439FC500987F5B /* FABMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA43343022439FC500987F5B /* FABMenuViewController.xib */; };
+		AA43343822439FC500987F5B /* FabViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA43343122439FC500987F5B /* FabViewController.xib */; };
+		AA43343922439FC500987F5B /* FABMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA43343222439FC500987F5B /* FABMenuViewController.swift */; };
+		AA43343A22439FC500987F5B /* FABMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA43343322439FC500987F5B /* FABMenuTableViewCell.swift */; };
+		AA43343B22439FC500987F5B /* FABMenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA43343422439FC500987F5B /* FABMenuTableViewCell.xib */; };
+		AA43343C22439FC500987F5B /* FabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA43343522439FC500987F5B /* FabViewController.swift */; };
 		AA9021DE223B8E6F00CBF52F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9021DD223B8E6F00CBF52F /* AppDelegate.swift */; };
 		AA9021E5223B8E7100CBF52F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA9021E4223B8E7100CBF52F /* Assets.xcassets */; };
 		AA9021E8223B8E7100CBF52F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA9021E6223B8E7100CBF52F /* LaunchScreen.storyboard */; };
@@ -63,12 +74,23 @@
 		AA168EC1223FA17700857113 /* AppIcon_1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon_1024.png; sourceTree = "<group>"; };
 		AA168EC5223FA8EB00857113 /* UserDefaultsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsService.swift; sourceTree = "<group>"; };
 		AA168EC7223FC56000857113 /* precinct-siege-sample.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "precinct-siege-sample.mp3"; sourceTree = "<group>"; };
+		AA1A9F4A224A0D2500653BA7 /* division2-night.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "division2-night.mov"; sourceTree = "<group>"; };
+		AA1A9F4D224A0DCC00653BA7 /* BrowserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserViewController.swift; sourceTree = "<group>"; };
+		AA1A9F4E224A0DCC00653BA7 /* BrowserViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BrowserViewController.xib; sourceTree = "<group>"; };
+		AA1CDECA224A60C700CE1EFA /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		AA433401224000F800987F5B /* division2-dz-east.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "division2-dz-east.mov"; sourceTree = "<group>"; };
 		AA4334032240DE9400987F5B /* DPS CALCULATOR MARCOSTYLE.xlsx */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DPS CALCULATOR MARCOSTYLE.xlsx"; sourceTree = "<group>"; };
 		AA4334222242E97200987F5B /* ContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		AA4334232242E97200987F5B /* ContainerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContainerViewController.xib; sourceTree = "<group>"; };
 		AA4334282242FA5500987F5B /* division2-streets.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "division2-streets.mov"; sourceTree = "<group>"; };
 		AA43342A22438E8600987F5B /* UIDevice+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+Extensions.swift"; sourceTree = "<group>"; };
+		AA43342F22439FC500987F5B /* FABWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FABWindow.swift; sourceTree = "<group>"; };
+		AA43343022439FC500987F5B /* FABMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FABMenuViewController.xib; sourceTree = "<group>"; };
+		AA43343122439FC500987F5B /* FabViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FabViewController.xib; sourceTree = "<group>"; };
+		AA43343222439FC500987F5B /* FABMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FABMenuViewController.swift; sourceTree = "<group>"; };
+		AA43343322439FC500987F5B /* FABMenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FABMenuTableViewCell.swift; sourceTree = "<group>"; };
+		AA43343422439FC500987F5B /* FABMenuTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FABMenuTableViewCell.xib; sourceTree = "<group>"; };
+		AA43343522439FC500987F5B /* FabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FabViewController.swift; sourceTree = "<group>"; };
 		AA9021DA223B8E6F00CBF52F /* Division2FanApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Division2FanApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA9021DD223B8E6F00CBF52F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AA9021E4223B8E7100CBF52F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -112,6 +134,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA1CDECB224A60C700CE1EFA /* WebKit.framework in Frameworks */,
 				8C7968A5F3D48D08637FBA2B /* Pods_Division2FanApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -150,6 +173,15 @@
 			path = Artwork;
 			sourceTree = "<group>";
 		};
+		AA1A9F4C224A0DB800653BA7 /* Browser */ = {
+			isa = PBXGroup;
+			children = (
+				AA1A9F4D224A0DCC00653BA7 /* BrowserViewController.swift */,
+				AA1A9F4E224A0DCC00653BA7 /* BrowserViewController.xib */,
+			);
+			path = Browser;
+			sourceTree = "<group>";
+		};
 		AA4334262242F09800987F5B /* Container */ = {
 			isa = PBXGroup;
 			children = (
@@ -165,6 +197,20 @@
 				AA902246223D6CD400CBF52F /* RootViewController.swift */,
 			);
 			path = RootViewController;
+			sourceTree = "<group>";
+		};
+		AA43342E22439FC500987F5B /* FAB */ = {
+			isa = PBXGroup;
+			children = (
+				AA43343322439FC500987F5B /* FABMenuTableViewCell.swift */,
+				AA43343422439FC500987F5B /* FABMenuTableViewCell.xib */,
+				AA43343222439FC500987F5B /* FABMenuViewController.swift */,
+				AA43343022439FC500987F5B /* FABMenuViewController.xib */,
+				AA43343522439FC500987F5B /* FabViewController.swift */,
+				AA43343122439FC500987F5B /* FabViewController.xib */,
+				AA43342F22439FC500987F5B /* FABWindow.swift */,
+			);
+			path = FAB;
 			sourceTree = "<group>";
 		};
 		AA9021D1223B8E6E00CBF52F = {
@@ -191,8 +237,10 @@
 				AA9021DD223B8E6F00CBF52F /* AppDelegate.swift */,
 				AA168EBE223F9EB600857113 /* Artwork */,
 				AA9021FC223B92F000CBF52F /* Base */,
+				AA1A9F4C224A0DB800653BA7 /* Browser */,
 				AA9021F7223B92BC00CBF52F /* Calculator */,
 				AA4334262242F09800987F5B /* Container */,
+				AA43342E22439FC500987F5B /* FAB */,
 				AA90220C223B9EE800CBF52F /* Font */,
 				AA168EB5223EC6D800857113 /* Info */,
 				AA9021E6223B8E7100CBF52F /* LaunchScreen.storyboard */,
@@ -268,6 +316,7 @@
 		AA902241223D6B4100CBF52F /* Video */ = {
 			isa = PBXGroup;
 			children = (
+				AA1A9F4A224A0D2500653BA7 /* division2-night.mov */,
 				AA4334282242FA5500987F5B /* division2-streets.mov */,
 				AA433401224000F800987F5B /* division2-dz-east.mov */,
 				AA902242223D6B5F00CBF52F /* VideoPlayerViewController.swift */,
@@ -298,6 +347,7 @@
 		F137D8F89D8A446A702776DE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AA1CDECA224A60C700CE1EFA /* WebKit.framework */,
 				5D90300CAC8CF99EFBAA4C60 /* Pods_Division2FanApp.framework */,
 			);
 			name = Frameworks;
@@ -364,20 +414,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA9021E8223B8E7100CBF52F /* LaunchScreen.storyboard in Resources */,
+				AA1A9F4B224A0D2500653BA7 /* division2-night.mov in Resources */,
 				AA902207223B9BC200CBF52F /* Localizable.strings in Resources */,
 				AA9021FB223B92E100CBF52F /* CalculatorCell.xib in Resources */,
 				AA902223223B9EE800CBF52F /* Borda-ExtraBold.ttf in Resources */,
 				AA4334252242E97200987F5B /* ContainerViewController.xib in Resources */,
 				AA902233223BEBC100CBF52F /* StatsCollectionViewController.xib in Resources */,
 				AA4334292242FA5500987F5B /* division2-streets.mov in Resources */,
+				AA43343B22439FC500987F5B /* FABMenuTableViewCell.xib in Resources */,
 				AA90223B223BF42F00CBF52F /* StatCollectionViewCell.xib in Resources */,
 				AA9021E5223B8E7100CBF52F /* Assets.xcassets in Resources */,
 				AA902222223B9EE800CBF52F /* Borda-Bold.ttf in Resources */,
+				AA43343822439FC500987F5B /* FabViewController.xib in Resources */,
 				AA90221D223B9EE800CBF52F /* Borda Light.ttf in Resources */,
 				AA902220223B9EE800CBF52F /* Borda.ttf in Resources */,
+				AA43343722439FC500987F5B /* FABMenuViewController.xib in Resources */,
 				AA168EC8223FC56000857113 /* precinct-siege-sample.mp3 in Resources */,
 				AA168EBD223EC77F00857113 /* InfoCell.xib in Resources */,
 				AA902245223D6B6000CBF52F /* VideoPlayerViewController.xib in Resources */,
+				AA1A9F50224A0DCC00653BA7 /* BrowserViewController.xib in Resources */,
 				AA4334042240DE9400987F5B /* DPS CALCULATOR MARCOSTYLE.xlsx in Resources */,
 				AA9021F6223B8F4700CBF52F /* CalcualtorTableViewController.xib in Resources */,
 				AA90223E223C375500CBF52F /* Loot Drop Epic.mp3 in Resources */,
@@ -419,6 +474,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA168EC3223FA6F400857113 /* InfoTableViewController.swift in Sources */,
+				AA1A9F4F224A0DCC00653BA7 /* BrowserViewController.swift in Sources */,
 				AA90222F223BE44C00CBF52F /* DpsCalculator.swift in Sources */,
 				AA90223A223BF42F00CBF52F /* StatCollectionViewCell.swift in Sources */,
 				AA902244223D6B6000CBF52F /* VideoPlayerViewController.swift in Sources */,
@@ -427,8 +483,10 @@
 				AA902247223D6CD400CBF52F /* RootViewController.swift in Sources */,
 				AA902259223D896100CBF52F /* UIView+Extensions.swift in Sources */,
 				AA43342B22438E8600987F5B /* UIDevice+Extensions.swift in Sources */,
+				AA43343922439FC500987F5B /* FABMenuViewController.swift in Sources */,
 				AA902240223C377300CBF52F /* Sounds.swift in Sources */,
 				AA902204223B983F00CBF52F /* String+Extensions.swift in Sources */,
+				AA43343622439FC500987F5B /* FABWindow.swift in Sources */,
 				AA902228223BA15B00CBF52F /* UIFont+Extensions.swift in Sources */,
 				AA168EC6223FA8EB00857113 /* UserDefaultsService.swift in Sources */,
 				AA902202223B966900CBF52F /* UIColor+Extensions.swift in Sources */,
@@ -438,8 +496,10 @@
 				AA90225D223D898300CBF52F /* UINavigationBar+Extensions.swift in Sources */,
 				AA90225F223D8A0500CBF52F /* NSLayoutContraint+Extensions.swift in Sources */,
 				AA902200223B939900CBF52F /* UITableView+Extensions.swift in Sources */,
+				AA43343A22439FC500987F5B /* FABMenuTableViewCell.swift in Sources */,
 				AA902232223BEBC100CBF52F /* StatsCollectionViewController.swift in Sources */,
 				AA9021DE223B8E6F00CBF52F /* AppDelegate.swift in Sources */,
+				AA43343C22439FC500987F5B /* FabViewController.swift in Sources */,
 				AA168EBC223EC77F00857113 /* InfoCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -23,9 +23,10 @@ final class VideoPlayerViewController: UIViewController {
   enum Video: String {
     case streets = "division2-streets"  
     case darkzoneEast = "division2-dz-east"
+    case night = "division2-night"
   }
   
-  
+
   enum State {
     case playing
     case paused

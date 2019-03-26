@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FabViewController" customModule="Division2FanApp" customModuleProvider="target">
+            <connections>
+                <outlet property="button" destination="eny-S4-9H5" id="35M-Ef-jAM"/>
+                <outlet property="buttonBackgroundView" destination="vIx-Xw-SEc" id="zcV-1v-9U6"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vIx-Xw-SEc" userLabel="BackgroundView">
+                    <rect key="frame" x="159.5" y="305.5" width="56" height="56"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eny-S4-9H5" customClass="AnimatedButton" customModule="CDTools4">
+                    <rect key="frame" x="159.5" y="305.5" width="56" height="56"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="56" id="0IT-9c-Tm3"/>
+                        <constraint firstAttribute="height" constant="56" id="w2v-eZ-UGe"/>
+                    </constraints>
+                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <state key="normal" image="icon-shd">
+                        <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                    </state>
+                    <connections>
+                        <action selector="buttonAction" destination="-1" eventType="touchUpInside" id="3d3-JK-XCQ"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="vIx-Xw-SEc" firstAttribute="centerX" secondItem="eny-S4-9H5" secondAttribute="centerX" id="Fze-nr-4kK"/>
+                <constraint firstItem="vIx-Xw-SEc" firstAttribute="centerY" secondItem="eny-S4-9H5" secondAttribute="centerY" id="eyX-TH-QXl"/>
+                <constraint firstItem="eny-S4-9H5" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="gfb-hw-msh"/>
+                <constraint firstItem="eny-S4-9H5" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="mgS-n1-QUh"/>
+                <constraint firstItem="vIx-Xw-SEc" firstAttribute="width" secondItem="eny-S4-9H5" secondAttribute="width" id="rZ3-3H-EJC"/>
+                <constraint firstItem="vIx-Xw-SEc" firstAttribute="height" secondItem="eny-S4-9H5" secondAttribute="height" id="xJv-Hd-LpK"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="icon-shd" width="1080" height="1080"/>
+    </resources>
+</document>

@@ -43,28 +43,19 @@ final class KeyboardManager: KeyboardManaging{
       let tableView = view as? UITableView else { return }
     
     self.keyboardHeight = min(keyboardRect.size.height, self.keyboardHeight)
-    tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: keyboardHeight + textfield.bounds.height, right: 0)
     
-//    let textFieldRect = view.convert(textfield.frame, from: textfield)
-//    let diffY = view.bounds.size.height - keyboardRect.size.height - textFieldRect.origin.y
-//
-//    guard diffY < 0 else { return }
-//    let translation: CGFloat = diffY - textfield.bounds.height - (view.safeAreaInsets.top - view.safeAreaInsets.bottom)
-//
-//    UIView.animate(withDuration: 0.2) {
-//      view.transform = CGAffineTransform.init(translationX: 0, y: translation)
-//    }
-//
-//    debugPrint(">> Keyboard: setting offset \(translation)")
+    let bottom: CGFloat
+    if UIDevice.current.screenType == .iPhones_5_5s_5c_SE {
+      bottom = keyboardHeight
+    } else {
+      bottom = keyboardHeight + textfield.bounds.height
+    }
+    tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: bottom, right: 0)
   }
   
   func reset(view: UIView) {
     guard let tableView = view as? UITableView else { return }
     tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 16, right: 0)
-//    UIView.animate(withDuration: 0.2) {
-//      view.transform = .identity
-//    }
-//    debugPrint(">> Keyboard: resetting offset \(0)")
   }
 }
 
@@ -113,8 +104,13 @@ final class ContainerViewController: UIViewController {
     return calcualtorTableViewController
   }()
   
+  private let fabWindow: FABWindow
   
-  init(keyboardManager: KeyboardManaging = KeyboardManager()) {
+  init(
+    fabWindow: FABWindow,
+    keyboardManager: KeyboardManaging = KeyboardManager()
+    ) {
+    self.fabWindow = fabWindow
     self.keyboardManager = keyboardManager
     super.init(nibName: nil, bundle: nil)
   }
@@ -190,7 +186,7 @@ extension ContainerViewController {
   }
   
   @objc func infoAction() {
-    let infoController = InfoTableViewController()
+    let infoController = InfoTableViewController(fabWindow: fabWindow)
     navigationController?.pushViewController(infoController, animated: true)
   }
 }

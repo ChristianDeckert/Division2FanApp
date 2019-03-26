@@ -16,8 +16,12 @@ final class RootViewController: UIViewController {
   }()
   
   lazy var videoPlayerViewController = VideoPlayerViewController(delegate: self)
-  lazy var containerViewController = ContainerViewController()
+  lazy var containerViewController = ContainerViewController(fabWindow: self.fabWindow)
   
+  lazy var fabWindow = FABWindow(
+    delegate: self,
+    tintColor: .primaryTint
+  )
   private let userDefaultsService: UserDefaultsService
   init(userDefaultsService: UserDefaultsService = .shared) {
     self.userDefaultsService = userDefaultsService
@@ -54,6 +58,7 @@ final class RootViewController: UIViewController {
     DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(seconds)) { [weak self] in
       guard let self = self else { return }
       self.add(childViewController: self.navController, animation: .fade(duration: 0.5))
+      self.fabWindow.transistion(to: .shown)
     }
   }
   
@@ -61,10 +66,16 @@ final class RootViewController: UIViewController {
     super.viewWillAppear(animated)
     
     switch userDefaultsService.stringValue(for: .recentVideo) {
-    case VideoPlayerViewController.Video.darkzoneEast.rawValue:      
+    case VideoPlayerViewController.Video.darkzoneEast.rawValue:
       videoPlayerViewController.play(video: .streets)
       userDefaultsService.set(
         value: VideoPlayerViewController.Video.streets.rawValue,
+        key: .recentVideo
+      )
+    case VideoPlayerViewController.Video.streets.rawValue:
+      videoPlayerViewController.play(video: .night)
+      userDefaultsService.set(
+        value: VideoPlayerViewController.Video.night.rawValue,
         key: .recentVideo
       )
     default:
@@ -95,3 +106,33 @@ extension RootViewController: VideoPlayerViewControllerDelegate {
   }
 }
 
+extension RootViewController: FABDelegate {
+  var fabButtonCellsOnTapAction: [FABMenuViewController.Section] {
+    return [
+      FABMenuViewController.Section(
+        cells: [
+          FABMenuViewController.Cells.mapBrowser,
+          FABMenuViewController.Cells.about
+        ],
+        name:"Intelligent System Analytic Computer"
+      )
+    ]
+  }
+  
+  func fabMenuViewController(_ controller: FABMenuViewController, didSelect cell: FABMenuViewController.Cells) {
+    
+    switch cell {
+    case .mapBrowser:
+      let browser = BrowserViewController(
+        destination: .division2map,
+        fabWindow: fabWindow
+      )
+      navController.pushViewController(browser, animated: true)
+    case .about:
+      let infoController = InfoTableViewController(fabWindow: fabWindow)
+      navController.pushViewController(infoController, animated: true)
+    }
+    
+    fabWindow.toggleFabMenuViewControllerVisibility()
+  }
+}
