@@ -1,0 +1,6 @@
+framework module Pods_Division2FanAppTests {
+  umbrella header "Pods-Division2FanAppTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -6,3 +6,7 @@ target 'Division2FanApp' do
   #pod 'IQKeyboardManagerSwift'
 
 end
+
+target 'Division2FanAppTests' do
+  use_frameworks!
+end
