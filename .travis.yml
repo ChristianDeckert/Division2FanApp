@@ -1,5 +1,5 @@
 language: swift
 xcode_project: Division2FanApp.xcworkspace
-xcode_scheme: Division2FanAppTests
+xcode_scheme: Division2FanApp
 xcode_destination: platform=iOS Simulator,OS=13.3,name=iPhone X
 podfile: Podfile
