@@ -1,5 +1,12 @@
 language: swift
-xcode_project: Division2FanApp.xcworkspace
+#xcode_project: Division2FanApp.xcproj
+xcode_workspace: Division2FanApp.xcworkspace
 xcode_scheme: Division2FanApp
 xcode_destination: platform=iOS Simulator,OS=13.3,name=iPhone X
+osx_image: xcode11.3
 podfile: Podfile
+#before_install:
+#- pod install
+#script:
+#- xctool clean build -workspace Division2FanApp.xcworkspace -scheme Division2FanApp -sdk iphonesimulator
+#- xcodebuild test -workspace XLProjectName.xcworkspace -scheme Division2FanApp -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone X,OS=13.3'
