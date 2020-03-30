@@ -14,17 +14,17 @@ final class Division2FanAppTests: XCTestCase {
 
     var subject: DpsCalculator! 
 
-    override func setUpWithError() throws {
-        try super.setUpWithError()
+    override func setUp() {
+        super.setUp()
         subject = DpsCalculator()
     }
 
-    override func tearDownWithError() throws {
-        try super.tearDownWithError()
+    override func tearDown() {
+        super.tearDown()
         subject = nil
     }
 
-    func testEliteNPCOutOfCover() throws {
+    func testEliteNPCOutOfCover() {
         XCTAssertTrue(true)
     }
 
