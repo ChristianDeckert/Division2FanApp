@@ -331,18 +331,31 @@ final class DpsCalculator {
 }
 
 extension DpsCalculator.InputAttribute: Hashable {
+    var hash: String {
 
-  private func sha256() -> Data {
-    guard let data = attribute.description.data(using: .utf8) else { return Data() }
-
-    var hash = [UInt8](repeating: 0, count: Int(CC_SHA256_DIGEST_LENGTH))
-    data.withUnsafeBytes {
-      _ = CC_SHA256($0, CC_LONG(data.count), &hash)
+        var hasher = Hasher()
+        hasher.combine(attribute.description)
+        return String(describing: hasher.finalize())
+//        return sha256()
     }
-    return Data(bytes: hash)
-  }
 
-  var hash: String {
-    return sha256().base64EncodedString()
-  }
+    func sha256() -> String {
+        guard let data = attribute.description.data(using: .utf8) else { return "" }
+
+        /// #define CC_SHA256_DIGEST_LENGTH     32
+        /// Creates an array of unsigned 8 bit integers that contains 32 zeros
+        var digest = [UInt8](repeating: 0, count:Int(CC_SHA256_DIGEST_LENGTH))
+
+        /// CC_SHA256 performs digest calculation and places the result in the caller-supplied buffer for digest (md)
+        /// Takes the strData referenced value (const unsigned char *d) and hashes it into a reference to the digest parameter.
+        _ = data.withUnsafeBytes {
+            CC_SHA256($0.baseAddress, UInt32(data.count), &digest)
+        }
+        var sha256String = ""
+        /// Unpack each byte in the digest array and add them to the sha256String
+        for byte in digest {
+            sha256String += String(format:"%02x", UInt8(byte))
+        }
+        return sha256String
+    }
 }

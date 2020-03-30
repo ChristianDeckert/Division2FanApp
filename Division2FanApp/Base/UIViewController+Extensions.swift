@@ -18,7 +18,7 @@ public extension UIViewController {
   }
 
   static func topViewController(in viewController: UIViewController? = nil) -> UIViewController? {
-    guard var topViewController = (viewController ?? root) else { return nil }
+    guard let topViewController = (viewController ?? root) else { return nil }
 
     func presentedRecursive(of parentViewController: UIViewController) -> UIViewController {
       if let navVC = parentViewController as? UINavigationController, let navTopVc = navVC.topViewController { // navigation controller
@@ -35,7 +35,7 @@ public extension UIViewController {
     return presentedRecursive(of: topViewController)
   }
 
-  public func add(childViewController: UIViewController, animation: UIView.Animations, embed: Bool = true, insets: UIEdgeInsets = .zero, duration: TimeInterval = 0.3, complete: (() -> Void)? = nil) {
+  func add(childViewController: UIViewController, animation: UIView.Animations, embed: Bool = true, insets: UIEdgeInsets = .zero, duration: TimeInterval = 0.3, complete: (() -> Void)? = nil) {
     childViewController.willMove(toParent: self)
     childViewController.beginAppearanceTransition(true, animated: animation.isAnimated)
 
@@ -62,7 +62,7 @@ public extension UIViewController {
     }
   }
 
-  public func remove(childViewController: UIViewController, animation: UIView.Animations = .none, complete: (() -> Void)? = nil) {
+  func remove(childViewController: UIViewController, animation: UIView.Animations = .none, complete: (() -> Void)? = nil) {
     childViewController.willMove(toParent: nil)
     childViewController.beginAppearanceTransition(false, animated: animation.isAnimated)
 

@@ -9,7 +9,7 @@
 import UIKit
 
 public extension NSLayoutConstraint {
-  @discardableResult public static func embed(view: UIView, in parentView: UIView, insets: UIEdgeInsets = .zero) -> Bool {
+  @discardableResult static func embed(view: UIView, in parentView: UIView, insets: UIEdgeInsets = .zero) -> Bool {
     view.translatesAutoresizingMaskIntoConstraints = false
     parentView.addSubview(view)
 

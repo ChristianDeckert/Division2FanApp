@@ -10,7 +10,7 @@ import UIKit
 
 public extension UIView {
 
-  public enum Animations {
+  enum Animations {
     case none
     case fade(duration: TimeInterval)
     case pushFromBottom(duration: TimeInterval)
@@ -58,7 +58,7 @@ public extension UIView {
     public static var preferredMinimumScaleTransformation: CGAffineTransform = CGAffineTransform(scaleX: 0.01, y: 0.01)
   }
 
-  public func animate(in viewAnimation: Animations, fromCurrentState: Bool = true, completion: ((_ complete: Bool) -> Void)? = nil) {
+  func animate(in viewAnimation: Animations, fromCurrentState: Bool = true, completion: ((_ complete: Bool) -> Void)? = nil) {
     switch viewAnimation {
     case .none:
       if !fromCurrentState {
