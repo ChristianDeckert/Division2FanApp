@@ -10,26 +10,26 @@ import UIKit
 import AVFoundation
 
 final class Sounds {
-  
+
   enum Effect: String {
     case lootDrop = "Loot Drop Epic"
     case precinctSiege = "precinct-siege-sample"
   }
-  
+
   private var player: AVAudioPlayer?
-  
+
   static let shared = Sounds()
-  
+
   var isPlaying: Bool {
     return player?.isPlaying ?? false
   }
-  
+
   func play(effect: Effect, volume: Float = 0.2) {
 
     guard
       let path = Bundle.main.path(forResource: effect.rawValue, ofType: "mp3")
       else { return }
- 
+
     do {
       player = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: path))
       player?.volume = volume
@@ -37,7 +37,7 @@ final class Sounds {
     } catch let error {
       debugPrint(error.localizedDescription)
     }
-  
+
   }
 
 }

@@ -13,7 +13,7 @@ protocol StatsCollectionViewControllerDelegate: class {
 }
 
 final class StatsCollectionViewController: UICollectionViewController {
-  
+
   enum Stat {
     case npcInCoverHealth
     case eliteNpcInCoverHealth
@@ -23,7 +23,7 @@ final class StatsCollectionViewController: UICollectionViewController {
     case eliteNpcInCoverArmor
     case npcOutOfCoverArmor
     case eliteNpcOutOfCoverArmor
-    
+
     var description: String {
       switch  self {
       case .npcInCoverHealth:
@@ -45,7 +45,7 @@ final class StatsCollectionViewController: UICollectionViewController {
       }
     }
   }
-  
+
   private weak var statsDataSource: StatsDataSource?
   private weak var statsDelegate: StatsCollectionViewControllerDelegate?
   private var startIndex: Int?
@@ -61,25 +61,25 @@ final class StatsCollectionViewController: UICollectionViewController {
     self.startIndex = startIndex
     super.init(collectionViewLayout: flowLayout)
   }
-  
+
   required init?(coder aDecoder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }
-  
+
   var items = [StatCollectionViewCellController]() {
     didSet {
       collectionView?.reloadData()
     }
   }
-  
+
   override func viewDidLoad() {
     super.viewDidLoad()
-    
+
     collectionView.register(UINib(nibName: "StatCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "StatCollectionViewCell")
     collectionView.backgroundColor = .clear
     collectionView.backgroundView = nil
     collectionView.isPagingEnabled = true
-    
+
     items = [
       StatCollectionViewCellController(
         stat: .npcInCoverHealth,
@@ -88,7 +88,7 @@ final class StatsCollectionViewController: UICollectionViewController {
       StatCollectionViewCellController(
         stat: .eliteNpcInCoverHealth,
         statsDataSource: statsDataSource
-      ),      
+      ),
       StatCollectionViewCellController(
         stat: .npcOutOfCoverHealth,
         statsDataSource: statsDataSource
@@ -115,15 +115,15 @@ final class StatsCollectionViewController: UICollectionViewController {
       )
     ]
   }
-  
+
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
-    
+
     guard let startIndex = startIndex else { return }
     scroll(to: startIndex)
     self.startIndex = nil
   }
-  
+
   func scroll(to index: Int, animated: Bool = false) {
     collectionView.scrollToItem(
       at: IndexPath(
@@ -135,70 +135,68 @@ final class StatsCollectionViewController: UICollectionViewController {
     )
   }
   // MARK: UICollectionViewDataSource
-  
+
   override func numberOfSections(in collectionView: UICollectionView) -> Int {
     return 1
   }
-  
-  
-  override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {    
+
+  override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     return items.count
   }
-  
+
   override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell = collectionView.dequeueReusableCell(
       withReuseIdentifier: "StatCollectionViewCell",
       for: indexPath
       ) as! StatCollectionViewCell
-    
+
     cell.setup(with: items[indexPath.row])
-    
+
     return cell
   }
-  
+
   // MARK: UICollectionViewDelegate
 
   override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
     return false
   }
-  
-  
+
   override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
     return false
   }
-  
+
 }
 
 extension StatsCollectionViewController: UICollectionViewDelegateFlowLayout {
-  
+
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
     return view.bounds.size
   }
-  
+
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
     return 0
   }
-  
+
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
     return .zero
   }
-  
+
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
     return 0
   }
 }
 
 extension StatsCollectionViewController {
-  
+
   override func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
     updateIndex()
   }
-  
+
   override func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
     guard !decelerate else {return }
     updateIndex()
   }
-  
+
   private func updateIndex() {
     guard collectionView.bounds.size.width > 0 else { return }
     var currentIndex: Int = Int(collectionView.contentOffset.x / collectionView.bounds.size.width)

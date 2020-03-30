@@ -9,25 +9,24 @@
 import UIKit
 
 protocol RowControlling {
-  
+
   var preferredHeight: CGFloat? { get }
   var preferredFont: UIFont? { get }
   var preferredTintColor: UIColor? { get }
-  
+
 }
 
 protocol RowControlable: class {
-  
+
   associatedtype CONTROLLER: RowControlling
-  
+
   func setup(with rowController: CONTROLLER)
-  
+
 }
 
 extension RowControlling {
-  
+
   var preferredFont: UIFont? {
     return UIFont.borda
   }
 }
-

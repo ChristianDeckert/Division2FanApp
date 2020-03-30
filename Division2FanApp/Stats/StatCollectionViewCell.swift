@@ -10,9 +10,9 @@ import UIKit
 
 final class StatCollectionViewCellController: RowControlling {
   var preferredHeight: CGFloat? { return nil }
-  
+
   var preferredTintColor: UIColor? { return .primaryTint }
-  
+
   let stat: StatsCollectionViewController.Stat
   let statsDataSource: StatsDataSource?
   init(
@@ -25,24 +25,24 @@ final class StatCollectionViewCellController: RowControlling {
 }
 
 final class StatCollectionViewCell: UICollectionViewCell {
-  
+
   @IBOutlet weak var titleLabel: UILabel!
-  
+
   @IBOutlet weak var bodyTitleLabel: UILabel! {
     didSet {
       bodyTitleLabel.text = "stats-collection-controller.body-shot.title".localized
       bodyTitleLabel.font = .bordaSubtitle
     }
   }
-  @IBOutlet weak var bodyValueLabel: UILabel!{
+  @IBOutlet weak var bodyValueLabel: UILabel! {
     didSet {
       bodyValueLabel.text = "0"
       bodyValueLabel.font = .bordaSubtitle
       bodyValueLabel.textColor = .primaryTint
     }
   }
-  
-  @IBOutlet weak var bodyCritTitleLabel: UILabel!{
+
+  @IBOutlet weak var bodyCritTitleLabel: UILabel! {
     didSet {
       bodyCritTitleLabel.text = "stats-collection-controller.body-shot-critical.title".localized
       bodyCritTitleLabel.font = .bordaSubtitle
@@ -55,8 +55,8 @@ final class StatCollectionViewCell: UICollectionViewCell {
       bodyCritValueLabel.textColor = .primaryTint
     }
   }
-  
-  @IBOutlet weak var headTitleLabel: UILabel!{
+
+  @IBOutlet weak var headTitleLabel: UILabel! {
     didSet {
       headTitleLabel.text = "stats-collection-controller.head-shot.title".localized
       headTitleLabel.font = .bordaSubtitle
@@ -69,9 +69,8 @@ final class StatCollectionViewCell: UICollectionViewCell {
       headValueLabel.textColor = .primaryTint
     }
   }
-  
-  
-  @IBOutlet weak var headCritTitleLabel: UILabel!{
+
+  @IBOutlet weak var headCritTitleLabel: UILabel! {
     didSet {
       headCritTitleLabel.text = "stats-collection-controller.head-shot-critical.title".localized
       headCritTitleLabel.font = .bordaSubtitle
@@ -84,8 +83,8 @@ final class StatCollectionViewCell: UICollectionViewCell {
       headCritValueLabel.textColor = .primaryTint
     }
   }
-  
-  @IBOutlet weak var dpsTitleLabel: UILabel!{
+
+  @IBOutlet weak var dpsTitleLabel: UILabel! {
     didSet {
       dpsTitleLabel.text = "stats-collection-controller.dps.title".localized
       dpsTitleLabel.font = .bordaSubtitle
@@ -98,46 +97,46 @@ final class StatCollectionViewCell: UICollectionViewCell {
       dpsValueLabel.textColor = .primaryTint
     }
   }
-  
+
   var controller: StatCollectionViewCellController?
-  
+
 }
 
 extension StatCollectionViewCell: RowControlable {
   func setup(with rowController: StatCollectionViewCellController) {
     self.controller = rowController
-    
+
     titleLabel.font = .bordaHeading
     titleLabel.text = rowController.stat.description
-    
+
     let bodyValue = Int(rowController.statsDataSource?.getDpsCalculator?.calulate(
       stat: rowController.stat,
       category: .bodyshot
       ) ?? 0
     )
     bodyValueLabel.text = "\(bodyValue)"
-    
+
     let headValue = Int(rowController.statsDataSource?.getDpsCalculator?.calulate(
       stat: rowController.stat,
       category: .headshot
       ) ?? 0
     )
     headValueLabel.text = "\(headValue)"
-    
+
     let critBodyValue = Int(rowController.statsDataSource?.getDpsCalculator?.calulate(
       stat: rowController.stat,
       category: .critBodyShot
       ) ?? 0
     )
     bodyCritValueLabel.text = "\(critBodyValue)"
-    
+
     let critHeadValue = Int(rowController.statsDataSource?.getDpsCalculator?.calulate(
       stat: rowController.stat,
       category: .critHeadShot
       ) ?? 0
     )
     headCritValueLabel.text = "\(critHeadValue)"
-    
+
     let dpsValue = Int(rowController.statsDataSource?.getDpsCalculator?.calulate(
       stat: rowController.stat,
       category: .dps
@@ -145,8 +144,7 @@ extension StatCollectionViewCell: RowControlable {
     )
     dpsValueLabel.text = "\(dpsValue)"
   }
-  
-  typealias CONTROLLER = StatCollectionViewCellController
-  
-}
 
+  typealias CONTROLLER = StatCollectionViewCellController
+
+}

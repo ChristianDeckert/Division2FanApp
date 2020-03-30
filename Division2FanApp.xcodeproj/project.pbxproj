@@ -62,7 +62,18 @@
 		AA90225B223D897400CBF52F /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA90225A223D897400CBF52F /* UIViewController+Extensions.swift */; };
 		AA90225D223D898300CBF52F /* UINavigationBar+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA90225C223D898300CBF52F /* UINavigationBar+Extensions.swift */; };
 		AA90225F223D8A0500CBF52F /* NSLayoutContraint+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA90225E223D8A0500CBF52F /* NSLayoutContraint+Extensions.swift */; };
+		AAE3B3A82431F65F00D86E4F /* DPSCalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE3B3A72431F65F00D86E4F /* DPSCalculatorTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AAE3B3AA2431F65F00D86E4F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AA9021D2223B8E6E00CBF52F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AA9021D9223B8E6F00CBF52F;
+			remoteInfo = Division2FanApp;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		5D90300CAC8CF99EFBAA4C60 /* Pods_Division2FanApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Division2FanApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -125,6 +136,10 @@
 		AA90225A223D897400CBF52F /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		AA90225C223D898300CBF52F /* UINavigationBar+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+Extensions.swift"; sourceTree = "<group>"; };
 		AA90225E223D8A0500CBF52F /* NSLayoutContraint+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayoutContraint+Extensions.swift"; sourceTree = "<group>"; };
+		AAE3B3A52431F65F00D86E4F /* Division2FanAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Division2FanAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AAE3B3A72431F65F00D86E4F /* DPSCalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPSCalculatorTests.swift; sourceTree = "<group>"; };
+		AAE3B3A92431F65F00D86E4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AAE3B3AF2431F7D500D86E4F /* .travis.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .travis.yml; sourceTree = "<group>"; };
 		E83349855BDFFBC9911A8E2E /* Pods-Division2FanApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Division2FanApp.debug.xcconfig"; path = "Target Support Files/Pods-Division2FanApp/Pods-Division2FanApp.debug.xcconfig"; sourceTree = "<group>"; };
 		F3278855D53960EFFF3E43B1 /* Pods-Division2FanApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Division2FanApp.release.xcconfig"; path = "Target Support Files/Pods-Division2FanApp/Pods-Division2FanApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -136,6 +151,13 @@
 			files = (
 				AA1CDECB224A60C700CE1EFA /* WebKit.framework in Frameworks */,
 				8C7968A5F3D48D08637FBA2B /* Pods_Division2FanApp.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AAE3B3A22431F65F00D86E4F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,7 +238,9 @@
 		AA9021D1223B8E6E00CBF52F = {
 			isa = PBXGroup;
 			children = (
+				AAE3B3AF2431F7D500D86E4F /* .travis.yml */,
 				AA9021DC223B8E6F00CBF52F /* Division2FanApp */,
+				AAE3B3A62431F65F00D86E4F /* Division2FanAppTests */,
 				AA9021DB223B8E6F00CBF52F /* Products */,
 				CEC53AF69D00A31415BF357B /* Pods */,
 				F137D8F89D8A446A702776DE /* Frameworks */,
@@ -227,6 +251,7 @@
 			isa = PBXGroup;
 			children = (
 				AA9021DA223B8E6F00CBF52F /* Division2FanApp.app */,
+				AAE3B3A52431F65F00D86E4F /* Division2FanAppTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -335,6 +360,15 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		AAE3B3A62431F65F00D86E4F /* Division2FanAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				AAE3B3A72431F65F00D86E4F /* DPSCalculatorTests.swift */,
+				AAE3B3A92431F65F00D86E4F /* Info.plist */,
+			);
+			path = Division2FanAppTests;
+			sourceTree = "<group>";
+		};
 		CEC53AF69D00A31415BF357B /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -374,18 +408,40 @@
 			productReference = AA9021DA223B8E6F00CBF52F /* Division2FanApp.app */;
 			productType = "com.apple.product-type.application";
 		};
+		AAE3B3A42431F65F00D86E4F /* Division2FanAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AAE3B3AC2431F65F00D86E4F /* Build configuration list for PBXNativeTarget "Division2FanAppTests" */;
+			buildPhases = (
+				AAE3B3A12431F65F00D86E4F /* Sources */,
+				AAE3B3A22431F65F00D86E4F /* Frameworks */,
+				AAE3B3A32431F65F00D86E4F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AAE3B3AB2431F65F00D86E4F /* PBXTargetDependency */,
+			);
+			name = Division2FanAppTests;
+			productName = Division2FanAppTests;
+			productReference = AAE3B3A52431F65F00D86E4F /* Division2FanAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		AA9021D2223B8E6E00CBF52F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1010;
+				LastSwiftUpdateCheck = 1140;
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = "Christian Deckert";
 				TargetAttributes = {
 					AA9021D9223B8E6F00CBF52F = {
 						CreatedOnToolsVersion = 10.1;
+					};
+					AAE3B3A42431F65F00D86E4F = {
+						CreatedOnToolsVersion = 11.4;
+						TestTargetID = AA9021D9223B8E6F00CBF52F;
 					};
 				};
 			};
@@ -404,6 +460,7 @@
 			projectRoot = "";
 			targets = (
 				AA9021D9223B8E6F00CBF52F /* Division2FanApp */,
+				AAE3B3A42431F65F00D86E4F /* Division2FanAppTests */,
 			);
 		};
 /* End PBXProject section */
@@ -438,6 +495,13 @@
 				AA90223E223C375500CBF52F /* Loot Drop Epic.mp3 in Resources */,
 				AA168EB8223EC6D800857113 /* InfoTableViewController.xib in Resources */,
 				AA433402224000F800987F5B /* division2-dz-east.mov in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AAE3B3A32431F65F00D86E4F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -504,7 +568,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AAE3B3A12431F65F00D86E4F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AAE3B3A82431F65F00D86E4F /* DPSCalculatorTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AAE3B3AB2431F65F00D86E4F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AA9021D9223B8E6F00CBF52F /* Division2FanApp */;
+			targetProxy = AAE3B3AA2431F65F00D86E4F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		AA9021E6223B8E7100CBF52F /* LaunchScreen.storyboard */ = {
@@ -651,6 +731,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = C7G26D2828;
 				INFOPLIST_FILE = "$(SRCROOT)/Division2FanApp/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -658,6 +739,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.christiandeckertapps.dpscalculator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -671,6 +753,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = C7G26D2828;
 				INFOPLIST_FILE = "$(SRCROOT)/Division2FanApp/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -678,10 +761,53 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.christiandeckertapps.dpscalculator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		AAE3B3AD2431F65F00D86E4F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = C7G26D2828;
+				INFOPLIST_FILE = Division2FanAppTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.christiandeckertapps.Division2FanAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Division2FanApp.app/Division2FanApp";
+			};
+			name = Debug;
+		};
+		AAE3B3AE2431F65F00D86E4F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = C7G26D2828;
+				INFOPLIST_FILE = Division2FanAppTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.christiandeckertapps.Division2FanAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Division2FanApp.app/Division2FanApp";
 			};
 			name = Release;
 		};
@@ -702,6 +828,15 @@
 			buildConfigurations = (
 				AA9021ED223B8E7100CBF52F /* Debug */,
 				AA9021EE223B8E7100CBF52F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AAE3B3AC2431F65F00D86E4F /* Build configuration list for PBXNativeTarget "Division2FanAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AAE3B3AD2431F65F00D86E4F /* Debug */,
+				AAE3B3AE2431F65F00D86E4F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

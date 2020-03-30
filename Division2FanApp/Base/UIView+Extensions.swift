@@ -9,55 +9,55 @@
 import UIKit
 
 public extension UIView {
-  
+
   public enum Animations {
     case none
     case fade(duration: TimeInterval)
     case pushFromBottom(duration: TimeInterval)
     case springAnimation(duration: TimeInterval)
     case scale(duration: TimeInterval)
-    
+
     public var isAnimated: Bool {
       switch self {
       case .none: return false
       default: return true
       }
     }
-    
+
     public var isFade: Bool {
       switch self {
       case .fade: return true
       default: return false
       }
     }
-    
+
     public var isPushFromBottom: Bool {
       switch self {
       case .pushFromBottom: return true
       default: return false
       }
     }
-    
+
     public var isSpringAnimation: Bool {
       switch self {
       case .springAnimation: return true
       default: return false
       }
     }
-    
+
     public var isScaleAnimation: Bool {
       switch self {
       case .springAnimation: return true
       default: return false
       }
     }
-    
+
     public static var preferredSpringAnimationDuration: TimeInterval = 0.5
     public static var preferredAnimationDuration: TimeInterval = 0.3
     public static var preferredDamping: CGFloat = 0.45
     public static var preferredMinimumScaleTransformation: CGAffineTransform = CGAffineTransform(scaleX: 0.01, y: 0.01)
   }
-  
+
   public func animate(in viewAnimation: Animations, fromCurrentState: Bool = true, completion: ((_ complete: Bool) -> Void)? = nil) {
     switch viewAnimation {
     case .none:
@@ -74,7 +74,7 @@ public extension UIView {
       UIView.animate(withDuration: duration, animations: {
         self.transform = .identity
       }, completion: completion)
-      
+
     case .fade(let duration):
       if !fromCurrentState {
         alpha = 0
@@ -82,7 +82,7 @@ public extension UIView {
       UIView.animate(withDuration: duration, animations: {
         self.alpha = 1
       }, completion: completion)
-      
+
     case .scale(let duration):
       if !fromCurrentState {
         transform = CGAffineTransform(scaleX: 0.01, y: 0.01)
@@ -92,16 +92,16 @@ public extension UIView {
         self.transform = .identity
         self.alpha = 1
       }, completion: completion)
-      
+
     case .springAnimation(let duration):
       UIView.animate(withDuration: duration, delay: 0, usingSpringWithDamping: Animations.preferredDamping, initialSpringVelocity: 0, options: .curveEaseIn, animations: {
         self.transform = .identity
         self.alpha = 1
       }, completion: completion)
-      
+
     }
   }
-  
+
   func embed(in parentView: UIView, insets: UIEdgeInsets = .zero) {
     NSLayoutConstraint.embed(view: self, in: parentView, insets: insets)
   }

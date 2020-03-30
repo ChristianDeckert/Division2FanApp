@@ -13,20 +13,20 @@ protocol FabViewControllerDelegate: class {
 }
 
 class FabViewController: UIViewController {
-  
+
   @IBOutlet weak var button: UIButton!
   @IBOutlet weak var buttonBackgroundView: UIView!
   private weak var delegate: FabViewControllerDelegate?
-  
+
   init(delegate: FabViewControllerDelegate) {
     self.delegate = delegate
     super.init(nibName: nil, bundle: nil)
   }
-  
+
   required init?(coder aDecoder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }
-  
+
   override func viewDidLayoutSubviews() {
     super.viewDidLayoutSubviews()
     buttonBackgroundView.layer.shadowColor = UIColor.black.cgColor
@@ -37,12 +37,11 @@ class FabViewController: UIViewController {
 
 }
 
-
 // MARK: - Actions
 extension FabViewController {
-  
+
   @IBAction func buttonAction() {
     delegate?.fabButtonTapped()
   }
-  
+
 }

@@ -9,7 +9,7 @@
 import UIKit
 
 extension UITableView {
-  
+
   func register(cellNibNamed name: String, bundle: Bundle? = nil) {
     register(
       UINib(

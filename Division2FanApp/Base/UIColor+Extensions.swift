@@ -9,7 +9,7 @@
 import UIKit
 
 extension UIColor {
-  
+
   static let primaryTint: UIColor = UIColor(
     red: 237/255.0,
     green: 115/255.0,

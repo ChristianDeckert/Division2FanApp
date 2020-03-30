@@ -18,11 +18,11 @@ protocol KeyboardManaging: class {
   func reset(view: UIView)
 }
 
-final class KeyboardManager: KeyboardManaging{
+final class KeyboardManager: KeyboardManaging {
   weak var textField: UITextField?
-  
+
   private var keyboardHeight: CGFloat = 0
-  
+
   init() {
     switch UIDevice.current.screenType {
     case .iPhones_5_5s_5c_SE:
@@ -35,15 +35,15 @@ final class KeyboardManager: KeyboardManaging{
       keyboardHeight = 243
     }
   }
-  
+
   func focus(view: UIView, keyboardRect: CGRect) {
-    
+
     guard
       let textfield = self.textField,
       let tableView = view as? UITableView else { return }
-    
+
     self.keyboardHeight = min(keyboardRect.size.height, self.keyboardHeight)
-    
+
     let bottom: CGFloat
     if UIDevice.current.screenType == .iPhones_5_5s_5c_SE {
       bottom = keyboardHeight
@@ -52,7 +52,7 @@ final class KeyboardManager: KeyboardManaging{
     }
     tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: bottom, right: 0)
   }
-  
+
   func reset(view: UIView) {
     guard let tableView = view as? UITableView else { return }
     tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 16, right: 0)
@@ -60,11 +60,11 @@ final class KeyboardManager: KeyboardManaging{
 }
 
 final class ContainerViewController: UIViewController {
-  
+
   @IBOutlet weak var collectionContainerView: UIView!
   @IBOutlet weak var tableContainerView: UIView!
   @IBOutlet weak var pageControl: UIPageControl!
-  
+
   lazy var resetBarButtonItem: UIBarButtonItem = {
     return UIBarButtonItem(
       title: "calculator-controller.reset-button.title".localized,
@@ -73,7 +73,7 @@ final class ContainerViewController: UIViewController {
       action: #selector(resetAction)
     )
   }()
-  
+
   lazy var infoBarButtonItem: UIBarButtonItem = {
     return UIBarButtonItem(
       title: "calculator-controller.info-button.title".localized,
@@ -82,11 +82,11 @@ final class ContainerViewController: UIViewController {
       action: #selector(infoAction)
     )
   }()
-  
+
   private var recentStatIndex: Int = 0
   private var dpsCalculator = DpsCalculator()
   private var keyboardManager: KeyboardManaging
-  
+
   private lazy var statsCollectionViewController: StatsCollectionViewController = {
     let statsCollectionViewController = StatsCollectionViewController(
       statsDataSource: self,
@@ -95,7 +95,7 @@ final class ContainerViewController: UIViewController {
     )
     return statsCollectionViewController
   }()
-  
+
   private lazy var calculatorTableViewController: CalcualtorTableViewController = {
     let calcualtorTableViewController = CalcualtorTableViewController(
       rowControllers: exampleRowControllers,
@@ -103,9 +103,9 @@ final class ContainerViewController: UIViewController {
     )
     return calcualtorTableViewController
   }()
-  
+
   private let fabWindow: FABWindow
-  
+
   init(
     fabWindow: FABWindow,
     keyboardManager: KeyboardManaging = KeyboardManager()
@@ -114,49 +114,49 @@ final class ContainerViewController: UIViewController {
     self.keyboardManager = keyboardManager
     super.init(nibName: nil, bundle: nil)
   }
-  
+
   required init?(coder aDecoder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }
-  
+
   deinit {
     NotificationCenter.default.removeObserver(self)
   }
-  
+
   override func viewDidLoad() {
     super.viewDidLoad()
-    
+
     title = "container-controller.title".localized
-    
+
     statsCollectionViewController.view.embed(in: collectionContainerView)
     calculatorTableViewController.view.embed(in: tableContainerView)
-    
+
     pageControl.pageIndicatorTintColor = .darkGray
     pageControl.currentPageIndicatorTintColor = .primaryTint
     pageControl.currentPage = recentStatIndex
     pageControl.numberOfPages = 8
-    
+
     navigationController?.navigationBar.blurAppearance()
-    
+
     NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: UIResponder.keyboardDidShowNotification, object: nil)
-    
+
     NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: UIResponder.keyboardDidHideNotification, object: nil)
   }
-  
+
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
-    
+
     navigationItem.rightBarButtonItem = resetBarButtonItem
     navigationItem.leftBarButtonItem = infoBarButtonItem
-    
+
     guard !Sounds.shared.isPlaying else { return }
     Sounds.shared.play(effect: .precinctSiege)
   }
-  
+
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
   }
-  
+
   @objc func keyboardWillShow(notification: Notification) {
     guard let userInfo = notification.userInfo else { return }
     if let keyboardRect = (userInfo[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
@@ -166,7 +166,7 @@ final class ContainerViewController: UIViewController {
       )
     }
   }
-  
+
   @objc func keyboardWillHide(notification: Notification) {
   }
 }
@@ -184,7 +184,7 @@ extension ContainerViewController {
     calculatorTableViewController.rowControllers = defaultRowControllers
     statsCollectionViewController.collectionView.reloadData()
   }
-  
+
   @objc func infoAction() {
     let infoController = InfoTableViewController(fabWindow: fabWindow)
     navigationController?.pushViewController(infoController, animated: true)
@@ -197,7 +197,7 @@ extension ContainerViewController: StatsDataSource {
   }
 }
 
-extension ContainerViewController: StatsCollectionViewControllerDelegate{
+extension ContainerViewController: StatsCollectionViewControllerDelegate {
   func didScrollTo(index: Int) {
     recentStatIndex = index
     pageControl.currentPage = index
@@ -205,9 +205,9 @@ extension ContainerViewController: StatsCollectionViewControllerDelegate{
 }
 
 extension ContainerViewController {
-  
+
   var defaultRowControllers: [RowControlling] {
-    
+
     return [
       CalcualtorCellController(
         delegate: self,
@@ -264,7 +264,7 @@ extension ContainerViewController {
       )
     ]
   }
-  
+
   var exampleRowControllers: [RowControlling] {
     dpsCalculator = DpsCalculator(inputAttributes: [])
     dpsCalculator.add(attribute: .weaponDamage, value: 5000)
@@ -341,31 +341,28 @@ extension ContainerViewController: CalcualtorCellControllerDelegate {
     keyboardManager.reset(view: view)
 //    guard keyboardManager.textField == textfield else { return }
     keyboardManager.textField = nil
-    
+
   }
-  
-  
+
   func calcualtorCellWillBeginEditing(textfield: UITextField) {
    keyboardManager.textField = textfield
   }
-  
+
   func calcualtorCell(controller: CalcualtorCellController?, didReturnFromTextfieldWith value: String?) {
-    
+
     guard
       let attribute = controller?.attribute,
       let stringValue = value,
       let value = Double(stringValue) else { return }
-    
+
     dpsCalculator.add(
       attribute: attribute,
       value: value
     )
-    
+
     controller?.update(value: value)
-    
+
     statsCollectionViewController.collectionView.reloadData()
   }
-  
+
 }
-
-

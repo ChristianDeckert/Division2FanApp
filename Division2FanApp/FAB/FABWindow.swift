@@ -13,15 +13,14 @@ protocol MenuWindowDelegate: class {
   func menuWindowBackgroundBButtonAction()
 }
 
-
 protocol FABDelegate: FABMenuViewControllerDelegate {
   var fabButtonCellsOnTapAction: [FABMenuViewController.Section] { get }
 }
-  
+
 final class FABWindow: UIWindow {
-  
+
   final class MenuWindow: UIWindow {
-    
+
     lazy var backgroundButton: UIButton = {
       let button = UIButton(frame: self.bounds)
       button.setTitle(nil, for: .normal)
@@ -29,25 +28,25 @@ final class FABWindow: UIWindow {
       button.addTarget(self, action: #selector(backgroundButtonAction), for: .touchUpInside)
       return button
     }()
-    
+
     weak var delegate: MenuWindowDelegate!
-    
+
     func setup(delegate: MenuWindowDelegate) {
       self.delegate = delegate
       backgroundButton.addTarget(self, action: #selector(backgroundButtonAction), for: .touchUpInside)
     }
-    
+
     @objc func backgroundButtonAction() {
       delegate.menuWindowBackgroundBButtonAction()
     }
-    
+
   }
-  
+
   enum Visibility {
     case hidden
     case shown
   }
-  
+
   lazy var menuWindow: MenuWindow = {
     let window = MenuWindow()
     window.windowLevel = UIWindow.Level.normal + 3
@@ -64,13 +63,13 @@ final class FABWindow: UIWindow {
     window.setup(delegate: self)
     return window
   }()
-  
+
   lazy var fabViewController: FabViewController = {
     let viewController = FabViewController(delegate: self)
     viewController.view.alpha = 0
     return viewController
   }()
-  
+
   lazy var fabMenuViewController: FABMenuViewController = {
     let viewController = FABMenuViewController(
       delegate: self.delegate
@@ -78,32 +77,31 @@ final class FABWindow: UIWindow {
     viewController.view.backgroundColor = buttonTintColor
     return viewController
   }()
-  
+
   private var preferredFrame: CGRect = .zero
-  
+
   private var delegate: FABDelegate
   private var buttonTintColor: UIColor
-  
+
   init(delegate: FABDelegate, tintColor: UIColor) {
     self.delegate = delegate
     buttonTintColor = tintColor
     super.init(frame: UIScreen.main.bounds)
-    
+
     windowLevel = UIWindow.Level.normal + 1
     backgroundColor = .clear
     resignKey()
     isHidden = true
     clipsToBounds = false
-    
-    
+
   }
-  
+
   required init?(coder aDecoder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }
-  
+
   fileprivate func initialSetup() {
-    
+
     let bottom: CGFloat
     switch UIDevice.current.screenType {
     case .iPhone_XR, .iPhones_X_XS, .iPhone_XSMax:
@@ -120,20 +118,20 @@ final class FABWindow: UIWindow {
         height: width
       )
     }
-    
+
     guard fabViewController.view.superview == nil else { return }
     self.rootViewController = fabViewController
     fabViewController.view.embed(in: self)
     fabViewController.buttonBackgroundView.backgroundColor = buttonTintColor
   }
-  
+
 }
 
 // MARK: - Presentation
 extension FABWindow {
-  
+
   func transistion(to newVisibilty: Visibility, animated: Bool = true, completion: (() -> Void)? = nil) {
-    
+
     initialSetup()
     self.frame = preferredFrame
     isHidden = false
@@ -145,17 +143,16 @@ extension FABWindow {
       case .hidden:
         opacity = 0
       }
-      
+
       self.fabViewController.view.alpha = opacity
     }
-    
+
   }
-  
+
 }
 
-
 extension FABWindow: FabViewControllerDelegate {
-  
+
   func toggleFabMenuViewControllerVisibility() {
     UIView.animate(withDuration: 0.4, animations: {
       if self.menuWindow.alpha == 0 {
@@ -169,16 +166,16 @@ extension FABWindow: FabViewControllerDelegate {
       self.menuWindow.isUserInteractionEnabled = self.menuWindow.alpha > 0
     }
   }
-  
+
   fileprivate func prepareMenuIfNeeded() {
-    
+
     var bottom: CGFloat = 56
     if #available(iOS 11.0, *) {
       bottom += UIApplication.shared.keyWindow?.safeAreaInsets.bottom ?? 0
     } else {
       bottom += 0
     }
-    
+
     if menuWindow.isHidden { // first setup
       fabMenuViewController.view.transform = .init(translationX: 0, y: UIScreen.main.bounds.height * 0.6)
       menuWindow.isHidden = false
@@ -193,7 +190,6 @@ extension FABWindow: FabViewControllerDelegate {
         equalTo: menuWindow.rootViewController!.view.trailingAnchor,
         constant: -8
         ).isActive = true
-      
 
       fabMenuViewController.view.bottomAnchor.constraint(
         equalTo: menuWindow.rootViewController!.view.bottomAnchor,
@@ -202,7 +198,7 @@ extension FABWindow: FabViewControllerDelegate {
     }
 
     var height: CGFloat = 0
-    
+
     for (sectionIndex, section) in fabMenuViewController.sections.enumerated() {
       height += 44.0 // section header
       for (rowIndex, _) in section.cells.enumerated() {
@@ -215,35 +211,32 @@ extension FABWindow: FabViewControllerDelegate {
         )
       }
     }
-    
+
     fabMenuViewController.view.topAnchor.constraint(
       equalTo: menuWindow.rootViewController!.view.topAnchor,
       constant: UIScreen.main.bounds.height - height - bottom
       ).isActive = true
   }
-  
+
   func fabButtonTapped() {
     presentFabMenu(items: delegate.fabButtonCellsOnTapAction)
   }
-  
+
   func presentFabMenu(items: [FABMenuViewController.Section]) {
-    
+
     fabMenuViewController.sections = items
-    
+
     prepareMenuIfNeeded()
-    
+
     toggleFabMenuViewControllerVisibility()
   }
-  
-}
 
+}
 
 extension FABWindow: MenuWindowDelegate {
   func menuWindowBackgroundBButtonAction() {
     guard menuWindow.alpha > 0 else { return }
     toggleFabMenuViewControllerVisibility()
   }
-  
-  
-}
 
+}
